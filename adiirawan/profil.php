@@ -15,7 +15,7 @@ if( empty($_SESSION['email']) ){
 </head>
 <body>
     <!-- Menampilkan isi session email -->
-    <center><h3> Hallo Selamat Datang <?php echo $_SESSION['email']; ?> </h3></center>
+    <h3> Hallo Selamat Datang <?php echo $_SESSION['email']; ?> </h3>
     <a href="logout.php">Keluar</a>
 </body>
 </html>

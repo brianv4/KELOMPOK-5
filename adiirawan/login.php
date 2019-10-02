@@ -22,6 +22,7 @@ if(isset($_POST['submit'])){
  
         // jika login salah maka variabel form_error diisi value seperti dibawah
         // nilai variabel ini akan ditampilkan di halaman login jika salah
+        
         $form_error = '<p>Password atau email yang kamu masukkan salah</p>';
     }
 }
@@ -30,22 +31,22 @@ if(isset($_POST['submit'])){
  
 <!DOCTYPE html>
 <head>
-    <title>Login Kelompok 5</title>
+    <title>Login Sederhana</title>
 </head>
 <body>
  
-    <center><h1>Silakan Login</h1></center>
+    <h3>Silakan Login</h3>
  
-    <center>
-        <form method="POST" action="login.php">
-            Email <br><input type="email" name="email"><br>
-            <br>
-            Password <br> <input type="password" name="password"><br>
-            <?php echo $form_error; ?>
-            <br>    
-            <input type="submit" name="submit" value="Login">
-        </form>
-    </center>
+    <form method="POST" action="login.php">
+        Email : 
+        <br /> <input type="email" name="email"><br />
+        Password : 
+        <br /> <input type="password" name="password"> <br />
+        <?php echo $form_error; ?>
+        <input type="submit" name="submit" value="Login">
+    </form>
+    <br />
+    <button onclick="window.location.href='navigation.html'">Kembali Ke Navigasi</button>
     
 </body>
 </html>
