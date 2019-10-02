@@ -6,7 +6,7 @@
 <body>
         <?php 
         $tes = "Saya Pergi Kerja";
-        // variabel tes di atas merupakan tipe data string karena berisi text atau kalimat.   
+// variabel tes di atas merupakan tipe data string karena berisi text atau kalimat.   
         
         
         $bilangan_pertama = 12;
@@ -34,7 +34,5 @@
         echo "<h2>" .$y. "</h2>";
         echo "<h2>" .$anggota. "</h2>";
 ?>
-
-
 </body>
 </html> 
