@@ -18,10 +18,29 @@ Site : www.malasngoding.com
 	<header>
 		<h1 class="judul">SRI REJEKI</h1>
 		<h3 class="deskripsi">LEMBAGA KURSUS DAN PELATIHAN</h3>
-		<!--<a href="Admin/logout.php">LOGOUT</a>-->
+<!--untuk menampilkan username yang login-->
+<?php
+session_start();
+ 
+// check apakah session email sudah ada atau belum.
+// jika belum maka akan diredirect ke halaman index (login)
+if( empty($_SESSION['email']) ){
+    header('Location: tampilan.php');
+}
+ 
+?>
+ 
 
+<head>
+    <title>Profil</title>
+</head>
+<body>
+    <!-- Menampilkan isi session email -->
+	<h3> Hallo Selamat Datang <?php echo $_SESSION['username']; ?> </h3>
+	<a href="Admin/logout.php">LOGOUT</a> 
+    
 </body>
-</html>
+
 		
 	</header>
  
@@ -31,7 +50,7 @@ Site : www.malasngoding.com
 			<li><a href="tampilan.php?page=profil">Jadwal</a></li>
 			<li><a href="tampilan.php?page=tutorial">Materi</a></li>
 			<li><a href="#">Ubah Password</a></li>
-			<li><a href="Admin/logout.php">Logout</a></li>
+			<li><a href="#">Logout</a></li>
 			
 			
 			

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Login Multi User Level Dengan PHP dan MySQLi - www.malasngoding.com</title>
+	<title> Halaman Login</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -31,7 +31,7 @@
 			<br/>
 			<br/>
 			<center>
-				<a class="link" href="">kembali</a>
+				<a class="#" href="">kembali</a>
 			</center>
 		</form>
 		
