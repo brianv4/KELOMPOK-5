@@ -3,6 +3,8 @@
 <head>
 	<title>Login admin</title>
 </head>
+<!--<link rel="stylesheet" type="text/css" href="login.css">
+<script type="text/javascript" src="login.js"></script>-->
 <body>
 	<h2>Login admin</h2>
 	<br/>
@@ -21,6 +23,13 @@
 	<br/>
 	<br/>
 	<form method="post" action="cek_login.php">
+	
+    <!--<form class="login-form">
+      <input type="text" placeholder="username"/>
+      <input type="password" placeholder="password"/>
+      <input type="submit" value="LOGIN"/>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>-->
+    
 		<table>
 			<tr>
 				<td>Username</td>
