@@ -30,18 +30,22 @@ if(isset($_POST['submit'])){
  
 <!DOCTYPE html>
 <head>
-    <title>Login Sederhana</title>
+    <title>Login Kelompok 5</title>
 </head>
 <body>
  
-    <h3>Silakan Login</h3>
+    <center><h1>Silakan Login</h1></center>
  
-    <form method="POST" action="login.php">
-        Email : <input type="email" name="email"><br>
-        Password : <input type="password" name="password"><br>
-        <?php echo $form_error; ?>
-        <input type="submit" name="submit" value="Login">
-    </form>
+    <center>
+        <form method="POST" action="login.php">
+            Email <br><input type="email" name="email"><br>
+            <br>
+            Password <br> <input type="password" name="password"><br>
+            <?php echo $form_error; ?>
+            <br>    
+            <input type="submit" name="submit" value="Login">
+        </form>
+    </center>
     
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+ 	<title>Form Pendaftaran</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body>
+    
+   <div class="container">		
+   <h1>Form Pendaftaran LKP Sri Rejeki</h1> 
+	<!---<form>
+		<div class="form-group">
+			<label for="nama">NIK Anda:</label>
+			<input type="text" class="form-control">
+		</div>
+		<div class="form-group">
+			<label for="alamat">Nama anda:</label>
+			<input type="text" class="form-control" id="alamat">
+		</div>
+		<div class="form-group">
+				<label for="nama">Alamat Anda:</label>
+				<input type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<label for="alamat">Nomor Telepon anda:</label>
+				<input type="text" class="form-control" id="alamat">
+			</div>		
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>--> 
+	<form method="post" action="simpan.php">
+            <table>
+                <tr><td>NIK</td><td><input type="text" name="nik"></td></tr>
+                <tr><td>NAMA</td><td><input type="text" name="nama"></td></tr>
+                <tr><td>JENIS KELAMIN</td><td>
+                        <input type="radio" name="jenis_kelamin" value="L">Laki Laki
+                        <input type="radio" name="jenis_kelamin" value="P">Perempuan
+             	</td></tr>
+                <tr><td>ALAMAT</td><td><input type="text" name="alamat"></td><td>
+                <tr><td>NO HP</td><td><input type="text" name="hp"></td></tr>
+                <tr><td colspan="2"><button type="submit" value="simpan">SIMPAN</button></td></tr>
+            </table>
+        </form>
+   </div>
+ 
+</body>
+</html>
+
+
