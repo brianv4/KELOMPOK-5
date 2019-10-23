@@ -1,6 +1,6 @@
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
-/* Created on:     23/10/2019 8:49:02                           */
+/* Created on:     23/10/2019 9:06:06                           */
 /*==============================================================*/
 
 
@@ -91,7 +91,8 @@ create table PESERTA_KURSUS
    FILE_KTP             varchar(20),
    FILE_KK              varchar(20),
    FILE_IJAZAH          varchar(20),
-   PASSWORD             varchar(20),
+   UNAMEK               varchar(20),
+   PASSK                varchar(20),
    primary key (NIK_KURSUS)
 );
 
@@ -115,7 +116,8 @@ create table PESERTA_PELAT
    FILE_KTPKURSUS       varchar(10),
    FILE_KKPELATIHAN     varchar(50),
    FILE_IJAZAHPELATIHAN varchar(50),
-   PASSWORD_KURSUS      varchar(10),
+   PASSWORD_KURSUS      varchar(20),
+   PASSP                varchar(20),
    primary key (NIK2)
 );
 
@@ -177,7 +179,8 @@ create table USER
    ALAMAT_USER          varchar(255),
    NOHP_USER            varchar(15),
    LEVEL                varchar(10),
-   PASSWORD_USER        varchar(10),
+   USERNAME             varchar(20),
+   PASSWORD             varchar(20),
    primary key (ID_USER)
 );
 
