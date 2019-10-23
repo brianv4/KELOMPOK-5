@@ -42,11 +42,25 @@
           <!-- login modal-->
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
           <!-- login modal-->
+          <!-- login modal-->
+         
+          <!-- login modal-->
         </div>
 
         </div>
       </nav>
       <!-- Intro Section-->
+      <!--Login Koneksi-->
+      
+        <!--Login Koneksi-->
+        <?php 
+	if(isset($_GET['pesan'])){
+		if($_GET['pesan']=="gagal"){
+			echo "<div class='alert'>Username dan Password tidak sesuai !</div>";
+		}
+	}
+  ?>
+  <!--Kursus-->
       <div class="modal fade" role="dialog" id="loginModal">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -54,7 +68,8 @@
                     <h3 class="modal-title">Login user</h3>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-
+                
+        <form action="cek_login.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username">
@@ -66,9 +81,15 @@
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-success">Sign In</button>
                 </div>
+</form>
             </div>
+           
         </div>
+        
     </div>
+    <!--Kursus-->
+
+    
       <section class="view hm-gradient" id="intro">
         <div class="full-bg-img d-flex align-items-center">
           <div class="container">
