@@ -1,3 +1,13 @@
+<?php
+session_start();
+ 
+// check apakah session email sudah ada atau belum.
+// jika belum maka akan diredirect ke halaman index (login)
+if( empty($_SESSION['username']) ){
+    header('Location: tampilan.php');
+}
+ 
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,14 +24,13 @@
 Author : diki alfarabi hadi 
 Site : www.malasngoding.com
 -->
+
 <div class="content">
 	<header>
 		<h1 class="judul">SRI REJEKI</h1>
 		<h3 class="deskripsi">LEMBAGA KURSUS DAN PELATIHAN</h3>
-		<!--<a href="Admin/logout.php">LOGOUT</a>-->
-
-</body>
-</html>
+		
+		<h3> Hallo Selamat Datang <?php echo $_SESSION['username']; ?> </h3>	
 		
 	</header>
  
