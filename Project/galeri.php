@@ -10,9 +10,19 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
+    <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <!--menambahkan fancybox-->
+    <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+    <!--menambahkan css fancybox-->
+    <link href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(".fancy").fancybox();
+        });
+    </script>
   </head>
   <body>
-     
+  
       <!-- Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
           <div class="container"><a class="navbar-brand" href="#"><strong>Sri Rejeki</strong></a>
@@ -46,12 +56,20 @@
           </div>
         </nav>
   <br>
+  <?php
+    //koneksi ke database
+    $conn = mysql_connect('localhost', 'root', '');
+    mysql_select_db('lkpsri');
+    //membaca data dari database
+    $result = mysql_query("select * from galeri");
+    //menampilkan foto
     
+    ?>
           
 <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3 text-center">Our team members</h2>
+      <h2 class="h1 pt-5 pb-3 text-center">Dokumentasi</h2>
       <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
         esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
@@ -59,7 +77,7 @@
     </div>
     <div class="row mb-lg-4 center-on-small-only">
       <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/woman-1.jpg" alt="team member"/></div>
+        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="upload_galery/<?php echo $row['nama_file'];?>" alt="" /></div>
         <div class="col-md-6 float-right">
           <div class="h4">Nicole West</div>
           <h6 class="font-bold blue-grey-text mb-4">Lead Designer</h6>
@@ -94,6 +112,7 @@
       </div>
     </div>
   </div>
+  
   <div class="modal fade" role="dialog" id="loginModal">
       <div class="modal-dialog">
           <div class="modal-content">
