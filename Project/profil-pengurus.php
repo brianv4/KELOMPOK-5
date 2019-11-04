@@ -113,7 +113,9 @@
     </div>
   </div>
   
-  <div class="modal fade" role="dialog" id="loginModal">
+  
+</section>
+<div class="modal fade" role="dialog" id="loginModal">
       <div class="modal-dialog">
           <div class="modal-content">
               <div class="modal-header">
@@ -135,8 +137,6 @@
           </div>
       </div>
   </div>
-</section>
-
    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
       <div class="container">
         <div class="row">
