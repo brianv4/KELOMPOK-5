@@ -33,28 +33,28 @@
 <section class="py-5" id="team">
     <div class="container">
       <div class="wow fadeIn">
-        <h2 class="h1 pt-5 pb-3 text-center">Pendaftaran Kursus LKP SRI REJEKI</h2>
+        <h2 class="h1 pt-5 pb-3 text-center">Pendaftaran Pelatihan LKP SRI REJEKI</h2>
 
 <br>
-<form action="aksi/aksi_tambah.php" method="post" enctype="multipart/form-data">        
+<form action="aksi/aksi_tambahpelatihan.php" method="post" enctype="multipart/form-data">        
 <table border="0">
 
 <tr>
     <td>Nama Lengkap</td>
     <td>:</td>
-    <td><input type="text" name="NAMA_PESERTA"></td>
+    <td><input type="text" name="NAMA_PESERTAPELATIHAN"></td>
 </tr>
 
 <tr>
     <td>NIK</td>
     <td>:</td>
-    <td><input type="text" name="NIK_KURSUS"></td>
+    <td><input type="text" name="NIK_PELATIHAN"></td>
 </tr>
 
 <tr>
     <td>Tempat Lahir</td>
     <td>:</td>
-    <td><input type="text" name="TEMPAT_LAHIR"></td>
+    <td><input type="text" name="TEMPAT_LAHIRPELATIHAN"></td>
 </tr>
 
 <tr>
@@ -94,31 +94,38 @@
             </td>
 </tr>
 
+<!--<tr>
+    <td>Tanggal Lahir</td>
+    <td>:</td>
+    <td><input type="Date" name="TANGGAL_LAHIRPELATIHAN"></td>
+</tr>
+-->
+
 <tr>
     <td>Jenis Kelamin</td>
     <td>:</td>
     <td>
-    <input type="radio" name="JENIS_KELAMIN" value="laki-laki">Laki-Laki
-    <input type="radio" name="JENIS_KELAMIN" value="perempuan">Perempuan
+    <input type="radio" name="JENIS_KELAMINPELATIHAN" value="laki-laki">Laki-Laki
+    <input type="radio" name="JENIS_KELAMINPELATIHAN" value="perempuan">Perempuan
   </td>
 </tr>
 
 <tr>
     <td>Alamat</td>
     <td>:</td>
-    <td><textarea cols="22" rows="3" name="ALAMAT" ></textarea></td>
+    <td><textarea cols="22" rows="3" name="ALAMAT_PESERTAPELATIHAN" ></textarea></td>
 </tr>
 
 <tr>
     <td>Kode Pos</td>
     <td>:</td>
-    <td><input type="text" name="KODEPOS"></td>
+    <td><input type="text" name="KODEPOS_PELATIHAN"></td>
 </tr>
 
 <tr>
     <td>Agama</td>
     <td>:</td>
-    <td><select name="AGAMA">
+    <td><select name="AGAMA_PELATIHAN">
       <option>PILIH AGAMA</option>
       <option>Islam</option>
       <option>Kristen</option>
@@ -131,19 +138,19 @@
 <tr>
     <td>E-mail</td>
     <td>:</td>
-    <td><input type="email" name="EMAIL"></td>
+    <td><input type="email" name="EMAIL_PELATIHAN"></td>
 </tr>
 
 <tr>
     <td>No Hp</td>
     <td>:</td>
-    <td><input type="number" name="NOHP"></td>
+    <td><input type="number" name="NOHP_PELATIHAN"></td>
 </tr>
 
 <tr>
     <td>Provinsi</td>
     <td>:</td>
-    <td><select name="PROVINSI">
+    <td><select name="PROVINSI_PELATIHAN">
       <option>Banten</option>
       <option>Jawa Timur</option>
       <option>Jawa Barat</option>
@@ -154,7 +161,7 @@
 <tr>
     <td>Pendidikan</td>
     <td>:</td>
-    <td><select name="PENDIDIKAN">
+    <td><select name="PENDIDIKAN_PELATIHAN">
       <option>SD</option>
       <option>SMP</option>
       <option>SLTA</option>
@@ -162,21 +169,10 @@
       <option>Sarjana</option>
       </select></td>
 </tr>
-
-<tr>
-    <td>Jenis</td>
-    <td>:</td>
-    <td><select name="JENIS_LEVEL">
-      <option>----</option>
-      <option>Kursus Level 1</option>
-      <option>Kursus Level 2</option>
-      </select></td>
-</tr>
-
 </table>
 <footer>
 <!--kursus --> 
-<!--
+
   <div class="form-group">
     <label>File KTP</label><br>
     <input type="file" class="form-control" name="foto">
@@ -187,15 +183,15 @@
 <tr>
   <td>Username</td>
   <td>:</td>
-  <td><input type="text" name="UNAMEK"></td>
+  <td><input type="text" name="PASSWORD_KURSUS"></td>
 </tr>
 
 <tr>
   <td>Password</td>
   <td>:</td>
-  <td><input type="text" name="PASSK"></td>
+  <td><input type="text" name="PASSP"></td>
 </tr>
-</table> -->
+</table>
 <br>
 <tr>
   <td>&nbsp;</td>
