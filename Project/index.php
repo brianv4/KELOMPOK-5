@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html class="full-height" lang="en-US">
   <head>
+    <?php 
+    session_start();
+    ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +23,7 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
-             <li class="nav-item"><a class="nav-link active" href="beranda.html">Beranda</a></li>
+             <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
              <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
                 <ul class="dropdown-menu">
@@ -28,7 +31,7 @@
                   <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
                 </ul>
              </li>
-              <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+              <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
                 <ul class="dropdown-menu">
@@ -40,9 +43,19 @@
             </ul>
             <!--<a class="btn btn-primary btn-rounded my-0" href="" data-target="#loginModal">Login</a>-->
           <!-- login modal-->
+          <?php if(!isset($_SESSION['username'])){  ?>
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
-          <!-- login modal-->
-          <!-- login modal-->
+          <?php 
+          }else{
+          ?>
+          <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Profil</a></li>
+                  <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                </ul>
+             </li>
+          <?php }?>
          
           <!-- login modal-->
         </div>

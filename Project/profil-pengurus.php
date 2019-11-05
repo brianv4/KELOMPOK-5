@@ -65,56 +65,37 @@
     //menampilkan foto
     
     ?>
+
+<table>
+        <tr>
+        <?php
+        $i = 1;
+        while($row = mysql_fetch_array($result)){
+        ?>
+            <td>
+                <a href="../../uploadpengurus/<?php echo $row['nama_file'];?>" class="fancy">
+                <img src="../../uploadpengurus/<?php echo $row['nama_file'];?>" alt="" width="200" border="0"/>
+                </a>
+                <br/><?php echo $row['deskripsi'];?>
+                <br/>
+        <a href="edit-pengurus.php?id=<?php echo $row['id'];?>">Edit</a>
+        <br/>
+        <a href="delete-pengurus.php?id=<?php echo $row['id'];?>" onclick="return confirm('Anda yakin?');">Delete</a>
+            </td>
+        <?php
+            if($i % 3 == 0){
+                echo '</tr><tr>';
+            }
+            $i++;
+        }
+        
+
+        ?>
+        
+        <br/>
+        </tr>
+    </table>
           
-<section class="py-5" id="team">
-  <div class="container">
-    <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3 text-center">Dokumentasi</h2>
-      <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
-        esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
-      </p>
-    </div>
-    <div class="row mb-lg-4 center-on-small-only">
-      <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" <img src="kelompok-5/project/../../uploadpengurus/<?php echo $row['nama_file'];?>" alt="profil owner" width="200" border="0"/> /></div>
-        <div class="col-md-6 float-right">
-          <div class="h4">Nicole West</div>
-          <h6 class="font-bold blue-grey-text mb-4">Lead Designer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@nicolewest</span></a>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/woman-2.jpg" alt="team member"/></div>
-        <div class="col-md-6 float-right">
-          <div class="h4">Hannah Cruz</div>
-          <h6 class="font-bold blue-grey-text mb-4">Photographer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@hannahcruz</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="row center-on-small-only">
-      <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-1.jpg" alt="team member"/></div>
-        <div class="col-md-6 float-right">
-          <div class="h4">Mark Hall</div>
-          <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@markhall</span></a>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-2.jpg" alt="team member"/></div>
-        <div class="col-md-6 float-right">
-          <div class="h4">Vincent Harris</div>
-          <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@vincentharris</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  
-</section>
 <div class="modal fade" role="dialog" id="loginModal">
       <div class="modal-dialog">
           <div class="modal-content">

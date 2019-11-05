@@ -22,14 +22,17 @@
     </script>
   </head>
   <body>
-  
+  <?php 
+// mengaktifkan session php
+session_start();
+?>
       <!-- Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
           <div class="container"><a class="navbar-brand" href="#"><strong>Sri Rejeki</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarContent">
               <ul class="navbar-nav ml-auto">
-               <li class="nav-item"><a class="nav-link active" href="beranda.html">Beranda</a></li>
+               <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
                <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
                   <ul class="dropdown-menu">
@@ -37,7 +40,7 @@
                     <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
                   </ul>
                </li>
-                <li class="nav-item"><a class="nav-link" href="galeri.html">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
                 <li class="nav-item submenu dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
                   <ul class="dropdown-menu">
@@ -49,23 +52,27 @@
               </ul>
               <!--<a class="btn btn-primary btn-rounded my-0" href="" data-target="#loginModal">Login</a>-->
             <!-- login modal-->
-            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
+            <?php if(!isset($_SESSION['username'])){  ?>
+          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
+          <?php 
+          }else{
+          ?>
+          <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></a>
+                <ul class="dropdown-menu">
+                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Profil</a></li>
+                  <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                </ul>
+             </li>
+          <?php }?>
             <!-- login modal-->
           </div>
   
           </div>
         </nav>
   <br>
-  <?php
-    //koneksi ke database
-    $conn = mysql_connect('localhost', 'root', '');
-    mysql_select_db('lkpsri');
-    //membaca data dari database
-    $result = mysql_query("select * from galeri");
-    //menampilkan foto
-    
-    ?>
-          
+  
+  
 <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
@@ -114,27 +121,31 @@
   </div>
   
   <div class="modal fade" role="dialog" id="loginModal">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <h3 class="modal-title">Login User</h3>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-
-              <div class="modal-body">
-                  <div class="form-group">
-                      <input type="text" name="username" class="form-control" placeholder="Username">
-                  </div>
-                  <div class="form-group">
-                      <input type="password" name="password" class="form-control" placeholder="Password">
-                  </div>
-              </div>
-              <div class="modal-footer">
-                  <button type="submit" class="btn btn-success">Sign In</button>
-              </div>
-          </div>
-      </div>
-  </div>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login Anggota</h3>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+        <form action="cek_login.php" method="post">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" name="username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" class="form-control" placeholder="Password">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Sign In</button>
+                </div>
+</form>
+            </div>
+           
+        </div>
+        
+    </div>
 </section>
 
    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
