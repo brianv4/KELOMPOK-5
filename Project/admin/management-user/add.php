@@ -53,30 +53,27 @@ include("func.php");
 			
 			<?php
 			if(isset($_POST['add'])){
-				$nik		= aman($_POST['nik']);
+				$nim		= aman($_POST['nim']);
+				$pass1		= aman($_POST['pass1']);
+				$pass2		= aman($_POST['pass2']);
 				$nama		= aman($_POST['nama']);
 				$tmp		= aman($_POST['tmp']);
 				$tgl		= aman($_POST['tgl']);
-				$jk			= aman($_POST['jk']);
-				$alamat		= aman($_POST['alamat']);
-				$kp			= aman($_POST['kp']);
-				$agama		= aman($_POST['agama']);
 				$email		= aman($_POST['email']);
-				$nohp		= aman($_POST['nohp']);
-				$provinsi	= aman($_POST['provinsi']);
-				$pendidikan	= aman($_POST['pendidikan']);
-				$jl			= aman($_POST['jenislevel']);
-				$username	= aman($_POST['unamek']);
-				$pass1		= aman($_POST['passk1']);
-				$pass2		= aman($_POST['passk2']);
+				$jk			= aman($_POST['jk']);
+				$agama		= aman($_POST['agama']);
+				$jurusan	= aman($_POST['jurusan']);
+				$smt		= aman($_POST['semester']);
+				$thn_masuk	= aman($_POST['tahun_masuk']);
+				$alamat		= aman($_POST['alamat']);
 				$status		= aman($_POST['status']);
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE nik='$nik'");
+				$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
 				if(mysqli_num_rows($cek) == 0){
 					if($pass1 == $pass2){
 						$pass = md5($pass1);
-						$insert = mysqli_query($koneksi, "INSERT INTO peserta_kursus(NIK_KURSUS, NAMA_PESERTA, TEMPAT_LAHIR, TANGGAL_LAHIR, JENIS_KELAMIN, ALAMAT, KODEPOS, AGAMA, EMAIL, NOHP, PROVINSI, PENDIDIKAN, JENIS_LEVEL, UNAMEK, PASSK, status)
-															VALUES('$nik', '$nama', '$tmp', '$tgl', '$jk', '$alamat', '$kp', '$agama', '$email', '$nohp', '$provinsi', '$pendidikan', '$jl',' $username',' $passk1', '$status')") or die(mysqli_error());
+						$insert = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, password, nama, tempat_lahir, tanggal_lahir, email, jenis_kelamin, agama, jurusan, semester, tahun_masuk, alamat, foto, status)
+															VALUES('$nim', '$pass', '$nama', '$tmp', '$tgl', '$email', '$jk', '$agama', '$jurusan', '$smt', '$thn_masuk', '$alamat', 'avatar.png', '$status')") or die(mysqli_error());
 						if($insert){
 							echo '<div class="alert alert-success">Pendaftaran berhasil dilakukan.</div>';
 						}else{
@@ -86,20 +83,32 @@ include("func.php");
 						echo '<div class="alert alert-danger">Konfirmasi Password tidak sesuai.</div>';
 					}
 				}else{
-					echo '<div class="alert alert-danger">NIK sudah terdaftar.</div>';
+					echo '<div class="alert alert-danger">NIM sudah terdaftar.</div>';
 				}
 			}
 			?>
 			
 			<form class="form-horizontal" action="" method="post">
 				<div class="form-group">
-					<label class="col-sm-3 control-label">NIK</label>
+					<label class="col-sm-3 control-label">NIM</label>
 					<div class="col-sm-2">
-						<input type="text" name="nik" class="form-control" placeholder="NIK" required>
+						<input type="text" name="nim" class="form-control" placeholder="NIM" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">NAMA</label>
+					<label class="col-sm-3 control-label">PASSWORD</label>
+					<div class="col-sm-4">
+						<input type="password" name="pass1" class="form-control" placeholder="PASSWORD" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">KONFIRMASI PASSWORD</label>
+					<div class="col-sm-4">
+						<input type="password" name="pass2" class="form-control" placeholder="KONFIRMASI PASSWORD" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">NAMA LENGKAP</label>
 					<div class="col-sm-4">
 						<input type="text" name="nama" class="form-control" placeholder="NAMA LENGKAP" required>
 					</div>
@@ -119,6 +128,12 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-sm-3 control-label">EMAIL</label>
+					<div class="col-sm-3">
+						<input type="email" name="email" class="form-control" placeholder="EMAIL" required>
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-sm-3 control-label">JENIS KELAMIN</label>
 					<div class="col-sm-2">
 						<select name="jk" class="form-control" required>
@@ -126,18 +141,6 @@ include("func.php");
 							<option value="Laki-Laki">LAKI-LAKI</option>
 							<option value="Perempuan">PEREMPUAN</option>
 						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">ALAMAT</label>
-					<div class="col-sm-6">
-						<textarea name="alamat" class="form-control" placeholder="ALAMAT"></textarea>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">KODE POS</label>
-					<div class="col-sm-4">
-						<input type="text" name="kp" class="form-control" placeholder="Kode Pos" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -155,64 +158,33 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">EMAIL</label>
+					<label class="col-sm-3 control-label">JURUSAN</label>
 					<div class="col-sm-3">
-						<input type="email" name="email" class="form-control" placeholder="EMAIL" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">NO HP</label>
-					<div class="col-sm-2">
-						<input type="text" name="nohp" class="form-control" placeholder="No HP">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Provinsi</label>
-					<div class="col-sm-2">
-						<input type="text" name="provinsi" class="form-control" placeholder="Provinsi">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">PENDIDIKAN</label>
-					<div class="col-sm-3">
-						<select name="pendidikan" class="form-control">
-							<option value="">PENDIDIKAN</option>
-							<option value="SD">SD</option>
-							<option value="SMP">SMP</option>
-							<option value="SMA">SMA</option>
-							<option value="SARJANA">SARJANA</option>
+						<select name="jurusan" class="form-control">
+							<option value="">JURUSAN</option>
+							<option value="Teknik Informatika">TEKNIK INFORMATIKA</option>
+							<option value="Teknik Sipil">TEKNIK SIPIL</option>
+							<option value="Ekonomi">EKONOMI</option>
+							<option value="Perikanan">PERIKANAN</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">JENIS LEVEL</label>
-					<div class="col-sm-3">
-						<select name="jenislevel" class="form-control">
-							<option value="">Jenis Level</option>
-							<option value="Level1">Level 1</option>
-							<option value="Level2">Level 2</option>
-							<option value="Level3">Level 3</option>
-							
-						</select>
-					</div>
-				</div>
-				
-				<div class="form-group">
-					<label class="col-sm-3 control-label">Username</label>
+					<label class="col-sm-3 control-label">SEMESTER</label>
 					<div class="col-sm-2">
-						<input type="text" name="unamek" class="form-control" placeholder="username">
+						<input type="text" name="semester" class="form-control" placeholder="SEMESTER">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">PASSWORD</label>
+					<label class="col-sm-3 control-label">TAHUN MASUK</label>
 					<div class="col-sm-2">
-						<input type="password" name="passk1" class="form-control" placeholder="Password">
+						<input type="text" name="tahun_masuk" class="form-control" placeholder="TAHUN MASUK">
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">CONFIRMASI PASSWORD </label>
-					<div class="col-sm-2">
-						<input type="password" name="passk2" class="form-control" placeholder="Password">
+					<label class="col-sm-3 control-label">ALAMAT</label>
+					<div class="col-sm-6">
+						<textarea name="alamat" class="form-control" placeholder="ALAMAT"></textarea>
 					</div>
 				</div>
 				<div class="form-group">

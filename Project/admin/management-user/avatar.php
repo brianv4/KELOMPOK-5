@@ -63,9 +63,7 @@ include("koneksi.php");
 					<li><a href="index.php">Beranda</a></li>
 					<li><a href="add.php">Tambah Data</a></li>
 				</ul>
-			</div>
-			
-			<!--Pembatas-->
+			</div><!--/.nav-collapse -->
 		</div>
 	</nav>
 	<div class="container">
