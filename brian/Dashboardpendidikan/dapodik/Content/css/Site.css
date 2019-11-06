@@ -1,0 +1,29 @@
+.dapodik-title {
+    text-align: center;
+}
+
+.print-to-pdf {
+    color: #000;
+}
+
+.dapodik-title h1 {
+    font-size: 32px;
+}
+
+.validation-summary {
+    text-align: left;
+}
+
+tr.muted {
+    color: #d6d6d6;
+}
+
+
+
+@media print {
+    .page-breaker {
+        display: block;
+        clear: both;
+        page-break-inside: avoid;
+    }
+}
