@@ -51,9 +51,9 @@ include("func.php");
 			<hr />
 			
 			<?php
-			$nim = $_GET['nim'];
+			$nim = $_GET['NIK_KURSUS'];
 			
-			$sql = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+			$sql = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE NIK_KURSUS='$nik'");
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -61,7 +61,7 @@ include("func.php");
 			}
 			
 			if(isset($_GET['aksi']) == 'delete'){
-				$delete = mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE nim='$nim'");
+				$delete = mysqli_query($koneksi, "DELETE FROM peserta_kursus WHERE NIK_KURSUS='$nik'");
 				if($delete){
 					echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 				}else{

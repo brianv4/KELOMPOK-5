@@ -51,12 +51,12 @@ include("koneksi.php");
 			
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
-				$nim = $_GET['nim'];
-				$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+				$nim = $_GET['NIK_PESERTA'];
+				$cek = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE NIK_KURSUS='$nik'");
 				if(mysqli_num_rows($cek) == 0){
 					echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
 				}else{
-					$delete = mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE nim='$nim'");
+					$delete = mysqli_query($koneksi, "DELETE FROM peserta_kursus WHERE NIK_KURSUS='$nik'");
 					if($delete){
 						echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 					}else{
@@ -81,19 +81,19 @@ include("koneksi.php");
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>NO.</th>
-					<th>NIM</th>
+					<th>NIK</th>
 					<th>NAMA LENGKAP</th>
-					<th>EMAIL</th>
+					<th>NOHP</th>
 					<th>JENIS KELAMIN</th>
-					<th>JURUSAN</th>
+					<th>JENIS LEVEL</th>
 					<th>STATUS</th>
 					<th>SETTING</th>
 				</tr>
 				<?php
 				if($urut){
-					$sql = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE status='$urut' ORDER BY nim ASC");
+					$sql = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE status='$urut' ORDER BY NIK_KURSUS ASC");
 				}else{
-					$sql = mysqli_query($koneksi, "SELECT * FROM mahasiswa ORDER BY nim ASC");
+					$sql = mysqli_query($koneksi, "SELECT * FROM peserta_kursus ORDER BY NIK_KURSUS ASC");
 				}
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">Tidak ada data.</td></tr>';
@@ -103,13 +103,13 @@ include("koneksi.php");
 						echo '
 						<tr>
 							<td>'.$no.'</td>
-							<td>'.$row['nim'].'</td>
-							<td>'.$row['nama'].'</td>
-							<td>'.$row['email'].'</td>
-							<td>'.$row['jenis_kelamin'].'</td>
-							<td>'.$row['jurusan'].'</td>
+							<td>'.$row['NIK_KURSUS'].'</td>
+							<td>'.$row['NAMA_PESERTA'].'</td>
+							<td>'.$row['NOHP'].'</td>
+							<td>'.$row['JENIS_KELAMIN'].'</td>
+							<td>'.$row['JENIS_LEVEL'].'</td>
 							<td>';
-							if($row['status'] == 1){
+							if($row['STATUS'] == 1){
 								echo '<span class="label label-success">Aktif</span>';
 							}else{
 								echo '<span class="label label-warning">Tidak Aktif</span>';
@@ -117,11 +117,11 @@ include("koneksi.php");
 						echo '
 							</td>
 							<td>
-								<a href="profile.php?nim='.$row['nim'].'" title="Lihat Detail"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-								<a href="edit.php?nim='.$row['nim'].'" title="Rubah Data"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-								<a href="password.php?nim='.$row['nim'].'" title="Ganti Password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a>
-								<a href="avatar.php?nim='.$row['nim'].'" title="Ganti Password"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></a>
-								<a href="index.php?aksi=delete&nim='.$row['nim'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a href="profile.php?nim='.$row['NIK_KURSUS'].'" title="Lihat Detail"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+								<a href="edit.php?nim='.$row['NIK_KURSUS'].'" title="Rubah Data"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+								<a href="password.php?nim='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a>
+								<a href="avatar.php?nim='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></a>
+								<a href="index.php?aksi=delete&nik='.$row['NIK_KURSUS'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 							</td>
 						</tr>
 						';
