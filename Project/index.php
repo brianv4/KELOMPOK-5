@@ -64,6 +64,7 @@
       </nav>
       <!-- Intro Section-->
       <!--Login Koneksi-->
+      <div></div>
       
         <!--Login Koneksi-->
         <?php 
@@ -100,6 +101,7 @@
         </div>
         
     </div>
+    <div></div>
     <!--Kursus-->
 
     

@@ -24,6 +24,9 @@ include("func.php");
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+	<?php
+	error_reporting(0)
+	?>
 </head>
 <body>
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -53,27 +56,30 @@ include("func.php");
 			
 			<?php
 			if(isset($_POST['add'])){
-				$nim		= aman($_POST['nim']);
+				$nik		= aman($_POST['nik']);
 				$pass1		= aman($_POST['pass1']);
 				$pass2		= aman($_POST['pass2']);
-				$nama		= aman($_POST['nama']);
+				$nama		= aman($_POST['nama_peserta']);
 				$tmp		= aman($_POST['tmp']);
 				$tgl		= aman($_POST['tgl']);
 				$email		= aman($_POST['email']);
 				$jk			= aman($_POST['jk']);
 				$agama		= aman($_POST['agama']);
-				$jurusan	= aman($_POST['jurusan']);
-				$smt		= aman($_POST['semester']);
-				$thn_masuk	= aman($_POST['tahun_masuk']);
+				$nohp		= aman($_POST['nohp']);
+				$kdpos		= aman($_POST['kodepos']);
+				$jl			= aman($_POST['jenis_level']);
+				$provinsi	= aman($_POST['provinsi']);
+				$pendidikan	= aman($_POST['pendidikan']);
+				$unamek		= aman($_POST['username']);
 				$alamat		= aman($_POST['alamat']);
 				$status		= aman($_POST['status']);
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim'");
+				//tinggal masalah database NIK dijadikan BIG INT
+				$cek = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE nik='$nik'");
 				if(mysqli_num_rows($cek) == 0){
 					if($pass1 == $pass2){
 						$pass = md5($pass1);
-						$insert = mysqli_query($koneksi, "INSERT INTO mahasiswa(nim, password, nama, tempat_lahir, tanggal_lahir, email, jenis_kelamin, agama, jurusan, semester, tahun_masuk, alamat, foto, status)
-															VALUES('$nim', '$pass', '$nama', '$tmp', '$tgl', '$email', '$jk', '$agama', '$jurusan', '$smt', '$thn_masuk', '$alamat', 'avatar.png', '$status')") or die(mysqli_error());
+						$insert = mysqli_query($koneksi, "INSERT INTO `peserta_kursus`(`NIK_KURSUS`, `NAMA_PESERTA`, `TEMPAT_LAHIR`, `TANGGAL_LAHIR`, `JENIS_KELAMIN`, `ALAMAT`, `KODEPOS`, `AGAMA`, `EMAIL`, `NOHP`, `PROVINSI`, `PENDIDIKAN`, `JENIS_LEVEL`, `FILE_KTP`, `FILE_KK`, `FILE_IJAZAH`, `UNAMEK`, `PASSK`, `STATUS`) VALUES ('$nik','$nama','$tmp','$tgl','$jk','$alamat','$kdpos','$agama','$email','$nohp','$provinsi','$pendidikan','$jl',NULL,NULL,NULL,'$unamek','$pass','$status')") or die(mysqli_error($koneksi));
 						if($insert){
 							echo '<div class="alert alert-success">Pendaftaran berhasil dilakukan.</div>';
 						}else{
@@ -90,9 +96,9 @@ include("func.php");
 			
 			<form class="form-horizontal" action="" method="post">
 				<div class="form-group">
-					<label class="col-sm-3 control-label">NIM</label>
+					<label class="col-sm-3 control-label">NIK</label>
 					<div class="col-sm-2">
-						<input type="text" name="nim" class="form-control" placeholder="NIM" required>
+						<input type="text" name="nik" class="form-control" placeholder="NIK" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -108,9 +114,15 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-sm-3 control-label">Username</label>
+					<div class="col-sm-4">
+						<input type="text" name="username" class="form-control" placeholder="username" required>
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-sm-3 control-label">NAMA LENGKAP</label>
 					<div class="col-sm-4">
-						<input type="text" name="nama" class="form-control" placeholder="NAMA LENGKAP" required>
+						<input type="text" name="nama_peserta" class="form-control" placeholder="NAMA LENGKAP" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -158,27 +170,27 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">JURUSAN</label>
+					<label class="col-sm-3 control-label">provinsi</label>
+					<div class="col-sm-2">
+						<input type="text" name="provinsi" class="form-control" placeholder="Provinsi">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Pendidikan</label>
+					<div class="col-sm-2">
+						<input type="text" name="pendidikan" class="form-control" placeholder="pendidikan">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Jenis Level</label>
 					<div class="col-sm-3">
-						<select name="jurusan" class="form-control">
+						<select name="jenis_level" class="form-control">
 							<option value="">JURUSAN</option>
-							<option value="Teknik Informatika">TEKNIK INFORMATIKA</option>
-							<option value="Teknik Sipil">TEKNIK SIPIL</option>
-							<option value="Ekonomi">EKONOMI</option>
-							<option value="Perikanan">PERIKANAN</option>
+							<option value="Level 1">Level 1</option>
+							<option value="Level 2">Level 2</option>
+							<option value="Level 3">Level 3</option>
+							
 						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">SEMESTER</label>
-					<div class="col-sm-2">
-						<input type="text" name="semester" class="form-control" placeholder="SEMESTER">
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">TAHUN MASUK</label>
-					<div class="col-sm-2">
-						<input type="text" name="tahun_masuk" class="form-control" placeholder="TAHUN MASUK">
 					</div>
 				</div>
 				<div class="form-group">
@@ -188,11 +200,16 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
+					<label class="col-sm-3 control-label">Nomor Hp</label>
+					<div class="col-sm-2">
+						<input type="text" name="nohp" class="form-control" placeholder="Nomor Hp">
+					</div>
+				</div>
+				<div class="form-group">
 					<label class="col-sm-3 control-label">STATUS</label>
 					<div class="col-sm-2">
 						<select name="status" class="form-control" required>
 							<option value="">STATUS</option>
-							<option value="1">AKTIF</option>
 							<option value="2">TIDAK AKTIF</option>
 						</select>
 					</div>
