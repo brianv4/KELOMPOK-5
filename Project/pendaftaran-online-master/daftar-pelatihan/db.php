@@ -1,5 +1,5 @@
 <?php 
-$koneksi = mysqli_connect('localhost','root','','lkpssr');
+$koneksi = mysqli_connect('localhost','root','','srirejeki');
 if(!$koneksi){
 	echo 'hmmmm';
 }

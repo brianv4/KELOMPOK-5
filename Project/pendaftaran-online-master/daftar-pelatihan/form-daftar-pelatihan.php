@@ -32,6 +32,8 @@
 			<input type="text" name="telp" required/><br><br>
 			Email :<br>
 			<input type="email" name="email" required/><br><br>
+			Username :<br>
+			<input type="text" name="username" required/><br><br>
 			Password :<br>
 			<input type="password" name="pass" required/><br><br>
 			Alamat Lengkap :<br>

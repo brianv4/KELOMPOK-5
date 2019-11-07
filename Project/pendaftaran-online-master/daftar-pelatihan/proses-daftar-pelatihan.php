@@ -4,7 +4,7 @@ if(isset($_POST['daftar'])){
 	if(!is_numeric($_POST['telp'])){
 		header("location:form-daftar-pelatihan.php?err1");
 	}else{
-		$daftar = mysqli_query($koneksi, "INSERT INTO tb_daftarpelatihan VALUES(
+		$daftar = mysqli_query($koneksi, "INSERT INTO tb_pelatihan VALUES(
 			NULL,
 			'".$_POST['nama']."',
 			'".$_POST['nik']."',
