@@ -51,7 +51,7 @@ include("koneksi.php");
 			
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
-				$nim = $_GET['NIK_PESERTA'];
+				$nik = $_GET['NIK_KURSUS'];
 				$cek = mysqli_query($koneksi, "SELECT * FROM peserta_kursus WHERE NIK_KURSUS='$nik'");
 				if(mysqli_num_rows($cek) == 0){
 					echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
@@ -117,11 +117,11 @@ include("koneksi.php");
 						echo '
 							</td>
 							<td>
-								<a href="profile.php?nim='.$row['NIK_KURSUS'].'" title="Lihat Detail"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
-								<a href="edit.php?nim='.$row['NIK_KURSUS'].'" title="Rubah Data"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-								<a href="password.php?nim='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a>
-								<a href="avatar.php?nim='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></a>
-								<a href="index.php?aksi=delete&nik='.$row['NIK_KURSUS'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a href="profile.php?NIK_KURSUS='.$row['NIK_KURSUS'].'" title="Lihat Detail"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+								<a href="edit.php?NIK_KURSUS='.$row['NIK_KURSUS'].'" title="Rubah Data"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+								<a href="password.php?NIK_KURSUS='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></a>
+								<a href="avatar.php?NIK_KURSUS='.$row['NIK_KURSUS'].'" title="Ganti Password"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span></a>
+								<a href="index.php?aksi=delete&NIK_KURSUS='.$row['NIK_KURSUS'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 							</td>
 						</tr>
 						';
