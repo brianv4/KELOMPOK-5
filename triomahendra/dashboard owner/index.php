@@ -50,7 +50,10 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         <a class="active-menu"  href="index.php"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a  href="index.php?halaman=user"><i class="fa fa-desktop fa-3x"></i> User</a>
+                        <a  href="index.php?halaman=pesertakursus"><i class="fa fa-desktop fa-3x"></i> Peserta Kursus</a>
+                    </li>
+                    <li>
+                        <a  href="index.php?halaman=pesertapelatihan"><i class="fa fa-desktop fa-3x"></i> Peserta Pelatihan</a>
                     </li>
                     <li>
                         <a  href="index.php?halaman=admin"><i class="fa fa-desktop fa-3x"></i> Admin</a>
@@ -63,6 +66,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     </li>
                     <li>
                         <a  href="index.php?halaman=materikursus"><i class="fa fa-desktop fa-3x"></i> Materi Kursus</a>
+                    </li>
+                    <li>
+                        <a  href="index.php?halaman=materipelatihan"><i class="fa fa-desktop fa-3x"></i> Materi Pelatihan</a>
                     </li>
                     
                
@@ -77,9 +83,12 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                 if(isset($_GET['halaman']))
                 {
                         
-                    if($_GET['halaman']=='user')
+                    if($_GET['halaman']=='pesertakursus')
                     {
-                        include '../management-user/index.php';
+                        include 'management-user/index.php';
+                    }elseif($_GET['halaman']=='pesertapelatihan')
+                    {
+                        include 'management-user/index.php';
                     }elseif($_GET['halaman']=='admin')
                     {
                         include 'admin.php';
@@ -93,7 +102,11 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     }
                     elseif($_GET['halaman']=='materikursus')
                     {
-                    include '../../adiirawan/input_kursus/index.php';
+                    include 'input_kursus/index.php';
+                    }
+                    elseif($_GET['halaman']=='materipelatihan')
+                    {
+                    include 'input_pelatihan/index.php';
                     }
 
                 }
