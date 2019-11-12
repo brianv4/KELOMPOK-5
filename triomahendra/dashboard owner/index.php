@@ -17,10 +17,10 @@
 </head>
 <body>
 <?php 
-session_start();
-if($_SESSION['level']=="")
-{header("location:index.php?pesan=gagal");
-}?>
+//session_start();
+//if($_SESSION['level']=="")
+//{header("location:index.php?pesan=gagal");
+//}?>
     <div id="wrapper">
         <nav class="navbar navbar-default navbar-cls-top " role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -61,6 +61,9 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     <li>
                         <a  href="index.php?halaman=berita"><i class="fa fa-desktop fa-3x"></i> Berita</a>
                     </li>
+                    <li>
+                        <a  href="index.php?halaman=materikursus"><i class="fa fa-desktop fa-3x"></i> Materi Kursus</a>
+                    </li>
                     
                
             </div>
@@ -87,6 +90,10 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                     elseif($_GET['halaman']=='berita')
                     {
                     include 'berita.php';
+                    }
+                    elseif($_GET['halaman']=='materikursus')
+                    {
+                    include '../../adiirawan/input_kursus/index.php';
                     }
 
                 }
