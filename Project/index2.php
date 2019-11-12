@@ -13,18 +13,9 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"href="fontawesome-free/css/all.min.css">
-    <link href="css/button.css" rel="stylesheet">
 
- </head>   
+  </head>
   <body>
-    <div class="icon ml-4">
-      <h5>
-      <i class="fas fa-user-circle"></i>
-        <i class="fas fa-user"></i>
-        <i class="fas fa-sign-out-alt"></i>
-      </h5>
-    </div>
       <header>
       <!-- Navbar-->
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
@@ -92,7 +83,7 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 
-        <form action="cek_login.php" method="post">
+        <form action="cek_login_pelatihan.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
                         <input type="text" name="username" class="form-control" placeholder="Username">
@@ -102,7 +93,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn ">Sign In</button>
+                    <button type="submit" class="btn btn-success">Sign In</button>
                 </div>
 </form>
             </div>
