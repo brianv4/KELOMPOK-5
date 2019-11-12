@@ -49,23 +49,23 @@ include("koneksi.php");
 			<h2>Manajemen User &raquo; Ganti Password</h2>
 			<hr />
 			
-			<p>Ganti Password untuk mahasiswa dengan NIM <?php echo '<b>'.$_GET['nim'].'</b>'; ?></p>
+			<p>Ganti Password untuk mahasiswa dengan NIM <?php echo '<b>'.$_GET['NIK_KURSUS'].'</b>'; ?></p>
 			
 			<?php
 			if(isset($_POST['ganti'])){
-				$nim		= $_GET['nim'];
+				$nik		= $_GET['NIK_KURSUS'];
 				$password 	= md5($_POST['password']);
 				$password1 	= $_POST['password1'];
 				$password2 	= $_POST['password2'];
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE nim='$nim' AND password='$password'");
+				$cek = mysqli_query($koneksi, "SELECT * FROM user WHERE NIK_KURSUS='$nik' AND password='$password'");
 				if(mysqli_num_rows($cek) == 0){
 					echo '<div class="alert alert-danger">Password sekarang tidak tepat.</div>';
 				}else{
 					if($password1 == $password2){
 						if(strlen($password1) >= 5){
 							$pass = md5($password1);
-							$update = mysqli_query($koneksi, "UPDATE mahasiswa SET password='$pass' WHERE nim='$nim'");
+							$update = mysqli_query($koneksi, "UPDATE user SET password='$pass' WHERE NIK_KURSUS='$nik'");
 							if($update){
 								echo '<div class="alert alert-success">Password berhasil dirubah.</div>';
 							}else{

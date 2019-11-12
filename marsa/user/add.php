@@ -66,7 +66,7 @@ include("func.php");
 			
 				//tinggal masalah database NIK dijadikan BIG INT
 				
-				
+				//$cek = mysqli_query($koneksi, "SELECT * FROM user WHERE ID_USER='$id'");
 				if(mysqli_num_rows($cek) == 0){
 					if($pass1 == $pass2){
 						$pass = md5($pass1);
@@ -80,7 +80,7 @@ include("func.php");
 						echo '<div class="alert alert-danger">Konfirmasi Password tidak sesuai.</div>';
 					}
 				}else{
-					echo '<div class="alert alert-danger">NIM sudah terdaftar.</div>';
+					echo '<div class="alert alert-danger">ID sudah terdaftar.</div>';
 				}
 			}
 			?>

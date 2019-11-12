@@ -11,6 +11,8 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
     <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <link rel="stylesheet" type="text/css"href="fontawesome-free/css/all.min.css">
+    <link href="css/button.css" rel="stylesheet">
     <!--menambahkan fancybox-->
     <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
     <!--menambahkan css fancybox-->
@@ -22,11 +24,18 @@
     </script>
   </head>
   <body>
-  <?php 
-// mengaktifkan session php
-session_start();
-?>
-      <!-- Navbar-->
+    <?php 
+    session_start();
+    ?>
+
+    <div class="icon ml-4">
+      <h5>
+      <i class="fas fa-user-circle"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-sign-out-alt"></i>
+      </h5>
+    </div>
+      
       <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
           <div class="container"><a class="navbar-brand" href="#"><strong>Sri Rejeki</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -49,23 +58,21 @@ session_start();
                   </ul>
                </li>
                 <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-              </ul>
-              <!--<a class="btn btn-primary btn-rounded my-0" href="" data-target="#loginModal">Login</a>-->
-            <!-- login modal-->
-            <?php if(!isset($_SESSION['username'])){  ?>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
+                <?php if(!isset($_SESSION['username'])){  ?>
+          <button type="button" class="btn ml-5" data-toggle="modal" data-target="#loginModal">LOGIN</button>
           <?php 
           }else{
           ?>
           <li class="nav-item submenu dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></a>
+                <a href="#" class="nav-link dropdown-toggle ml-5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle mr-2"></i><?php echo $_SESSION['username'] ?></a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Profil</a></li>
-                  <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                  <li class="nav-item"><a class="nav-link" href="single-blog.html"><i class="fas fa-user mr-1"></i>Profil</a></li>
+                  <li class="nav-item"><a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt mr-1"></i>Logout</a></li>
                 </ul>
              </li>
           <?php }?>
-            <!-- login modal-->
+              </ul>
+           
           </div>
   
           </div>
@@ -138,7 +145,7 @@ session_start();
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Sign In</button>
+                    <button type="submit" class="btn ">Sign In</button>
                 </div>
 </form>
             </div>

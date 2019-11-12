@@ -4,7 +4,7 @@ include 'config.php';
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$login = mysql_query("select * from tb_daftar where username='$username' and password='$password'");
+$login = mysql_query("select * from tb_user where username='$username' and password='$password'");
 $cek = mysql_num_rows($login);
 
 if($cek > 0){

@@ -69,8 +69,8 @@
 <table>
         <tr>
         <?php
-        $i = 1;
-        while($row = mysql_fetch_array($result)){
+          $i = 1;
+          while($row = mysql_fetch_array($result)){
         ?>
             <td>
                 <a href="../../uploadpengurus/<?php echo $row['nama_file'];?>" class="fancy">
