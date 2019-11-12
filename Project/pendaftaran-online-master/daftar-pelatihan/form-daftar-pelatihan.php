@@ -7,7 +7,7 @@
 <body>
 	<div class="box-form">
 		<h3>Pendaftaran Peserta Pelatihan LKP SRI REJEKI</h3><hr><br>
-		<a class="btn-primary:hover" href="data-pendaftar-pelatihan.php">Kembali</a><br>
+		<a class="btn-primary:hover" href="../../index.php">Kembali</a><br>
 		<?php 
 		if(isset($_GET['err1'])){
 			echo '<div class="alert-error">Maaf, nomor telepon harus angka!!!</div>';

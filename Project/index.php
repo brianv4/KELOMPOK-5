@@ -35,7 +35,7 @@
               <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Info Daftar</a></li>
+                  <li class="nav-item"><a class="nav-link" href="pendaftaran-online-master/daftar-pelatihan/form-daftar-pelatihan.php">Pelatihan</a></li>
                   <li class="nav-item"><a class="nav-link" href="pendaftaran-online-master/daftar-online/form-daftar.php">Daftar Online</a></li>
                 </ul>
              </li>
