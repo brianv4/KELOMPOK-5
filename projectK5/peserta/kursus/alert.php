@@ -1,0 +1,1 @@
+<script>alert (" SILAHKAN MENGUNJUNGI LKP SRI REJEKI ") </script>
