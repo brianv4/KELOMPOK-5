@@ -85,7 +85,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         
                     if($_GET['halaman']=='pesertakursus')
                     {
-                        include 'management-user/index.php';
+                        include '../../project/admin/management-user/index.php';
                     }elseif($_GET['halaman']=='pesertapelatihan')
                     {
                         include 'management-user/index.php';
