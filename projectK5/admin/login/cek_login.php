@@ -32,19 +32,19 @@ if (isset($_POST['login'])){
 				$data = mysqli_fetch_assoc($login);
 			
 				
-				if($data['level']=="owner"){
+				if($data['level']=="Owner"){
 			
 				
 					$_SESSION['username'] = $username;
-					$_SESSION['level'] = "owner";
+					$_SESSION['level'] = "Owner";
 				
 					header("location:../halaman_owner.php");
 			
 
-				}else if($data['level']=="admin"){
+				}else if($data['level']=="Admin"){
 					
 					$_SESSION['username'] = $username;
-					$_SESSION['level'] = "admin";
+					$_SESSION['level'] = "Admin";
 					
 					header("location:../halaman_owner.php");
 			

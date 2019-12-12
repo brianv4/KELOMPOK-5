@@ -61,7 +61,7 @@
             <?php 
             }else{
             ?>
-            <li class="nav-link"><i>Selamat Datang</i></li>
+            <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
             <li class="nav-item submenu dropdown">
                 
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
@@ -109,7 +109,7 @@
                     </div>
 					</div> 
           <div class="modal-footer">
-          
+                   <a href="peserta/calon_peserta/form_daftar.php"><font color="blue"><u>belum memiliki akun?</u></font></a> 
                     <input type="submit" name="login" class="btn btn-info" value="sign in">
                 </div>
                     </div>  
@@ -236,40 +236,35 @@
     <div class="wow fadeIn">
       <h2 class="text-center h1 my-4">Fasilitas Kami</h2>
       <p class="px-5 mb-5 pb-3 lead blue-grey-text text-center">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
     </div>
     <div class="row wow fadeInLeft" data-wow-delay=".3s">
       <div class="col-lg-6 col-xl-5 pr-lg-5 pb-5"><img class="img-fluid rounded z-depth-2" src="img/10.jpg" alt="project image"/></div>
       <div class="col-lg-6 col-xl-7 pl-lg-5 pb-4">
         <div class="row mb-3">
-          <div class="col-1 mr-1"><i class="fa fa-book fa-2x cyan-text"></i></div>
+          <div class="col-1 mr-1"><i class="fa fa-home fa-2x cyan-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Education</h5>
+            <h5 class="font-bold">Kantor</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+            LKP SRI REJEKI memiliki kantor (Ruang Teori & Prakter) seluas 7 x 12 M
             </p>
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-1 mr-1"><i class="fa fa-code fa-2x red-text"></i></div>
+          <div class="col-1 mr-1"><i class="fa fa-building fa-2x black-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Technology</h5>
+            <h5 class="font-bold">Asrama</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+            LKP SRI REJEKI memiliki penginapan asrama seluas 4 x 5 M bagi peserta yang bertempat tinggal jauh 
             </p>
           </div>
         </div>
         <div class="row">
           <div class="col-1 mr-1"><i class="fa fa-money fa-2x deep-purple-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Finance</h5>
+            <h5 class="font-bold">Musholah</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+            LKP SRI REJEKI memiliki musholah kecil untuk ibadah bagi yang beragama muslim 
             </p>
           </div>
         </div>
@@ -281,30 +276,27 @@
         <div class="row mb-3">
           <div class="col-1 mr-1"><i class="fa fa-bar-chart fa-2x indigo-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Marketing</h5>
+            <h5 class="font-bold">Mesin Jahit</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+            LKP SRI REJEKI memfasilitasi mesin jahit sebanyak 20 buah untuk peserta kursus dan pelatihan
             </p>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-1 mr-1"><i class="fa fa-music fa-2x pink-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Entertainment</h5>
+            <h5 class="font-bold">Mesin Obras</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+              fasilitas peserta kursus dan pelatihan menjahit
             </p>
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-1 mr-1"><i class="fa fa-smile-o fa-2x blue-text"></i></div>
           <div class="col-10">
-            <h5 class="font-bold">Communication</h5>
+            <h5 class="font-bold">Ruangan pas</h5>
             <p class="grey-text">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima assumenda
-              voluptate velit.
+             untuk mencoba pakaian hasil menjahit peserta lkp sri rejeki
             </p>
           </div>
         </div>
@@ -390,14 +382,14 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
 </section>
 
 
-<!--HARGA-->
+
+
+<!--harga-->
 <section class="text-center py-5 indigo darken-1 text-white" id="pricing">
-  <div class="container">
+<div class="container">
     <div class="wow fadeIn">
       <h2 class="h1 pt-5 pb-3">Persyaratan</h2>
       <p class="px-5 mb-5 pb-3 lead">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi,
-        veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
       </p>
     </div>
     <div class="row wow zoomIn">
@@ -405,22 +397,22 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
         <div class="card card-image">
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-stylish-strong py-3 px-3 rounded">
             <div class="card-body">
-              <div class="h5">Individual</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-1">9</span><span class="display-4">/m</span></div>
+              <div class="h5">Kursus Level 1</div>
+              <div class="py-5"><sup class="display-4">Rp.</sup><span class="display-1">800K</span><span class="display-4"></span></div>
               <ul class="list-unstyled">
                 <li>
-                  <p><strong>1</strong> person</p>
+                  <p><strong>Persyaratan</strong> :</p>
                 </li>
                 <li>
-                  <p><strong>10</strong> projects</p>
+                  <p><strong></strong> Fotocopy KK</p>
                 </li>
                 <li>
-                  <p><strong>100</strong> features</p>
+                  <p><strong></strong> Fotocopy KTP</p>
                 </li>
                 <li>
-                  <p><strong>20GB</strong> storage</p>
+                  <p><strong></strong> Fotocopy Ijazah</p>
                 </li>
-              </ul><a class="btn btn-outline-white mt-5"> Buy now</a>
+              </ul><a class="btn btn-outline-white mt-5"> Ikut</a>
             </div>
           </div>
         </div>
@@ -429,22 +421,22 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
         <div class="card card-image">
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-teal-strong py-3 px-3 rounded">
             <div class="card-body">
-              <div class="h5">Startup</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-1">29</span><span class="display-4">/m</span></div>
+              <div class="h5">Kursus Level 2</div>
+              <div class="py-5"><sup class="display-4">Rp.</sup><span class="display-1">1,5Jt</span><span class="display-4"></span></div>
               <ul class="list-unstyled">
-                <li>
-                  <p><strong>10</strong> person</p>
+              <li>
+                  <p><strong>Persyaratan</strong> :</p>
                 </li>
                 <li>
-                  <p><strong>100</strong> projects</p>
+                  <p><strong></strong> Fotocopy KK</p>
                 </li>
                 <li>
-                  <p><strong>200</strong> features</p>
+                  <p><strong></strong> Fotocopy KTP</p>
                 </li>
                 <li>
-                  <p><strong>100GB</strong> storage</p>
+                  <p><strong></strong> Fotocopy Ijazah</p>
                 </li>
-              </ul><a class="btn btn-outline-white mt-5"> Buy now</a>
+              </ul><a class="btn btn-outline-white mt-5"> Ikut</a>
             </div>
           </div>
         </div>
@@ -453,28 +445,53 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
         <div class="card card-image">
           <div class="text-white text-center pricing-card d-flex align-items-center rgba-red-strong py-3 px-3 rounded">
             <div class="card-body">
-              <div class="h5">Enterprise</div>
-              <div class="py-5"><sup class="display-4">$</sup><span class="display-1">99</span><span class="display-4">/m</span></div>
+              <div class="h5">Kursus Level 3</div>
+              <div class="py-5"><sup class="display-4">Rp.</sup><span class="display-1">2Jt</span><span class="display-4"></span></div>
               <ul class="list-unstyled">
-                <li>
-                  <p><strong>10+</strong> person</p>
+              <li>
+                  <p><strong>Persyaratan</strong> :</p>
                 </li>
                 <li>
-                  <p><strong>Unlimited</strong> projects</p>
+                  <p><strong></strong> Fotocopy KK</p>
                 </li>
                 <li>
-                  <p><strong>Unlimited</strong> features</p>
+                  <p><strong></strong> Fotocopy KTP</p>
                 </li>
                 <li>
-                  <p><strong>1TB</strong> storage</p>
+                  <p><strong></strong> Fotocopy Ijazah</p>
                 </li>
-              </ul><a class="btn btn-outline-white mt-5"> Buy now</a>
+              </ul><a class="btn btn-outline-white mt-5"> Ikut</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-12 mb-r">
+        <div class="card card-image">
+          <div class="text-white text-center pricing-card d-flex align-items-center rgba-red-strong py-3 px-3 rounded">
+            <div class="card-body">
+              <div class="h5">Pelatihan</div>
+              <div class="py-5"><sup class="display-4"></sup><span class="display-1">FREE</span><span class="display-4"></span></div>
+              <ul class="list-unstyled">
+              <li>
+                  <p><strong>Persyaratan</strong> :</p>
+                </li>
+                <li>
+                  <p><strong></strong> Fotocopy KK</p>
+                </li>
+                <li>
+                  <p><strong></strong> Fotocopy KTP</p>
+                </li>
+                <li>
+                  <p><strong></strong> Fotocopy Ijazah</p>
+                </li>
+              </ul><a class="btn btn-outline-white mt-5"> Ikut</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  
 </section>
 
 <!--GALERI-->
@@ -483,28 +500,39 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
     <div class="wow fadeIn">
       <h2 class="h1 pt-5 pb-3 text-center">Profil</h2>
       <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
-        LKP SRI REJEKI adalah
+        LKP SRI REJEKI
         <br>
-        Visi  :
         <br>
-        Misi  : 
+        Visi  : <br>
+        Mencetak peserta didik untuk lebih terampil, inovatif, dan kreatf serta berwawasan luas di bidang jahit menjahit
+        <br>
+        <br>
+        Misi  : <br>
+        1. Melaksanakan kegiatan belajar yang aktif dan menyenangkan <br>
+        2. Menumbuhkan kedisiplinan, ketrampilan, dan kepercayaan diri peserta didik <br>
+        3. Mencetak lulusan yang terampil dan profesional
+        <br>
+        <br>
+        Tujuan Lembaga : <br>
+        Tujuan yang ingin dicapai oleh Lembaga Kursus Sri Rejeki dalam peran sertanya sebagai penyelanggara pendidikan non formal adalah "mewujudkan mansia mandiri dan terampil dalam bidang menjahit" 
+
       </p>
     </div>
     <div class="row mb-lg-4 center-on-small-only">
       <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="upload_galery/<?php echo $row['nama_file'];?>" alt="" /></div>
+        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-1.jpg" alt="" /></div>
         <div class="col-md-6 float-right">
-          <div class="h4">Nicole West</div>
-          <h6 class="font-bold blue-grey-text mb-4">Lead Designer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@nicolewest</span></a>
+          <div class="h4">Dwita Widyandari</div>
+          <h6 class="font-bold blue-grey-text mb-4">Owner, Pengajar & Desainer</h6>
+          <p class="grey-text">@dwitawidyandari</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@nicolewest</span></a>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
-        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/woman-2.jpg" alt="team member"/></div>
+        <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-1.jpg" alt="team member"/></div>
         <div class="col-md-6 float-right">
-          <div class="h4">Hannah Cruz</div>
-          <h6 class="font-bold blue-grey-text mb-4">Photographer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@hannahcruz</span></a>
+          <div class="h4">Sri Rejeki</div>
+          <h6 class="font-bold blue-grey-text mb-4">Pengajar 2</h6>
+          <p class="grey-text">@Srirejeki</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@hannahcruz</span></a>
         </div>
       </div>
     </div>
@@ -512,17 +540,17 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
       <div class="col-lg-6 col-md-12 mb-r wow fadeInLeft" data-wow-delay=".3s">
         <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-1.jpg" alt="team member"/></div>
         <div class="col-md-6 float-right">
-          <div class="h4">Mark Hall</div>
-          <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@markhall</span></a>
+          <div class="h4">Viddy Yully Tristanto</div>
+          <h6 class="font-bold blue-grey-text mb-4">Bendahara</h6>
+          <p class="grey-text">@Viddy</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@markhall</span></a>
         </div>
       </div>
       <div class="col-lg-6 col-md-12 mb-r wow fadeInRight" data-wow-delay=".3s">
         <div class="col-md-6 float-left"><img class="img-fluid rounded z-depth-1 mb-3" src="img/man-2.jpg" alt="team member"/></div>
         <div class="col-md-6 float-right">
-          <div class="h4">Vincent Harris</div>
-          <h6 class="font-bold blue-grey-text mb-4">Web Developer</h6>
-          <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur.</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@vincentharris</span></a>
+          <div class="h4">Zayn Malik</div>
+          <h6 class="font-bold blue-grey-text mb-4">Sekretaris</h6>
+          <p class="grey-text">@zayn1D</p><a href="https://twitter.com" target="_blank"><i class="fa fa-twitter"></i><span class="ml-1">@vincentharris</span></a>
         </div>
       </div>
     </div>

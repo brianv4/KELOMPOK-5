@@ -1,5 +1,9 @@
 
-
+<?php
+if (!isset($_SESSION['username'])){
+  header('Location:login/');
+}
+?>
 <!-- Navbar -->
 <ul class="navbar-nav ml-auto ml-md-0">
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">

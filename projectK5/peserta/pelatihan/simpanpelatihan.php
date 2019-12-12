@@ -26,7 +26,7 @@ $tmp = $_FILES['file_pelatihan']['tmp_name'];
 		}else{
 			// Jika Gagal, Lakukan :
 			echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-			echo "<br><a href='formulir_kursus.php'>Kembali Ke Form</a>";
+			//echo "<br><a href='formulir_kursus.php'>Kembali Ke Form</a>";
 		}
 	}else{
 		// Jika gambar gagal diupload, Lakukan :

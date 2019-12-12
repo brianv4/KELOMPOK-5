@@ -22,8 +22,8 @@ $tmp = $_FILES['file_kursus']['tmp_name'];
 	
 		if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 			// Jika Sukses, Lakukan :
-			echo '<div class="alert alert-success">SUKSES BRO AOWKAOKWOAW.</div>';
-			//header("location: formulir_kusus.php"); // Redirect ke halaman index.php
+			//echo '<div class="alert alert-success">SUKSES BRO AOWKAOKWOAW.</div>';
+			header("location: bayar.php"); // Redirect ke halaman index.php
 		}else{
 			// Jika Gagal, Lakukan :
 			echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";

@@ -57,8 +57,11 @@ if($cek > 0){
 		// alihkan ke halaman dashboard pengurus
 		header("location:dashboard-user/dashboard/tampilan3.php");
 
-}else{
-	header("location:index.php");	
+
+	}else{
+		header("location:index.php");	
 }
+}else{
+	header("location:index.php?pesan=passwordsalah");	
 }
 ?>
