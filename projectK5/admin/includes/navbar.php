@@ -44,7 +44,7 @@ if (!isset($_SESSION['username'])){
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Menu Owner</h6>
-          <a class="dropdown-item" href="#">Beranda</a>
+          <a class="dropdown-item" href="beranda.php">Beranda</a>
           <a class="dropdown-item" href="#">Profil</a>
           <a class="dropdown-item" href="gallery.php">Galeri</a>
           <div class="dropdown-divider"></div>

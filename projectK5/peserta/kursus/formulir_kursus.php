@@ -1,6 +1,7 @@
 <?php
 include("koneksi.php");
 include("func.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,6 +28,7 @@ include("func.php");
 	
 </head>
 <body>
+
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -56,6 +58,9 @@ include("func.php");
 			
 			<?php
 			session_start();
+			if(!isset($_SESSION['username'])){
+				header('Location:../../index.php');
+			}
                /* $id     	        = aman($_POST['id_kursus']);
 				$nik		        = aman($_POST['nik']);
 				$jenis_level		= aman($_POST['jenis_level']);
@@ -87,7 +92,7 @@ include("func.php");
 							<option value="">pilih</option>
 							<option value="level1">level1</option>
 							<option value="level2">level2</option>
-                            <option value="level2">level3</option>
+                            <option value="level3">level3</option>
 						</select>
 					</div>
 				</div>

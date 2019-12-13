@@ -33,32 +33,73 @@
              
               <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
               <li class="nav-item submenu dropdown">
-              <?php if (isset($_SESSION['status'])){ ?>
-              
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
-                <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="peserta/kursus/formulir_kursus.php">kursus</a></li>
-                  <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
-                </ul>
-              <!--<li class="nav-item"><a class="nav-link" href="peserta/calon_peserta/form_daftar.php">Pendaftaran</a></li>-->
-              <?php
-               
-               
-               }else{
+                <?php 
+                  if (isset($_SESSION['status'])){ ?>
+
+                  <?php
+                    if($_SESSION['status'] == "0"){
+
+                   
+                  ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/kursus/formulir_kursus.php">kursus</a></li>
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                    <?php
+                      }else if ($_SESSION['status'] == "1"){
+                    ?>
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/kursus/formulir_kursus.php">kursus</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">Pelatihan</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "2"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                       <li class="nav-link"><i><font color="white">Kursus Level 1</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "3"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">kursus Level 2</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "4"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">kursus Level 3</i></font></li>
+                    <?php
+                    }
+                    ?>
+
+                <?php
+                  }
+                  else
+                  {
                  ?>
 
-                 <li class="nav-item"><a class="nav-link active" href="peserta/calon_peserta/form_daftar.php">Pendaftaran</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="peserta/calon_peserta/form_daftar.php">Pendaftaran</a></li>
              
                  <?php
-               }
+                  }
                  ?>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
              
              <?php if(!isset($_SESSION['username'])){  ?>
             
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">LOGIN</button>
-            <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginPelatihan">LOGIN</button> -->
-            <?php 
+           
+           <?php 
             }else{
             ?>
             <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
@@ -72,9 +113,7 @@
                </li>
             <?php }?>
             </ul>
-            <!--<a class="btn btn-primary btn-rounded my-0" href="" data-target="#loginModal">Login</a>-->
-          <!-- login modal-->
-          
+           
         </div>
         </div>
       </nav>
@@ -152,33 +191,6 @@
 	}
   ?>
 
-    <!--Form Login Pelatihan
-    <div class="modal fade" role="dialog" id="loginPelatihan">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Login Anggota</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-        <form action="cek_login_pelatihan.php" method="post">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Sign In</button>
-                </div>
-        </form>
-            </div>
-        </div>  
-    </div>
-    -->
-  
 
       <section class="view hm-gradient" id="intro">
         <div class="full-bg-img d-flex align-items-center">
@@ -606,30 +618,7 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
           <p>&copy; <a href="/">Sri Rejeki</a> - Design: <a href="#" target="#">EnvisionDev</a></p>
         </div>
       </div>
-      <!--modal 
-      <div class="modal fade" role="dialog" id="loginModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Modal Login Form</h3>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Sign In</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
+      
       <!--modal-->
     </footer>
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>

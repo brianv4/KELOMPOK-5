@@ -29,6 +29,12 @@ include("func.php");
 	?>
 </head>
 <body>
+<?php
+session_start();
+if(isset($_SESSION['username'])){
+	header('Location:../../index.php');
+}
+?>
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -38,8 +44,8 @@ include("func.php");
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Manajemen User</a>
-				<a class="navbar-brand hidden-xs hidden-sm" href="#">Manajemen User</a>
+				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Pendaftaran Calon Peserta</a>
+				<a class="navbar-brand hidden-xs hidden-sm" href="#">Pendaftaran Calon Peserta</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -191,6 +197,7 @@ include("func.php");
 							<option value="">pilih</option>
 							<option value="SMP">SMP</option>
 							<option value="SMA">SMA</option>
+							<option value="dll">Dan Lain-lain</option>
 						</select>
 					</div>
 				</div>

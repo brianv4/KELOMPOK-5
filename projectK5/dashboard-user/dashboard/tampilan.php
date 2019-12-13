@@ -4,7 +4,9 @@
 // jika belum maka akan diredirect ke halaman index (login)
 
 session_start();
- 
+if(!isset($_SESSION['username'])){
+	header('Location:../../index.php');
+}
 ?>
 <!DOCTYPE html>
 <html>

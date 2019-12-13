@@ -47,21 +47,9 @@ include('includes/navbar.php');
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KTP</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_ktp" class="form-control" value="<?php echo $row['file_ktp']; ?>" placeholder="file ktp" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KK</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_kk" class="form-control" value="<?php echo $row['file_kk']; ?>" placeholder="file kk" required>
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-sm-3 control-label">FILE IJAZAH</label>
 					<div class="col-sm-4">
-						<input type="file" name="file_ijazah" class="form-control" value="<?php echo $row['file_ijazah']; ?>" placeholder="file ijazah" required>
+						<input type="file" name="file_ijazah" class="form-control" value="<?php echo $row['file_pelatihan']; ?>"  required>
 					</div>
 				</div>
 				<div class="form-group">

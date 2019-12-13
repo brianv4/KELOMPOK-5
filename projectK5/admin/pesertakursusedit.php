@@ -23,9 +23,7 @@ error_reporting(0);
 				$nik		        = aman($_POST['nik']);
 				$jenis_level	    = aman($_POST['jenis_level']);
 				$ktp			    = aman($_POST['file_ktp']);
-				$kk	  				= aman($_POST['file_kk']);
-				$ijazah			    = aman($_POST['file_ijazah']);
-				$bukti		        = aman($_POST['bukti_bayar']);
+				
                
 				
 				
@@ -53,35 +51,17 @@ error_reporting(0);
 					<label class="col-sm-3 control-label">Level</label>
 					<div class="col-sm-2">
 						<select name="jenis_level" class="form-control" required>
-							<option value="">PILIH LEVEL</option>
-							<option value="Level 1" <?php if($row['jenis_level'] == 'Level 1'){ echo 'selected'; } ?>>Level 1</option>
-							<option value="Level 2" <?php if($row['jenis_level'] == 'Level 2'){ echo 'selected'; } ?>>Level 2</option>
-							<option value="Level 3" <?php if($row['jenis_level'] == 'Level 3'){ echo 'selected'; } ?>>Level 3</option>
+							<option value=""><?php echo $row['jenis_level']; ?></option>
+							<option value="Level 1" <?php if($row['jenis_level'] == 'Level1'){ echo 'selected'; } ?>>Level 1</option>
+							<option value="Level 2" <?php if($row['jenis_level'] == 'Level2'){ echo 'selected'; } ?>>Level 2</option>
+							<option value="Level 3" <?php if($row['jenis_level'] == 'Level3'){ echo 'selected'; } ?>>Level 3</option>
 						</select>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KTP</label>
+					<label class="col-sm-3 control-label">FILE</label>
 					<div class="col-sm-4">
 						<input type="file" name="file_ktp" class="form-control" value="<?php echo $row['file_ktp']; ?>" placeholder="file ktp" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KK</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_kk" class="form-control" value="<?php echo $row['file_kk']; ?>" placeholder="file kk" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE IJAZAH</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_ijazah" class="form-control" value="<?php echo $row['file_ijazah']; ?>" placeholder="file ijazah" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">BUKTI BAYAR</label>
-					<div class="col-sm-4">
-						<input type="file" name="bukti_bayar" class="form-control" value="<?php echo $row['bukti_bayar']; ?>" placeholder="bukti_bayar" required>
 					</div>
 				</div>
 				<div class="form-group">

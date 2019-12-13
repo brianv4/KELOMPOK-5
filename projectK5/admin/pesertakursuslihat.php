@@ -6,96 +6,55 @@ include('includes/navbar.php');
 ?>
     <div class="container">
 		<div class="content">
-			<h2>Edit Peserta Pelatihan</h2>
+			<h2>Data Jadwal Pelatihan</h2>
 			<hr />
 			
 			<?php
 			$id = $_GET['id_kursus'];
+			
 			$sql = mysqli_query($koneksi, "SELECT * FROM kursus WHERE id_kursus='$id'");
 			if(mysqli_num_rows($sql) == 0){
-				header("Location: pesertakursus.php");
+				header("Location: index.php");
 			}else{
 				$row = mysqli_fetch_assoc($sql);
 			}
-			if(isset($_POST['save'])){
-				
-                $nik		        = aman($_POST['nik']);
-                $jenis			    = aman($_POST['jenis_level']);
-				$ktp			    = aman($_POST['file_ktp']);
-				$kk	  				= aman($_POST['file_kk']);
-				$ijazah			    = aman($_POST['file_ijazah']);
-				$bukti			    = aman($_POST['bukti_bayar']);
-				
-				
-				$update = mysqli_query($koneksi, "UPDATE `kursus` SET `nik`='$nik',`jenis_level`='$jenis',`file_ktp`='$ktp',`file_kk`='$kk',`file_ijazah`='$ijazah', `bukti_bayar`='$bukti' WHERE id_kursus='$id'") or die(mysqli_error());
-				if($update){
-					echo '<div class="alert alert-success">Data Berhasil diUpdate</div>';
-					//header("Location:user.php?pesan=sukses");
+			
+			if(isset($_GET['aksi']) == 'delete'){
+				$delete = mysqli_query($koneksi, "DELETE FROM kursus WHERE id_kursus='$id'");
+				if($delete){
+					echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 				}else{
-					echo '<div class="alert alert-danger">Data gagal disimpan, silahkan coba lagi.</div>';
+					echo '<div class="alert alert-info">Data gagal dihapus.</div>';
 				}
 			}
-			
-			if(isset($_GET['pesan']) == 'sukses'){
-				echo '<div class="alert alert-success">Data berhasil disimpan.</div>';
-			}
 			?>
-			<form class="form-horizontal" action="" method="post">
-				<div class="form-group">
-					<label class="col-sm-3 control-label">NIK</label>
-					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" placeholder="nik" required>
-					</div>
+			<table class="table table-striped">
+				<tr>
+					<th width="20%">NIK</th>
+					<td><?php echo $row['nik']; ?></td>
+				</tr>
+				<tr>
+					<th>JENIS LEVEL</th>
+					<td><?php echo $row['jenis_level']; ?></td>
+				</tr>
+				<tr>
+				<div id="scroller">
+					<iframe name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['file_kursus']; ?>">
 				</div>
-                <div class="form-group">
-					<label class="col-sm-3 control-label">JENIS LEVEL</label>
-					<div class="col-sm-4">
-						<input type="file" name="jenis_level" class="form-control" value="<?php echo $row['jenis_level']; ?>" placeholder="file ktp" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KTP</label>
-					<div class="col-sm-4">
-						<input type="text" name="file_ktp" class="form-control" value="<?php echo $row['file_ktp']; ?>" placeholder="file ktp" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE KK</label>
-					<div class="col-sm-4">
-						<input type="text" name="file_kk" class="form-control" value="<?php echo $row['file_kk']; ?>" placeholder="file kk" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE IJAZAH</label>
-					<div class="col-sm-4">
-						<input type="text" name="file_ijazah" class="form-control" value="<?php echo $row['file_ijazah']; ?>" placeholder="file ijazah" required>
-					</div>
-				</div>
-                <div class="form-group">
-					<label class="col-sm-3 control-label"> BUKTI BAYAR</label>
-					<div class="col-sm-4">
-						<input type="text" name="bukti_bayar" class="form-control" value="<?php echo $row['bukti_bayar']; ?>" placeholder="file ijazah" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">&nbsp;</label>
-					<div class="col-sm-6">
-						<input type="submit" name="save" class="btn btn-primary" value="SIMPAN">
-						<a href="pesertakursus.php" class="btn btn-warning">Kembali</a>
-					</div>
-				</div>
-			</form>
+					
+				</tr>
+				
+				
+			</table>
+			
+			<a href="jadwalpelatihan.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+			<a href="jawdwalpelatihanedit.php?no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
+			<a href="jadwalpelatihanlihat.php?aksi=delete&no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
 		</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/bootstrap-datepicker.js"></script>
-	<script>
-	$('.date').datepicker({
-		format: 'yyyy-mm-dd',
-	})
-	</script>
+	<script src="js/bootstrap.min.js"></script>
 <?php 
 include('includes/scripts.php');
 include('includes/footer.php');

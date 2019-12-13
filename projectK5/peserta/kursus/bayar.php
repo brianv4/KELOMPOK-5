@@ -1,6 +1,7 @@
 <?php
 include("koneksi.php");
 include("func.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,7 @@ include("func.php");
 			margin-top: 80px;
 		}
 	</style>
+	
 	
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -56,6 +58,9 @@ include("func.php");
 			
 			<?php
 			session_start();
+			if(!isset($_SESSION['username'])){
+				header('Location:../../index.php');
+			}
                /* $id     	        = aman($_POST['id_kursus']);
 				$nik		        = aman($_POST['nik']);
 				$jenis_level		= aman($_POST['jenis_level']);
@@ -65,10 +70,10 @@ include("func.php");
 				*/
 				
 				$username = $_SESSION['username'];
-
 				//tinggal masalah database NIK dijadikan BIG INT
 				
-				$cek = mysqli_query($koneksi, "SELECT * FROM calon_peserta where username='$username'");
+				$cek = mysqli_query($koneksi, "SELECT * FROM calon_peserta INNER JOIN kursus ON
+				calon_peserta.nik=kursus.nik where username='$username'");
 				$tampil = mysqli_fetch_array($cek);
 			
 			?>
@@ -78,6 +83,12 @@ include("func.php");
 					<label class="col-sm-3 control-label">nik</label>
 					<div class="col-sm-4">
 						<input type="text" name="nik" class="form-control" value="<?php echo $tampil['nik']; ?>" placeholder="nik" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">id kursus</label>
+					<div class="col-sm-4">
+						<input type="text" name="id_kursus" class="form-control" value="<?php echo $tampil['id_kursus']; ?>" placeholder="nik" required>
 					</div>
 				</div>
                 <div class="form-group">

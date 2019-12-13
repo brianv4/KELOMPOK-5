@@ -62,6 +62,6 @@ if($cek > 0){
 		header("location:index.php");	
 }
 }else{
-	header("location:index.php?pesan=passwordsalah");	
+	header("location:index.php?pesan=gagal");	
 }
 ?>
