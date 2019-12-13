@@ -13,6 +13,7 @@ include('includes/navbar.php');
 			
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
+
 				$id = $_GET['id_kursus'];
 				$cek = mysqli_query($koneksi, "SELECT * FROM kursus WHERE id_kursus='$id'");
 				if(mysqli_num_rows($cek) == 0){
@@ -66,7 +67,7 @@ include('includes/navbar.php');
 							<td>
 								<a href="pesertakursuslihat.php?id_kursus='.$row['id_kursus'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
 								<a href="pesertakursusedit.php?id_kursus='.$row['id_kursus'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>
-								<a href="pesertakursus.php?aksi=delete&id_daftar='.$row['id_kursus'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><i class="fas fa-trash-alt"></i></a>
+								<a href="pesertakursus.php?aksi=delete&id_kursus='.$row['id_kursus'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><i class="fas fa-trash-alt"></i></a>
 							</td>
 						</tr>
 						';
