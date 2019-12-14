@@ -2,6 +2,7 @@
 include "koneksi.php";
 
 $nik = $_POST['nik'];
+$id = $_POST['id_kursus'];
 $file_bukti = $_FILES['file_bukti']['name'];
 $tmp = $_FILES['file_bukti']['tmp_name'];
 
@@ -16,7 +17,7 @@ $tmp = $_FILES['file_bukti']['tmp_name'];
 		
 		// Cek apakah gambar berhasil diupload atau tidak
 		// Proses simpan ke Database
-		$query = "INSERT INTO tb_bukti VALUES(null,'".$nik."', '".$fotobaru."')";
+		$query = "INSERT INTO tb_bukti VALUES(null,'".$id."','".$nik."','".$fotobaru."')";
 		$sql = mysqli_query($koneksi, $query); // Eksekusi/ Jalankan query dari variabel $query
 	
 		if($sql){ // Cek jika proses simpan ke database sukses atau tidak
@@ -26,12 +27,12 @@ $tmp = $_FILES['file_bukti']['tmp_name'];
 		}else{
 			// Jika Gagal, Lakukan :
 			echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
-			echo "<br><a href='formulir_kursus.php'>Kembali Ke Form</a>";
+			echo "<br><a href='bayar.php'>Kembali Ke Form</a>";
 		}
 	}else{
 		// Jika gambar gagal diupload, Lakukan :
 		echo "Maaf, Gambar gagal untuk diupload.";
-		echo "<br><a href='formulir.php'>Kembali Ke Form</a>";
+		echo "<br><a href='bayar.php'>Kembali Ke Form</a>";
 	}
 	
     /*if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak

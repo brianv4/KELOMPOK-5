@@ -1,6 +1,9 @@
 <?php
 session_start();
-//include 'koneksi.php';
+if(isset($_SESSION['level'])){
+}else{
+header('Location:../');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

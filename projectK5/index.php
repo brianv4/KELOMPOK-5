@@ -199,13 +199,22 @@
               <div class="col-md-10 col-lg-6 text-center text-md-left margins">
                 <div class="white-text">
                   <div class="wow fadeInLeft" data-wow-delay="0.3s">
-                    <h1 class="h1-responsive font-bold mt-sm-5">LKP SRI REJEKI</h1>
+                  <?php 
+                   include('config.php');
+                    $query_mysql = mysqli_query($koneksi, "SELECT * FROM `tampilan`")or die(mysql_error($koneksi));
+                    $nomor = 1;
+                    while($data = mysqli_fetch_array($query_mysql)){
+                  ?>
+                    <h1 class="h1-responsive font-bold mt-sm-5">LKP SRI REJEKI<?php //echo $data['judul']; ?></h1>
                     <div class="h6">
-                      Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo
+                    Lembaga Kursus Pelatihan Menjahit Swasta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo<?php //echo $data['judul_deskripsi']; ?>
                     </div>
                   </div><br>
                   <!--<div class="wow fadeInLeft" data-wow-delay="0.3s"><a class="btn btn-white dark-grey-text font-bold ml-0" href="https://www.youtube.com/watch?v=60ItHLz5WEA" target="_blank"><i class="fa fa-play mr-1"></i> View Demo</a><a class="btn btn-outline-white" href="#">Learn more</a></div>-->
                 </div>
+                <?php
+                    }
+                ?>
               </div>
             </div>
           </div>

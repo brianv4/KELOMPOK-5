@@ -10,16 +10,27 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
-    <script type="text/javascript" src="jquery-1.4.3.min.js"></script>
+    <!-- <script type="text/javascript" src="jquery-1.4.3.min.js"></script> -->
     <!--menambahkan fancybox-->
-    <script type="text/javascript" src="fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-    <!--menambahkan css fancybox-->
-    <link href="fancybox/jquery.fancybox-1.3.4.css" type="text/css" rel="stylesheet"/>
-    <script type="text/javascript">
-    $(document).ready(function(){
-        $(".fancy").fancybox();
-        });
-    </script>
+    <link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css">
+<!-- library JS -->
+<script src="//code.jquery.com/jquery-3.2.0.min.js"></script>
+<!-- library JS fancybox -->
+<script src="fancybox/jquery.fancybox.js"></script>
+
+<script type="text/javascript">
+    $("[data-fancybox]").fancybox({ });
+</script>
+
+<style type="text/css">
+.gallery img {
+    width: 30%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+</style>
   </head>
   <body>
   <?php 
@@ -33,82 +44,129 @@ session_start();
             <div class="collapse navbar-collapse" id="navbarContent">
               <ul class="navbar-nav ml-auto">
                <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
-               <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profil</a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Struktur Pengurusan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profil.html">Profil</a></li>
-                  </ul>
-               </li>
+               <li class="nav-item"><a class="nav-link active" href="index.php#team">Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
                 <li class="nav-item submenu dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
-                  <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Info Daftar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="formdaftar.html">Daftar Online</a></li>
-                  </ul>
-               </li>
-                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                <?php 
+                  if (isset($_SESSION['status'])){ ?>
+
+                  <?php
+                    if($_SESSION['status'] == "0"){
+
+                   
+                  ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/kursus/formulir_kursus.php">kursus</a></li>
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                    <?php
+                      }else if ($_SESSION['status'] == "1"){
+                    ?>
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/kursus/formulir_kursus.php">kursus</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">Pelatihan</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "2"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                       <li class="nav-link"><i><font color="white">Kursus Level 1</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "3"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">kursus Level 2</i></font></li>
+                    <?php
+                      }else if($_SESSION['status'] == "4"){
+                    ?>
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                          <li class="nav-item"><a class="nav-link" href="peserta/pelatihan/formulir_pelatihan.php">pelatihan</a></li>
+                        </ul>
+                        <li class="nav-link"><i><font color="white">kursus Level 3</i></font></li>
+                    <?php
+                    }
+                    ?>
+
+                <?php
+                  }
+                  else
+                  {
+                 ?>
+
+                    <li class="nav-item"><a class="nav-link active" href="peserta/calon_peserta/form_daftar.php">Pendaftaran</a></li>
+             
+                 <?php
+                  }
+                 ?>
+                <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
                 <?php if(!isset($_SESSION['username'])){  ?>
-          <button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">LOGIN</button>
+          <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">LOGIN</button>
           <?php 
           }else{
           ?>
           <li class="nav-item submenu dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username'] ?></a>
                 <ul class="dropdown-menu">
-                  <li class="nav-item"><a class="nav-link" href="single-blog.html">Profil</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
                   <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                 </ul>
              </li>
           <?php }?>
               </ul>
-              <!--<a class="btn btn-primary btn-rounded my-0" href="" data-target="#loginModal">Login</a>-->
-            <!-- login modal-->
             
-            <!-- login modal-->
           </div>
   
           </div>
         </nav>
   <br>
-  
-  
+
 <section class="py-5" id="team">
   <div class="container">
     <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3 text-center">Dokumentasi</h2>
+      <h2 class="h1 pt-5 pb-3 text-center">GALERY</h2>
       <p class="px-5 mb-5 pb-3 lead text-center blue-grey-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate
-        esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.
+        Dokumentasi LKP Sri Rejeki
       </p>
     </div>
     
-    <?php 
-    $dir = glob('img/gallery/{*.jpg,*.png}',GLOB_BRACE);
+    <div class="gallery">
+        
+        <?php
+        include('kon.php');
+
+        //mengambil gambar dari database
+        $query = $db->query("SELECT * FROM gallery ORDER BY id DESC");
+
+        if($query->num_rows > 0){
+            while($row = $query->fetch_assoc()){
+                $imageThumbURL = 'img/gallery/'.$row["nama_file"];
+                $imageURL = 'img/gallery/'.$row["nama_file"];
+        ?>
+            <a href="<?php echo $imageURL; ?>" data-fancybox="group" data-caption="<?php echo $row["deskripsi"]; ?>" >
+                <img src="<?php echo $imageThumbURL; ?>" alt="" />
+            </a>
+        <?php }
+        } ?>
+        
+    </div>
     
-    foreach ($dir as $key=>$value){
-      ?>
-     
-      <div class="thumbnail">
-
-      <a href="<?php echo $value; ?>" data-fancybox data-caption="<?php echo $value; ?>">
-	<img src="<?php echo $value; ?>" alt="<?php echo $value; ?>"/>
-</a>
-        <h2>TITLE LOL </h2>
-      </div>
-  
-
-    <?php
-   
-    }
-
-    ?>
 
     </div>
   </div>
   
-  <div class="modal fade" role="dialog" id="loginModal">
+
+</section>
+<!--Form Login Kursus-->
+<div class="modal fade" role="dialog" id="loginModal">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -116,25 +174,46 @@ session_start();
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 
-        <form action="cek_login.php" method="post">
+        <form action="cekloginlagi.php" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <input type="text" name="username" class="form-control" placeholder="Username">
+                        <input type="text" name="user" class="form-control" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="password" name="password" class="form-control" placeholder="Password">
+                        <input type="password" name="pass" class="form-control" placeholder="Password">
                     </div>
+					</div> 
+          <div class="modal-footer">
+                   <a href="peserta/calon_peserta/form_daftar.php"><font color="blue"><u>belum memiliki akun?</u></font></a> 
+                    <input type="submit" name="login" class="btn btn-info" value="sign in">
                 </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success">Sign In</button>
-                </div>
-</form>
+                    </div>  
+                </div> 
+        </form>
+        <?php
+        if (isset($_POST['login'])){
+          $user = $_POST['user'];
+          $pass = $_POST['pass'];
+          $data_user = mysqli_query($koneksi, "SELECT * FROM calon_peserta WHERE username = '$user' AND password = '$pass'");
+          $r = mysqli_fetch_array($data_user);
+          $username = $r['username'];
+          $password =$r['password'];
+          $status = $r['status'];
+          if($user == $username && $pass == $password){
+            $_SESSION['status'] = $status;
+            header('location:index2.php');
+
+          }
+          else
+          {
+            echo 'Login Gagal';
+          }
+        }
+        ?>
+      
             </div>
-           
-        </div>
-        
+        </div>    
     </div>
-</section>
 
    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
       <div class="container">

@@ -61,7 +61,7 @@ include('includes/navbar.php');
                 <a href="gallery-delete.php?id=<?php echo $row['id'];?>" onclick="return confirm('Anda yakin?');">Delete</a>
           
           </td>
-          </tr>
+        </tr>
           <?php
            
             $i++;
@@ -90,7 +90,7 @@ include('includes/navbar.php');
           <td>File: <input type="file" name="file" id="file"/><br/></td>
         </tr>
         <tr>
-          <td>Deskripsi: <textarea name="deskripsi" id="deskripsi"></textarea><br/></td>
+          <td>Deskripsi: <textarea style="resize:none;width:480px;height:150px;" name="deskripsi" id="deskripsi"></textarea><br/></td>
         </tr>
         <tr>
           <td> <input type="submit" class="btn btn-primary" name="save" value="Upload"/></td>

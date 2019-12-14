@@ -1,32 +1,38 @@
 <?php
 include('includes/header.php');
 include('includes/navbar.php');
+include('koneksiuser.php');
 ?>
 <table class="table table-hover table-bordered">
+<?php
+if(isset($_GET['pesan']) == 'update'){
+	echo '<div class="alert alert-success">Data berhasil disimpan.</div>';
+}
+?>
 	<tr>
 		<th>Judul</th>
 		<th>Deskripsi</th>
 		<th>Aksi</th>	
 	</tr>
 	<?php 
-	include "koneksi.php";
-	$query_mysql = mysql_query("SELECT * FROM `juduldashboard`")or die(mysql_error());
-	$nomor = 1;
-	while($data = mysql_fetch_array($query_mysql)){
+	
+	$query_mysql = mysqli_query($koneksi, "SELECT * FROM `tampilan`")or die(mysql_error($koneksi));
+	while($data = mysqli_fetch_array($query_mysql)){
 	?>
 	<tr>
 		
 		<td><?php echo $data['judul']; ?></td>
-		<td><?php echo $data['deskripsi']; ?></td>
+		<td><?php echo $data['judul_deskripsi']; ?></td>
 		<td>
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalEdit">Edit</button>
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#edit">Edit</button>
 		</td>
 	</tr>
 	<?php } ?>
 </table>
 
+
 <!-- Modal Edit -->
-<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -38,10 +44,9 @@ include('includes/navbar.php');
       <div class="modal-body">
 	  <!-- -->
 	  <?php 
-	include "koneksi.php";
-	$query_mysql = mysql_query("SELECT * FROM juduldashboard")or die(mysql_error());
-	$nomor = 1;
-	while($data = mysql_fetch_array($query_mysql)){
+	include "koneksiuser.php";
+	$query_mysql = mysqli_query($koneksi, "SELECT * FROM tampilan")or die(mysql_error());
+	while($data = mysqli_fetch_array($query_mysql)){
 	?>
 	<form action="updatejudul.php" method="post">		
 		<table class="table table-hover table-bordered">
@@ -54,7 +59,8 @@ include('includes/navbar.php');
 			</tr>	
 			<tr>
 				<td>Deskripsi</td>
-				<td><input class ="table table-hover table-bordered" type="textarea" name="deskripsi" value="<?php echo $data['deskripsi'] ?>"></td>					
+			
+				<td><input class ="table table-hover table-bordered" style="width:360px;height:200px;" type="textarea" name="judul_deskripsi" value="<?php echo $data['judul_deskripsi'] ?>"></td>					 
 			</tr>	
 			<tr>
 				<td></td>
@@ -71,6 +77,7 @@ include('includes/navbar.php');
     </div>
   </div>
 </div>
+
 <?php
 include('includes/scripts.php');
 include('includes/footer.php');

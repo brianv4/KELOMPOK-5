@@ -1,9 +1,3 @@
-
-<?php
-if (!isset($_SESSION['username'])){
-  header('Location:login/');
-}
-?>
 <!-- Navbar -->
 <ul class="navbar-nav ml-auto ml-md-0">
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
@@ -59,28 +53,22 @@ if (!isset($_SESSION['username'])){
           <span>Data</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-
-        <?php
-        $level = $_SESSION['level'] == 'admin';
-        if ($level) {
-        ?>
-
+        <?php $level = $_SESSION['level'] == 'Admin';
+        if ($level){
+          ?>
           <a class="dropdown-item" href="calonpeserta.php">Calon Peserta</a>
           <a class="dropdown-item" href="pesertakursus.php">Peserta Kursus</a>
           <a class="dropdown-item" href="pesertapelatihan.php">Peserta Pelatihan</a>
-
           <?php
-          } else {
-          ?>
-          
+        }else{
+          ?>          
           <a class="dropdown-item" href="user.php">User</a>
           <a class="dropdown-item" href="calonpeserta.php">Calon Peserta</a>
           <a class="dropdown-item" href="pesertakursus.php">Peserta Kursus</a>
           <a class="dropdown-item" href="pesertapelatihan.php">Peserta Pelatihan</a>
-
           <?php
-          }
-          ?>
+        }
+        ?>
     </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

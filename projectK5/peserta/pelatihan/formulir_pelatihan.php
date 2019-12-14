@@ -1,6 +1,7 @@
 <?php
 include("koneksi.php");
 include("func.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,7 +58,9 @@ include("func.php");
 			
 			<?php
 			session_start();
-                
+			if(!isset($_SESSION['username'])){
+				header('Location:../../index.php');
+			}
 				$username = $_SESSION['username'];
 
 				//tinggal masalah database NIK dijadikan BIG INT
