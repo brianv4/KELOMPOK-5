@@ -360,7 +360,7 @@ Calon Peserta.
       <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="	fa fa-bell-o fa-3x red-text"></i>
         <h3 class="h4 mt-3">4.</h3>
         <p class="mt-3 blue-grey-text">
-        Setelah Mendaftar menjadi calon peserta, calon peserta akan mempunyai akun. Aknun ini dapat digunakan untuk
+        Setelah Mendaftar menjadi calon peserta, calon peserta akan mempunyai akun. Akun ini dapat digunakan untuk
 masuk/login untuk melanjutkan pendaftaran jika calon peserta tertarik untuk mendapat kursus atau pelatihan.
         </p>
       </div>
@@ -624,7 +624,7 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
       </div>
       <div class="footer-copyright">
         <div class="container-fluid">
-          <p>&copy; <a href="/">Sri Rejeki</a> - Design: <a href="#" target="#">EnvisionDev</a></p>
+          <p>&copy; <a href="/">Sri Rejeki</a> - Design: <a href="#" target="#">PROJECTK5</a></p>
         </div>
       </div>
       
