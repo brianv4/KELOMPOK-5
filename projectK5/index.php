@@ -107,7 +107,7 @@
                 
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
                   <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="single-blog.html">Ubah Password</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ubahpassword.php">Ubah Password</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                   </ul>
                </li>
