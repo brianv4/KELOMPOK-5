@@ -6,5 +6,5 @@ session_start();
 session_destroy();
  
 // mengalihkan halaman ke halaman login
-header("location:../../../bismillah/index.php");
+header("location:../../index.php");
 ?>

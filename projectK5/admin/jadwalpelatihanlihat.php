@@ -12,7 +12,7 @@ include("includes/navbar.php");
 			<?php
 			$id = $_GET['no_jadwal'];
 			
-			$sql = mysqli_query($koneksi, "SELECT * FROM jadwal_kursus WHERE no_jadwal='$id'");
+			$sql = mysqli_query($koneksi, "SELECT * FROM jadwal_pelatihan WHERE no_jadwal='$id'");
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -20,7 +20,7 @@ include("includes/navbar.php");
 			}
 			
 			if(isset($_GET['aksi']) == 'delete'){
-				$delete = mysqli_query($koneksi, "DELETE FROM jadwal_kursus WHERE no_jadwal='$id'");
+				$delete = mysqli_query($koneksi, "DELETE FROM jadwal_pelatihan WHERE no_jadwal='$id'");
 				if($delete){
 					echo '<div class="alert alert-danger">Data berhasil dihapus.</div>';
 				}else{
@@ -47,7 +47,7 @@ include("includes/navbar.php");
 				
 			</table>
 			
-			<a href="jadwalpelatihan.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+			<a href="jadwalpelatihan.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>BACK</a>
 			<a href="jawdwalpelatihanedit.php?no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
 			<a href="jadwalpelatihanlihat.php?aksi=delete&no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
 		</div>

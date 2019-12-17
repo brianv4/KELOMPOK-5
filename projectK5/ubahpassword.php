@@ -88,12 +88,9 @@ return true;
               <div class="sidebar-toggle-box">
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
-            <a href="#" class="logo"><b>Admin Dashboard</b></a>
+            <h2>Ubah Password Peserta</h2>
             <div class="nav notify-row" id="top_menu">
-               
-                         
-                   
-                </ul>
+
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -103,27 +100,9 @@ return true;
         </header>
       <aside>
           <div id="sidebar"  class="nav-collapse ">
-              <ul class="sidebar-menu" id="nav-accordion">
-              
-              	  <p class="centered"><a href="#"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered"><?php echo $_SESSION['username'];?></h5>
-              	  	
-                  <li class="mt">
-                      <a href="change-password.php">
-                          <i class="fa fa-file"></i>
-                          <span>Change Password</span>
-                      </a>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="manage-users.php" >
-                          <i class="fa fa-users"></i>
-                          <span>Manage Users</span>
-                      </a>
-                   
-                  </li>
-              
-                 
+              <ul class="sidebar-menu" id="nav-accordion">    
+              	  <p class="centered"><a href="#"><img src="../../img/akun.jpg" class="img-circle" width="60"></a></p>
+              	  <h5 class="centered"><?php echo $_SESSION['username'];?></h5>              
               </ul>
           </div>
       </aside>
@@ -160,6 +139,7 @@ return true;
                           </div>
                           <div style="margin-left:100px;">
                           <input type="submit" name="Submit" value="Change" class="btn btn-theme"></div>
+                          <button><a href="index.php">Kembali</a></button>
                           </form>
                       </div>
                   </div>
