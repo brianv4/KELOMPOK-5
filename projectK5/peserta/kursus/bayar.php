@@ -38,8 +38,8 @@ include("func.php");
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Manajemen User</a>
-				<a class="navbar-brand hidden-xs hidden-sm" href="#">Manajemen User</a>
+				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Pembayaran</a>
+				<a class="navbar-brand hidden-xs hidden-sm" href="#">Pembayaran</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">

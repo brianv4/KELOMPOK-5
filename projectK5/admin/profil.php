@@ -3,7 +3,6 @@ include('includes/header.php');
 include('includes/navbar.php');
 ?>
 <?php
-
 include "koneksi.php";
     $USERNAME=$_SESSION['username'];
     $pt=mysqli_query($connect, "SELECT * FROM user WHERE username='$USERNAME'");

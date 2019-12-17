@@ -3,6 +3,11 @@ session_start();
 if(isset($_SESSION['level'])){
 }else{
 header('Location:../');
+if(isset($_SESSION['status'])){
+  header('Location:../../index.php');
+}else{
+  
+}
 }
 ?>
 <!DOCTYPE html>
