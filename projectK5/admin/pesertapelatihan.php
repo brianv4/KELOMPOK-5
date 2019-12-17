@@ -29,23 +29,22 @@ include('includes/navbar.php');
 			?>
 			
 			
-						<?php $urut = (isset($_GET['urut']) ? strtolower($_GET['urut']) : NULL);  ?>
-			
+						
 			<br />
 			<div class="table-responsive">
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>NO.</th>
 					<th>NIK</th>
+					<th>NAMA</th>
 					<th>FILE PELATIHAN</th>
 					<th>SETTING</th>
 				</tr>
 				<?php
-				if($urut){
-					$sql = mysqli_query($koneksi, "SELECT * FROM pelatihan WHERE status='$urut' ORDER BY id_pelatihan ASC");
-				}else{
-					$sql = mysqli_query($koneksi, "SELECT * FROM pelatihan ORDER BY id_pelatihan ASC");
-				}
+				
+				$sql = mysqli_query($koneksi, "SELECT pelatihan.id_pelatihan,pelatihan.nik,calon_peserta.nama,
+				pelatihan.file_pelatihan from pelatihan INNER JOIN calon_peserta ON pelatihan.nik=calon_peserta.nik ORDER BY id_pelatihan ASC");
+				
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">Tidak ada data.</td></tr>';
 				}else{
@@ -55,6 +54,7 @@ include('includes/navbar.php');
 						<tr>
 							<td>'.$no.'</td>
 							<td>'.$row['nik'].'</td>
+							<td>'.$row['nama'].'</td>
 							<td>'.$row['file_pelatihan'].'</td>
 							
 							<td>

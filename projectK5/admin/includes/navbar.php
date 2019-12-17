@@ -90,7 +90,7 @@
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-certificate"></i>
-          <span>Sertifikat</span>
+          <span>Nilai & Sertifikat</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <a class="dropdown-item" href="nilaikursus.php">Nilai Kursus</a>

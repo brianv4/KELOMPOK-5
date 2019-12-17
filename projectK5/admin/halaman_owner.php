@@ -20,11 +20,24 @@ include('includes/navbar.php');
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+        <?php
+        mysql_connect('localhost', 'root', '');
+        mysql_select_db('lkpsrirejeki');
+        $sql = "SELECT * FROM calon_peserta";
+        $query = mysql_query($sql);
+        $data = array();
+        while(($row = mysql_fetch_array($query)) != null)
+        {
+          $data[] = $row;
+        }
+        $count = count($data);
+
+        ?>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-info">
               <div class="inner">
-                <center><h3>150</h3></center>
+                <center><h3><?php echo "jumlah data : $count" ?></h3></center>
 
                 <center><p>Calon Peserta</p></center>
               </div>
@@ -35,11 +48,24 @@ include('includes/navbar.php');
             </div>
           </div>
          <!-- ./col -->
+         <?php
+        mysql_connect('localhost', 'root', '');
+        mysql_select_db('lkpsrirejeki');
+        $sql1 = "SELECT * FROM kursus";
+        $query1 = mysql_query($sql1);
+        $data1 = array();
+        while(($row1 = mysql_fetch_array($query1)) != null)
+        {
+          $data1[] = $row1;
+        }
+        $count1 = count($data1);
+
+        ?>
          <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-              <center><h3>67<sup style="font-size: 20px"></sup></h3></center>
+              <center><h3><?php echo "jumlah data : $count1" ?><sup style="font-size: 20px"></sup></h3></center>
 
               <center><p>Peserta Kursus</p></center>
               </div>
@@ -50,11 +76,24 @@ include('includes/navbar.php');
             </div>
           </div>
           <!-- ./col -->
+          <?php
+        mysql_connect('localhost', 'root', '');
+        mysql_select_db('lkpsrirejeki');
+        $sql2 = "SELECT * FROM pelatihan";
+        $query2 = mysql_query($sql2);
+        $data2 = array();
+        while(($row2 = mysql_fetch_array($query2)) != null)
+        {
+          $data2[] = $row2;
+        }
+        $count2 = count($data2);
+
+        ?>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-              <center><h3>83</h3></center>
+              <center><h3><?php echo "jumlah data : $count2" ?></h3></center>
 
               <center><p>Peserta Pelatihan</p></center>
               </div>
@@ -65,11 +104,24 @@ include('includes/navbar.php');
             </div>
           </div>
           <!-- ./col -->
+          <?php
+        mysql_connect('localhost', 'root', '');
+        mysql_select_db('lkpsrirejeki');
+        $sql3 = "SELECT * FROM user";
+        $query3 = mysql_query($sql3);
+        $data3 = array();
+        while(($row3 = mysql_fetch_array($query3)) != null)
+        {
+          $data3[] = $row3;
+        }
+        $count3 = count($data3);
+
+        ?>
           <div class="col-lg-3 col-6">
             <!-- small box -->
             <div class="small-box bg-danger">
               <div class="inner">
-              <center><h3>5</h3></center>
+              <center><h3><?php echo "jumlah data : $count3" ?></h3></center>
 
               <center><p>User</p></center>
               </div>

@@ -39,16 +39,16 @@ include('includes/navbar.php');
 					<th>NO.</th>
 					<th>ID KURSUS</th>
 					<th>NIK</th>
+					<th>NAMA</th>
 					<th>JENIS LEVEL</th>
 					<th>FILE</th>
 					<th>SETTING</th>
 				</tr>
 				<?php
-				if($urut){
-					$sql = mysqli_query($koneksi, "SELECT * FROM kursus WHERE status='$urut' ORDER BY id_kursus ASC");
-				}else{
-					$sql = mysqli_query($koneksi, "SELECT * FROM kursus ORDER BY id_kursus ASC");
-				}
+				
+					$sql = mysqli_query($koneksi, "SELECT kursus.id_kursus,kursus.nik,calon_peserta.nama,kursus.jenis_level,
+					kursus.file_kursus from kursus INNER JOIN calon_peserta ON kursus.nik=calon_peserta.nik ORDER BY id_kursus ASC");
+				
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">Tidak ada data.</td></tr>';
 				}else{
@@ -59,6 +59,7 @@ include('includes/navbar.php');
 							<td>'.$no.'</td>
 							<td>'.$row['id_kursus'].'</td>
 							<td>'.$row['nik'].'</td>
+							<td>'.$row['nama'].'</td>
 							<td>'.$row['jenis_level'].'</td>
 							<td>'.$row['file_kursus'].'</td>
 							
