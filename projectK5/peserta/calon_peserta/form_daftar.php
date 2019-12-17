@@ -205,7 +205,7 @@ if(isset($_SESSION['username'])){
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="form_daftar" class="btn btn-primary" value="TAMBAH">
-						<a href="index.php" class="btn btn-warning">BATAL</a>
+						<a href="../../index.php" class="btn btn-warning">BATAL</a>
 					</div>
 				</div>
 			</form>
