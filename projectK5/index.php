@@ -102,15 +102,63 @@
            <?php 
             }else{
             ?>
+            <?php
+            if($_SESSION['status'] == "1"){
+            ?>
             <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
             <li class="nav-item submenu dropdown">
-                
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
                   <ul class="dropdown-menu">
-                    <li class="nav-item"><a class="nav-link" href="ubahpassword.php">Ubah Password</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard-user/dashboard/tampilanpelatihan.php">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                   </ul>
-               </li>
+            </li>
+            <?php
+            }else if($_SESSION['status'] == "2"){
+            ?>
+            <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="dashboard-user/dashboard/tampilan2.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                  </ul>
+            </li>
+            <?php
+            }else if($_SESSION['status'] == "3"){
+            ?>
+            <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="dashboard-user/dashboard/tampilan.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                  </ul>
+            </li>
+            <?php
+            }else if($_SESSION['status'] == "4"){
+            ?>
+            <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="dashboard-user/dashboard/tampilan3.php">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                  </ul>
+            </li>
+            <?php
+            }else{
+            ?>
+             <li class="nav-link"><i><font color="white">Selamat Datang!</i></font></li>
+            <li class="nav-item submenu dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <?php echo $_SESSION['username'] ?></a>
+                  <ul class="dropdown-menu">
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                  </ul>
+            </li>
+            <?php
+            }
+            ?>
             <?php }?>
             </ul>
            
