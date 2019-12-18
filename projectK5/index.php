@@ -29,10 +29,13 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav ml-auto">
-             <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
-             <li class="nav-item"><a class="nav-link" href="#team">Profil</a></li>
-             
+              <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
+              <li class="nav-item"><a class="nav-link" href="#team">Profil</a></li>
               <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#fasilitas">Fasilitas</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#registrasi">Alur Registrasi</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#pricing">Persyaratan</a></li>
+              <li class="nav-item"><a class="nav-link active" href="#contact">Contact</a></li>
               <li class="nav-item submenu dropdown">
                 <?php 
                   if (isset($_SESSION['status'])){ ?>
@@ -89,12 +92,12 @@
                   {
                  ?>
 
-                    <li class="nav-item"><a class="nav-link active" href="peserta/calon_peserta/form_daftar.php">Pendaftaran</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="peserta/calon_peserta/form_daftar.php">Registrasi</a></li>
              
                  <?php
                   }
                  ?>
-              <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+              
              
              <?php if(!isset($_SESSION['status'])){  ?>
             
@@ -301,7 +304,7 @@
           </section>
 
 <!--PROFIL-->
-<section class="py-5" id="projects">
+<section class="py-5" id="fasilitas">
   <div class="container">
     <div class="wow fadeIn">
       <h2 class="text-center h1 my-4">Fasilitas Kami</h2>
@@ -377,10 +380,10 @@
 </section>
 
 <!--ALUR-->
-<section class="text-center py-5 grey lighten-4" id="about">
+<section class="text-center py-5 grey lighten-4" id="registrasi">
   <div class="container">
     <div class="wow fadeIn">
-      <h2 class="h1 pt-5 pb-3">Alur Pendaftaran</h2>
+      <h2 class="h1 pt-5 pb-3">Alur Registrasi</h2>
       <p class="px-5 mb-5 pb-3 lead blue-grey-text">
       Alur Pendafaran Lembaga Kursus dan Pelatihan Menjahit Sri Rejeki adalah sebagai berikut :
       </p>

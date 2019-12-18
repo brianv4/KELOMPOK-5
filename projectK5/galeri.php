@@ -43,9 +43,13 @@ session_start();
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarContent">
               <ul class="navbar-nav ml-auto">
-               <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
-               <li class="nav-item"><a class="nav-link active" href="index.php#team">Profil</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.php">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.php#team">Profil</a></li>
                 <li class="nav-item"><a class="nav-link" href="galeri.php">Galeri</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.php#fasilitas">Fasilitas</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.php#registrasi">Alur Registrasi</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.php#pricing">Persyaratan</a></li>
+                <li class="nav-item"><a class="nav-link active" href="index.php#contact">Contact</a></li>
                 <li class="nav-item submenu dropdown">
                 <?php 
                   if (isset($_SESSION['status'])){ ?>
@@ -107,7 +111,7 @@ session_start();
                  <?php
                   }
                  ?>
-                <li class="nav-item"><a class="nav-link" href="index.php#contact">Contact</a></li>
+
                 <?php if(!isset($_SESSION['username'])){  ?>
           <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">LOGIN</button>
           <?php 
