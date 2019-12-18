@@ -126,7 +126,7 @@ include('includes/navbar.php');
 			<form class="form-horizontal" action="" method="post">
             <div class="form-group">
 					<label class="col-sm-3 control-label">ID KURSUS</label>
-					<div class="col-sm-5">
+					<div class="col-sm-8">
 						<select name="id_kursus" class="form-control">
 							<option value="">ID NIK</option>
 							<?php 
@@ -142,7 +142,7 @@ include('includes/navbar.php');
 				</div>
             <div class="form-group">
 					<label class="col-sm-3 control-label">NILAI</label>
-					<div class="col-sm-5">
+					<div class="col-sm-8">
 						<input type="text" name="nilai" class="form-control" placeholder="nilai">
 					</div>
 				</div>
