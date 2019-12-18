@@ -22,7 +22,7 @@ $tmp = $_FILES['file_pelatihan']['tmp_name'];
 	
 		if($sql){ // Cek jika proses simpan ke database sukses atau tidak
 			// Jika Sukses, Lakukan :
-			header("location: index.php"); // Redirect ke halaman index.php
+			header("location: ../../index.php"); // Redirect ke halaman index.php
 		}else{
 			// Jika Gagal, Lakukan :
 			echo "Maaf, Terjadi kesalahan saat mencoba untuk menyimpan data ke database.";
