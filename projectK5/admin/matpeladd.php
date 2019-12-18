@@ -36,13 +36,6 @@ include("includes/navbar.php");
 		<td><input type="text" name="tgl_akhir"></td>
 	</tr>
 	<tr>
-		<td>STATUS</td>
-		<td>
-		<input type="radio" name="status" value="Aktif"> Aktif
-		<input type="radio" name="status" value="Tidak Aktif"> Tidak Aktif
-		</td>
-	</tr>
-	<tr>
 		<td>DOKUMEN</td>
 		<td><input type="file" name="foto"></td>
 	</tr>

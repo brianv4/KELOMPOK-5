@@ -43,7 +43,6 @@
 						<th>Tanggal Akhir</th>
 						<th>Deskripsi</th>
 						<th>Dokumen</th>
-						<th>Status</th>
 						<th>Setting</th>
 					</tr>
 					<?php
@@ -66,8 +65,7 @@
 								<td>'.$row['tgl_akhir'].'</td>
 								<td>'.$row['deskripsi'].'</td>
 								<td>'.$row['dokumen'].'</td>
-								<td>'.$row['status'].'</td>
-
+								
 								<td>
 									<a href="materipelatihanlihat.php?home=profileuser&id_topik='.$row['id_topik'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
 									<a href="materipelatihanedit.php?id_topik='.$row['id_topik'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>

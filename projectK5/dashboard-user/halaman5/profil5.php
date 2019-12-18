@@ -27,6 +27,7 @@ Tahun 2019
 <center><table border="1" cellpadding="3">
     <tr>
         <th width="30">No</th>
+        <th width="180">Deskripsi</th>
         <th width="180">Nama File</th>
         <th width="80">Action</th>
     </tr>
@@ -38,6 +39,7 @@ Tahun 2019
         ?>
     <tr>
         <td><?=$no?></td>
+        <td><?php echo $data['deskripsi']; ?></td>
         <td><?php echo $data['file']; ?></td>
         <td><a href="../halaman5/unduhh.php?filename=<?=$data['file']?>">Download</a></td>    
     </tr>

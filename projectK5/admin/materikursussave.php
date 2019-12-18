@@ -20,7 +20,7 @@ $path = "images/".$fotobaru;
 // Proses upload
 if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 	// Proses simpan ke Database
-	$query = "INSERT INTO `materi_kursus` (`id_topik`, `topik`, `tgl_mulai`, `tgl_akhir`, `deskripsi`, `file`, `jenis_level`, `status`) VALUES (NULL, '$topik', '$tglmulai', '$tglakhir', '$deskripsi', '$fotobaru', '$level', '$status');";
+	$query = "INSERT INTO `materi_kursus` (`id_topik`, `topik`, `tgl_mulai`, `tgl_akhir`, `deskripsi`, `file`, `jenis_level`) VALUES (NULL, '$topik', '$tglmulai', '$tglakhir', '$deskripsi', '$fotobaru', '$level');";
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak

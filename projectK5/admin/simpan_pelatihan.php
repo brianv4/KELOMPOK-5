@@ -8,7 +8,6 @@ $nama = $_POST['topik'];
 $jenis_kelamin = $_POST['tgl_mulai'];
 $telp = $_POST['tgl_akhir'];
 $alamat = $_POST['deskripsi'];
-$status = $_POST['status'];
 $foto = $_FILES['foto']['name'];
 $tmp = $_FILES['foto']['tmp_name'];
 	
@@ -21,7 +20,7 @@ $path = "terupload/".$fotobaru;
 // Proses upload
 if(move_uploaded_file($tmp, $path)){ // Cek apakah gambar berhasil diupload atau tidak
 	// Proses simpan ke Database
-	$query = "INSERT INTO materi_pelatihan VALUES('".$nis."', '".$nama."', '".$jenis_kelamin."', '".$telp."', '".$alamat."', '".$fotobaru."', '".$status."')";
+	$query = "INSERT INTO materi_pelatihan VALUES('".$nis."', '".$nama."', '".$jenis_kelamin."', '".$telp."', '".$alamat."', '".$fotobaru."')";
 	$sql = mysqli_query($connect, $query); // Eksekusi/ Jalankan query dari variabel $query
 
 	if($sql){ // Cek jika proses simpan ke database sukses atau tidak

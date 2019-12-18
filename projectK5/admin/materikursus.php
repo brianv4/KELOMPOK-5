@@ -44,7 +44,6 @@
 						<th>Deskripsi</th>
 						<th>Dokumen</th>
                         <th>Jenis Level</th>
-						<th>Status</th>
 						<th>Setting</th>
 					</tr>
 					<?php
@@ -68,8 +67,7 @@
 								<td>'.$row['deskripsi'].'</td>
                                 <td>'.$row['dokumen'].'</td>
                                 <td>'.$row['jenis_level'].'</td>
-								<td>'.$row['status'].'</td>
-
+								
 								<td>
 									<a href="materikursuslihat.php?home=profileuser&id_topik='.$row['id_topik'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
 									<a href="materikursusedit.php?id_topik='.$row['id_topik'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>

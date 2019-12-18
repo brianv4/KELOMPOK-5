@@ -54,16 +54,6 @@ include("includes/navbar.php");
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">status</label>
-					<div class="col-sm-3">
-						<select name="status" class="form-control">
-							<option value="">status</option>
-							<option value="aktif">Aktif</option>
-							<option value="tidak aktif">Tidak Aktif</option>				
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-sm-3 control-label">Dokumen</label>
 					<div class="col-sm-4">
 						<input type="file" name="foto" class="form-control" placeholder="" required>

@@ -17,6 +17,7 @@
 <center><table border="1" cellpadding="3">
     <tr>
         <th width="30">No</th>
+        <th width="180">Deskripsi</th>
         <th width="180">Nama File</th>
         <th width="80">Action</th>
     </tr>
@@ -28,6 +29,7 @@
         ?>
     <tr>
         <td><?=$no?></td>
+        <td><?php echo $data['deskripsi']; ?></td>
         <td><?php echo $data['dokumen']; ?></td>
         <td><a href="../halaman5/unduh.php?filename=<?php echo $data['dokumen']; ?>">Download</a></td>    
     </tr>

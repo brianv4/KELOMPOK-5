@@ -28,10 +28,10 @@ include("includes/navbar.php");
 				$deskripsi	= aman($_POST['deskripsi']);
 				$file		= aman($_POST['dokumen']);
 				$level		= aman($_POST['jenis_level']);
-				$status		= aman($_POST['status']);
 				
 				
-				$update = mysqli_query($koneksi, "UPDATE `materi_kursus` SET `topik`='$topik',`tgl_mulai`='$tglmulai',`tgl_akhir`='$tglakhir',`deskripsi`='$deskripsi',`dokumen`='$file',`jenis_level`='$level',`status`='$status' WHERE id_topik='$id'") or die(mysqli_error());
+				
+				$update = mysqli_query($koneksi, "UPDATE `materi_kursus` SET `topik`='$topik',`tgl_mulai`='$tglmulai',`tgl_akhir`='$tglakhir',`deskripsi`='$deskripsi',`dokumen`='$file',`jenis_level`='$level' WHERE id_topik='$id'") or die(mysqli_error());
 				if($update){
 					
 					echo '<div class="alert alert-success">Data Berhasil diUpdate</div>';
@@ -99,16 +99,6 @@ include("includes/navbar.php");
 							<option value="Level 1" <?php if($row['jenis_level'] == 'Level 1'){ echo 'selected'; } ?>>Level 1</option>
 							<option value="Level 2" <?php if($row['jenis_level'] == 'Level 2'){ echo 'selected'; } ?>>Level 2</option>
 							<option value="Level 3" <?php if($row['jenis_level'] == 'Level 3'){ echo 'selected'; } ?>>Level 2</option>
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">STATUS</label>
-					<div class="col-sm-2">
-						<select name="status" class="form-control" required>
-							<option value="">STATUS</option>
-							<option value="1" <?php if($row['status'] == '1'){ echo 'selected'; } ?>>AKTIF</option>
-							<option value="2" <?php if($row['status'] == '2'){ echo 'selected'; } ?>>TIDAK AKTIF</option>
 						</select>
 					</div>
 				</div>

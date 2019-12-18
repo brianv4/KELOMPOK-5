@@ -46,10 +46,6 @@ include("userfunc.php");
 					<th>DOKUMEN</th>
 					<td><?php echo $row['dokumen']; ?></td>
 				</tr>
-				<tr>
-					<th>STATUS</th>
-					<td><?php echo $row['status']; ?></td>
-				</tr>
 				
 			</table>
 			

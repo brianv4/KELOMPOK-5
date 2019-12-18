@@ -58,11 +58,7 @@ include("includes/navbar.php");
 					<th>JENIS LEVEL</th>
 					<td><?php echo $row['jenis_level']; ?></td>
 				</tr>
-				<tr>
-					<th>STATUS</th>
-					<td><?php echo $row['status']; ?></td>
-				</tr>
-				
+			
 				
 			</table>
 			

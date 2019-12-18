@@ -27,10 +27,10 @@ include("includes/navbar.php");
 				$tglakhir	= aman($_POST['tgl_akhir']);
 				$deskripsi	= aman($_POST['deskripsi']);
 				$file		= aman($_POST['dokumen']);
-				$status		= aman($_POST['status']);
+			
 				
 				
-				$update = mysqli_query($koneksi, "UPDATE `materi_pelatihan` SET `topik`='$topik',`tgl_mulai`='$tglmulai',`tgl_akhir`='$tglakhir',`deskripsi`='$deskripsi',`dokumen`='$file',`status`='$status' WHERE id_topik='$id'") or die(mysqli_error());
+				$update = mysqli_query($koneksi, "UPDATE `materi_pelatihan` SET `topik`='$topik',`tgl_mulai`='$tglmulai',`tgl_akhir`='$tglakhir',`deskripsi`='$deskripsi',`dokumen`='$file' WHERE id_topik='$id'") or die(mysqli_error());
 				if($update){
 					
 					echo '<div class="alert alert-success">Data Berhasil diUpdate</div>';
@@ -88,16 +88,6 @@ include("includes/navbar.php");
 					<label class="col-sm-3 control-label">file</label>
 					<div class="col-sm-4">
 						<input type="file" name="dokumen" class="form-control" placeholder="File" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="col-sm-3 control-label">STATUS</label>
-					<div class="col-sm-2">
-						<select name="status" class="form-control" required>
-							<option value="">STATUS</option>
-							<option value="1" <?php if($row['status'] == '1'){ echo 'selected'; } ?>>AKTIF</option>
-							<option value="2" <?php if($row['status'] == '2'){ echo 'selected'; } ?>>TIDAK AKTIF</option>
-						</select>
 					</div>
 				</div>
 				<div class="form-group">

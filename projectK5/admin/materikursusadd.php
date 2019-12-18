@@ -59,16 +59,6 @@ include("includes/navbar.php");
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">status</label>
-					<div class="col-sm-3">
-						<select name="status" class="form-control">
-							<option value="">status</option>
-							<option value="aktif">Aktif</option>
-							<option value="tidak aktif">Tidak Aktif</option>				
-						</select>
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-sm-3 control-label">Dokumen</label>
 					<div class="col-sm-4">
 						<input type="file" name="foto" class="form-control" placeholder="" required>
@@ -111,13 +101,6 @@ include("includes/navbar.php");
 		<input type="radio" name="jenis_level" value="Level 1"> Level 1
 		<input type="radio" name="jenis_level" value="Level 2"> Level 2
         <input type="radio" name="jenis_level" value="Level 3"> Level 3
-		</td>
-	</tr>
-	<tr>
-		<td>STATUS</td>
-		<td>
-		<input type="radio" name="status" value="Aktif"> Aktif
-		<input type="radio" name="status" value="Tidak Aktif"> Tidak Aktif
 		</td>
 	</tr>
 	<tr>
