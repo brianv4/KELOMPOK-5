@@ -10,7 +10,7 @@
   <?php 
     include "koneksi.php";
 ?>
-<h3>SILAHKAN UNDUH ATAU DOWNLOAD MATERI DIB BAWAH INI </h3>
+<h3>SILAHKAN UNDUH ATAU DOWNLOAD MATERI DIBAWAH INI </h3>
 <b>Daftar File</b>
 <br />
 <br />
