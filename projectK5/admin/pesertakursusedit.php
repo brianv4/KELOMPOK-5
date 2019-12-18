@@ -59,12 +59,6 @@ error_reporting(0);
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_ktp" class="form-control" value="<?php echo $row['file_ktp']; ?>" placeholder="file ktp" required>
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="save" class="btn btn-primary" value="SIMPAN">

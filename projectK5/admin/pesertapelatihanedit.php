@@ -47,12 +47,6 @@ include('includes/navbar.php');
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">FILE IJAZAH</label>
-					<div class="col-sm-4">
-						<input type="file" name="file_ijazah" class="form-control" value="<?php echo $row['file_pelatihan']; ?>"  required>
-					</div>
-				</div>
-				<div class="form-group">
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="save" class="btn btn-primary" value="SIMPAN">

@@ -80,7 +80,7 @@ error_reporting(0);
 					<label class="col-sm-3 control-label">JENIS KELAMIN</label>
 					<div class="col-sm-2">
 						<select name="jenis_kelamin" class="form-control" required>
-							<option value="">PILIH LEVEL</option>
+							<option value="">JENIS KELAMIN</option>
 							<option value="Laki-laki" <?php if($row['jenis_kelamin'] == 'Laki-laki'){ echo 'selected'; } ?>>Laki-laki</option>
 							<option value="Perempuan" <?php if($row['jenis_kelamin'] == 'Perempuan'){ echo 'selected'; } ?>>Perempuan</option>
 							
