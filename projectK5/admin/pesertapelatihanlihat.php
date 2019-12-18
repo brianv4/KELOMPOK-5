@@ -6,7 +6,7 @@ include('includes/navbar.php');
 ?>
    <div class="container">
 		<div class="content">
-			<h2>Data Jadwal Pelatihan</h2>
+			<h2>Data Peserta Pelatihan</h2>
 			<hr />
 			
 			<?php

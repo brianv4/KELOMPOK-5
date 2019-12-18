@@ -92,7 +92,7 @@ include("func.php");
 					</div>
 				</div>
                 <div class="form-group">
-					<label class="col-sm-3 control-label">bukti</label>
+					<label class="col-sm-3 control-label">file bukti bayar</label>	<font size="1" face="arial" color="black"><b>* No Rekening BRI - Fiersa Besari (0804.01.000432.30.0)</b></font>
 					<div class="col-sm-4">
 					<a title="Upload data document">
 						<input type="file" name="file_bukti" class="form-control" placeholder="file pdf/docx"  required>

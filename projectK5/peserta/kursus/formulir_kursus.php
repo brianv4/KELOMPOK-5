@@ -97,7 +97,7 @@ include("func.php");
 					</div>
 				</div>
                 <div class="form-group">
-					<label class="col-sm-3 control-label">file ktp</label>
+					<label class="col-sm-3 control-label">file Identitas (KTP,KK, dan IJAZAH)</label>
 					<div class="col-sm-4">
 					<a title="Upload data document">
 						<input type="file" name="file_kursus" class="form-control" placeholder="file pdf/docx"  required>

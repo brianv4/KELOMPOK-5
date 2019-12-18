@@ -14,6 +14,7 @@
     <link href="css/mdb.min.css" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
+    <link rel="shortcut icon" href="admin/login/assets/asset/img/logomi.png">
   </head>
   <body>
   <?php
@@ -95,7 +96,7 @@
                  ?>
               <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
              
-             <?php if(!isset($_SESSION['username'])){  ?>
+             <?php if(!isset($_SESSION['status'])){  ?>
             
             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#loginModal">LOGIN</button>
            

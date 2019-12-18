@@ -101,7 +101,7 @@ return true;
       <aside>
           <div id="sidebar"  class="nav-collapse ">
               <ul class="sidebar-menu" id="nav-accordion">    
-              	  <p class="centered"><a href="#"><img src="../../img/akun.jpg" class="img-circle" width="60"></a></p>
+              	  <!-- <p class="centered"><a href="#"><img src="../../img/akun.jpg" class="img-circle" width="60"></a></p> -->
               	  <h5 class="centered"><?php echo $_SESSION['username'];?></h5>              
               </ul>
           </div>

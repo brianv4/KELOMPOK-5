@@ -77,9 +77,10 @@ include("func.php");
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">file Pelatihan</label>
+					<label class="col-sm-3 control-label">file Identitas (KTP,KK, dan IJAZAH)</label>
 					<div class="col-sm-4">
 						<input type="file" name="file_pelatihan" class="form-control" placeholder="file" required>
+						<font size="1" face="arial" color="red"><i>* format data PDF atau DOCX</i></font>
 					</div>
 				</div>
                 <div class="form-group">

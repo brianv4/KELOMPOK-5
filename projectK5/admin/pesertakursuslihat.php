@@ -6,7 +6,7 @@ include('includes/navbar.php');
 ?>
     <div class="container">
 		<div class="content">
-			<h2>Data Jadwal Pelatihan</h2>
+			<h2>Data Peserta Kursus</h2>
 			<hr />
 			
 			<?php
@@ -39,7 +39,7 @@ include('includes/navbar.php');
 				</tr>
 				<tr>
 				<div id="scroller">
-					<iframe name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['file_kursus']; ?>">
+					<iframe name="myiframe" id="myiframe" src="../../projectK5/peserta/kursus/img<?php echo $row['file_kursus']; ?>">
 				</div>
 					
 				</tr>
