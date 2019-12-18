@@ -39,12 +39,12 @@
         <div class="dropdown-menu" aria-labelledby="pagesDropdown">
           <h6 class="dropdown-header">Menu Owner</h6>
           <a class="dropdown-item" href="beranda.php">Beranda</a>
-          <a class="dropdown-item" href="#">Profil</a>
+          <!-- <a class="dropdown-item" href="#">Profil</a>
           <a class="dropdown-item" href="gallery.php">Galeri</a>
           <div class="dropdown-divider"></div>
           <h6 class="dropdown-header">Other</h6>
           <a class="dropdown-item" href="judul.php">Judul Depan</a>
-          <a class="dropdown-item" href="#">Contact Person</a>
+          <a class="dropdown-item" href="#">Contact Person</a> -->
         </div>
     </li>
     <li class="nav-item dropdown">
@@ -99,7 +99,7 @@
           <a class="dropdown-item" href="sertifikatkursus.php">Sertifikat Kursus</a>
           <a class="dropdown-item" href="sertifikatpelatihan.php">Sertifikat Pelatihan</a>
     </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
@@ -108,7 +108,7 @@
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
-      </li>
+      </li> -->
 </ul>
 <!-- Logout Modal-->
 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
