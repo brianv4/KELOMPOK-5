@@ -44,6 +44,7 @@ include('includes/navbar.php');
 					<th>FILE</th>
 					<th>SETTING</th>
 				</tr>
+				
 				<?php
 				
 					$sql = mysqli_query($koneksi, "SELECT kursus.id_kursus,kursus.nik,calon_peserta.nama,kursus.jenis_level,
@@ -62,9 +63,7 @@ include('includes/navbar.php');
 							<td>'.$row['nama'].'</td>
 							<td>'.$row['jenis_level'].'</td>
 							<td>'.$row['file_kursus'].'</td>
-							
-							
-					
+						
 							<td>
 								<a href="pesertakursuslihat.php?id_kursus='.$row['id_kursus'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
 								<a href="pesertakursusedit.php?id_kursus='.$row['id_kursus'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>
@@ -75,6 +74,8 @@ include('includes/navbar.php');
 						$no++;
 					}
 				}
+				?>
+				<?php
 				?>
 			</table>
 			</div>

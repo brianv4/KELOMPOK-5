@@ -8,7 +8,7 @@ include("func.php");
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pendaftaran Peserta</title>
+	<title>Registrasi Calon Peserta</title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,8 +44,8 @@ if(isset($_SESSION['username'])){
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Pendaftaran Calon Peserta</a>
-				<a class="navbar-brand hidden-xs hidden-sm" href="#">Pendaftaran Calon Peserta</a>
+				<a class="navbar-brand visible-xs-block visible-sm-block" href="#">Registrasi Calon Peserta</a>
+				<a class="navbar-brand hidden-xs hidden-sm" href="#">Registrasi Calon Peserta</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -58,7 +58,7 @@ if(isset($_SESSION['username'])){
     <!--/.nav-collapse -->
 	<div class="container">
 		<div class="content">
-			<h2>PENDAFTARAN CALON PESERTA</h2>
+			<h2>REGISTRASI CALON PESERTA</h2>
 			<hr/>
 			
 			<?php
