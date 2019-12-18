@@ -42,6 +42,7 @@ Site : www.malasngoding.com
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#"><span class="glyphicon glyphicon-user"></span><?php echo $_SESSION['username'] ?></a></li>
+	  <li><a href="../../ubahpassword.php"><span class="glyphicon glyphicon-log-out"></span> Ubah Password</a></li>
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
     </ul>
 	<?php if(!isset($_SESSION['username'])){  ?> </h3>	
