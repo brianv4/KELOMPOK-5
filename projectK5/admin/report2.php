@@ -21,7 +21,7 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 	<table>
 		<tr>
 			<td width="20"></td>
-			<td width="125" align="left"><img src="../assets/asset/img/tut.png" width="90" height="90"></td>
+			<td width="125" align="left"><img src="../dokumentasilkp/logolkp.png" width="90" height="90"></td>
 			<td width="600">
 				<div align="center">
 					<b>
@@ -34,7 +34,7 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 					</b>
 				</div>
 			</td>	
-			<td width="125" align="right"><img src="../assets/asset/img/tut.png" width="90" height="90"></td>
+			<td width="125" align="right"><img src="../dokumentasilkp/logolkp.png" width="90" height="90"></td>
 			<td width="20"></td>
 		</tr>
 		<tr>

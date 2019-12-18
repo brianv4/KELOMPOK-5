@@ -21,7 +21,7 @@ sertifikat_kursus.tempat, sertifikat_kursus.tanggal FROM (sertifikat_kursus INNE
 	<table>
 		<tr>
 			<td width="20"></td>
-			<td width="125" align="left"><img src="../assets/asset/img/tut.png" width="90" height="90"></td>
+			<td width="125" align="left"><img src="../dokumentasilkp/logolkp.png" width="90" height="90"></td>
 			<td width="600">
 				<div align="center">
 					<b>
@@ -34,7 +34,7 @@ sertifikat_kursus.tempat, sertifikat_kursus.tanggal FROM (sertifikat_kursus INNE
 					</b>
 				</div>
 			</td>	
-			<td width="125" align="right"><img src="../assets/asset/img/tut.png" width="90" height="90"></td>
+			<td width="125" align="right"><img src="../dokumentasilkp/logolkp.png" width="90" height="90"></td>
 			<td width="20"></td>
 		</tr>
 		<tr>
