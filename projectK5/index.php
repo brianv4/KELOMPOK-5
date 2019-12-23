@@ -653,10 +653,10 @@ dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
                   <br> <a class="mt-2">Perum Kalirejo, Blok E-25/26, Kab.Probolinggo</a>                  
                 </li>
                 <li class="mt-4"><i class="fa fa-phone indigo-text fa-2x"></i>
-                  <p class="mt-2">+ 01 234 567 89</p>
+                  <p class="mt-2">+ 6281 234 927 94</p>
                 </li>
                 <li class="mt-4"><i class="fa fa-envelope indigo-text fa-2x"></i>
-                  <p class="mt-2">contact@company.com</p>
+                  <p class="mt-2">Srirejeki@gmail.com</p>
                 </li>
               </ul>
             </div>
