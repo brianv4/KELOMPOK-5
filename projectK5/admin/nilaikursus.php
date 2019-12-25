@@ -11,7 +11,8 @@ include('includes/navbar.php');
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
 				$id = $_GET['id_ujiankursus'];
-				$cek = mysqli_query($koneksi, "SELECT * FROM ujian_kursus WHERE id_ujiankursus='$id'");
+				$cek = mysqli_query($koneksi, "SELECT ujian_kursus.nilai, kursus.id_kursus FROM ujian_kursus INNER JOIN 
+				kursus ON ujian_kursus.id_kursus=kursus.id_kursus WHERE id_ujiankursus='$id'");
 				if(mysqli_num_rows($cek) == 0){
 					echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
 				}else{
@@ -64,7 +65,6 @@ include('includes/navbar.php');
 		echo "<td>".$data['nilai']."</td>";
 		echo '
 			<td>
-					<a href="nilaikursuslihat.php?id_ujiankursus='.$data['id_ujiankursus'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
 					<a href="nilaikursusedit.php?id_ujiankursus='.$data['id_ujiankursus'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>
 					<a href="nilaikursus.php?aksi=delete&id_ujiankursus='.$data['id_ujiankursus'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><i class="fas fa-trash-alt"></i></a>
 			</td>
@@ -130,10 +130,10 @@ include('includes/navbar.php');
 						<select name="id_kursus" class="form-control">
 							<option value="">ID NIK</option>
 							<?php 
-							$sql_topik = mysqli_query($koneksi, "SELECT * FROM kursus") or die
+							$sql_topik = mysqli_query($koneksi, "SELECT * FROM kursus inner join calon_peserta on kursus.nik=calon_peserta.nik order by id_kursus") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_kursus'].'">'.$tampilkan['id_kursus'].$tampilkan['nik'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_kursus'].'">'.$tampilkan['id_kursus'].$tampilkan['nama'].'</option></center>';
 								}
 							?>
 
