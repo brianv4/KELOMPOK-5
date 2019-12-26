@@ -65,7 +65,6 @@ include('includes/navbar.php');
 		echo "<td>".$data['nilai']."</td>";
 		echo '
 			<td>
-					<a href="nilaikursusedit.php?id_ujiankursus='.$data['id_ujiankursus'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>
 					<a href="nilaikursus.php?aksi=delete&id_ujiankursus='.$data['id_ujiankursus'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><i class="fas fa-trash-alt"></i></a>
 			</td>
 			';
@@ -102,6 +101,7 @@ include('includes/navbar.php');
 			<hr />
 			
 			<?php
+
 			if(isset($_POST['add'])){
 				$id			= aman($_POST['id_ujiankursus']);
 				$idk		= aman($_POST['id_kursus']);
@@ -128,12 +128,13 @@ include('includes/navbar.php');
 					<label class="col-sm-3 control-label">ID KURSUS</label>
 					<div class="col-sm-8">
 						<select name="id_kursus" class="form-control">
-							<option value="">ID NIK</option>
+							<option value="">ID | NAMA | LEVEL</option>
 							<?php 
+							$JARAK = " | ";
 							$sql_topik = mysqli_query($koneksi, "SELECT * FROM kursus inner join calon_peserta on kursus.nik=calon_peserta.nik order by id_kursus") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_kursus'].'">'.$tampilkan['id_kursus'].$tampilkan['nama'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_kursus'].'">'.$tampilkan['id_kursus'].$JARAK.$tampilkan['|'].$tampilkan['nama'].$JARAK.$tampilkan['jenis_level'].'</option></center>';
 								}
 							?>
 

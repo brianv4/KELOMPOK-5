@@ -11,7 +11,8 @@ include('includes/navbar.php');
 			<?php
 			if(isset($_GET['aksi']) == 'delete'){
 				$id = $_GET['id_ujianpelatihan'];
-				$cek = mysqli_query($koneksi, "SELECT * FROM ujian_pelatihan WHERE id_ujianpelatihan='$id'");
+				$cek = mysqli_query($koneksi, "SELECT ujian_pelatihan.nilai, pelatihan.id_pelatihan FROM ujian_pelatihan INNER JOIN 
+				pelatihan ON ujian_pelatihan.id_pelatihan=pelatihan.id_pelatihan WHERE id_ujianpelatihan='$id'");
 				if(mysqli_num_rows($cek) == 0){
 					echo '<div class="alert alert-info">Data tidak ditemukan.</div>';
 				}else{
@@ -50,7 +51,7 @@ include('includes/navbar.php');
 	// Load file koneksi.php
 	include "koneksiuser.php";
 	
-	$query = "SELECT * FROM ujian_pelatihan INNER JOIN pelatihan ON ujian_pelatihan.id_pelatihan=pelatihan.id_pelatihan INNER JOIN
+	$query = "SELECT * FROM ujian_pelatihan INNER JOIN pelatihan ON ujian_pelatihan.id_pelatihan=pelatihan.id_pelatihan INNER JOIN 
 	calon_peserta ON pelatihan.nik=calon_peserta.nik ORDER BY id_ujianpelatihan ASC"; // Query untuk menampilkan semua data 
 	$sql = mysqli_query($koneksi, $query); // Eksekusi/Jalankan query dari variabel $query
 	
@@ -62,8 +63,6 @@ include('includes/navbar.php');
 		echo "<td>".$data['nilai']."</td>";
 		echo '
 			<td>
-					<a href="nilaipelatihanlihat.php?id_ujianpelatihan='.$data['id_ujianpelatihan'].'" title="Lihat Detail"><i class="fas fa-list"></i></a>
-					<a href="nilaipelatihanedit.php?id_ujianpelatihan='.$data['id_ujianpelatihan'].'" title="Rubah Data"><i class="fas fa-edit"></i></a>
 					<a href="nilaipelatihan.php?aksi=delete&id_ujianpelatihan='.$data['id_ujianpelatihan'].'" title="Hapus Data" onclick="return confirm(\'Yakin?\')"><i class="fas fa-trash-alt"></i></a>
 			</td>
 			';
@@ -123,12 +122,13 @@ include('includes/navbar.php');
 					<label class="col-sm-3 control-label">ID PELATIHAN</label>
 					<div class="col-sm-8">
 						<select name="id_pelatihan" class="form-control">
-							<option value="">ID NIK</option>
-							<?php 
-							$sql_topik = mysqli_query($koneksi, "SELECT * FROM pelatihan") or die
+							<option value="">ID | NAMA</option>
+							<?php
+							$jarak =" | ";
+							$sql_topik = mysqli_query($koneksi, "SELECT * FROM pelatihan inner join calon_peserta on pelatihan.nik=calon_peserta.nik order by id_pelatihan") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_pelatihan'].'">'.$tampilkan['id_pelatihan'].$tampilkan['nik'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_pelatihan'].'">'.$tampilkan['id_pelatihan'].$jarak.$tampilkan['nama'].'</option></center>';
 								}
 							?>
 
@@ -146,14 +146,12 @@ include('includes/navbar.php');
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="add" class="btn btn-primary" value="TAMBAH">
-						<a href="nilaipelatihan.php" class="btn btn-warning">KEMBALI</a>
 					</div>
 				</div>
 			</form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
