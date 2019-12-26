@@ -43,13 +43,13 @@ include('includes/navbar.php');
 			
 			<form class="form-horizontal" action="" method="post">
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Nama</label>
+					<label class="col-sm-3 control-label">NAMA</label>
 					<div class="col-sm-4">
 						<input type="text" name="nama" class="form-control" placeholder="Nama" required>
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Username</label>
+					<label class="col-sm-3 control-label">USERNAME</label>
 					<div class="col-sm-4">
 						<input type="text" name="username" class="form-control" placeholder="username" required>
 					</div>
@@ -67,7 +67,7 @@ include('includes/navbar.php');
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">No HP</label>
+					<label class="col-sm-3 control-label">NO HP</label>
 					<div class="col-sm-4">
 						<input type="text" name="nohp" class="form-control" placeholder="Nomor Hp" required>
 					</div>
@@ -79,12 +79,12 @@ include('includes/navbar.php');
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Jenis Level</label>
+					<label class="col-sm-3 control-label">JENIS LEVEL</label>
 					<div class="col-sm-3">
 						<select name="level" class="form-control">
-							<option value="">Jenis Level</option>
-							<option value="owner">Owner</option>
-							<option value="admin">Admin</option>
+							<option value="">JENIS LEVEL</option>
+							<option value="Owner">OWNER</option>
+							<option value="Admin">ADMIN</option>
 							
 						</select>
 					</div>

@@ -10,17 +10,13 @@ include('includes/navbar.php');
 			
 			
             <br>
-<h2>SERTIFIKASI PELATIHAN</h2>
-<br>
-            <label >Tambah User :</label>
-           <a href="nilaikursusadd.php" class="btn btn-primary ml-2">Tambah</a>
-		   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUser">
-Tambah Versi Modal</button>
-<br>
+		<h2>SERTIFIKASI PELATIHAN</h2>
+			<br>
+        		<label >Tambah User :</label>
+        		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addUser">Tambah Sertifikat</button>
+			<br>
 			
-			<?php  $urut = (isset($_GET['urut']) ? strtolower($_GET['urut']) : NULL);  ?>
-			
-			<br />
+			<br>
 			<div class="table-responsive">
 			<table class="table table-striped table-hover">
 			<thead>
@@ -72,10 +68,7 @@ Tambah Versi Modal</button>
 						}
 						?>
 			</tbody>	
-						
-                <!--
-                <a href="avatar.php?id_user='.$row['id_user'].'" title="Foto Profile"><i class="fas fa-camera-retro"></i></a>
-				<a href="userpassword.php?id_user='.$row['id_user'].'" title="Ganti Password"><i class="fas fa-key"></i></a> -->
+			
 			</table>
 			</div>
 		</div>
@@ -102,12 +95,11 @@ Tambah Versi Modal</button>
                 $tgl		= aman($_POST['tanggal']);
 				
 				
-				//tinggal masalah database NIK dijadikan BIG INT
 				$cek = mysqli_query($koneksi, "SELECT sertifikat_pelatihan.id_ujianpelatihan, sertifikat_pelatihan.id_user, sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal, FROM sertifikat_pelatihan INNER JOIN 
-				ujian_pelatihan ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan INNER JOIN user ON sertifikat_kursus.id_user=user.id_user
+				ujian_pelatihan ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan INNER JOIN user ON sertifikat_pelatihan.id_user=user.id_user
                  WHERE nomor_sertifikat='$nomor'");
 				if(mysqli_num_rows($cek) == 0){
-						$insert = mysqli_query($koneksi, "INSERT INTO `sertifikat_pelatihan`(`id_ujianpelatihan`, `id_user`,`tempat`, `tanggal`) VALUES ('$id','$user','$tmp','$tgl')") or die(mysqli_error($koneksi));
+						$insert = mysqli_query($koneksi, "INSERT INTO `sertifikat_pelatihan`(`nomor_sertifikat`,`id_ujianpelatihan`, `id_user`,`tempat`, `tanggal`) VALUES (null,'$id','$user','$tmp','$tgl')") or die(mysqli_error($koneksi));
 						if($insert){
 							echo '<div class="alert alert-success">Pendaftaran berhasil dilakukan.</div>';
 						}else{
@@ -125,12 +117,13 @@ Tambah Versi Modal</button>
 					<label class="col-sm-3 control-label">ID UJIAN PELATIHAN</label>
 					<div class="col-sm-8">
 						<select name="id_ujianpelatihan" class="form-control">
-							<option value="">ID UJIAN ID PELATIHAN</option>
-							<?php 
+							<option value="">ID UJIAN | ID PELATIHAN</option>
+							<?php
+							$jarak = ' | '; 
 							$sql_topik = mysqli_query($koneksi, "SELECT * FROM ujian_pelatihan") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_ujianpelatihan'].'">'.$tampilkan['id_ujianpelatihan'].$tampilkan['id_pelatihan'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_ujianpelatihan'].'">'.$tampilkan['id_ujianpelatihan'].$jarak.$tampilkan['id_pelatihan'].'</option></center>';
 								}
 							?>
 
@@ -141,12 +134,12 @@ Tambah Versi Modal</button>
 					<label class="col-sm-3 control-label">ID USER</label>
 					<div class="col-sm-8">
 						<select name="id_user" class="form-control">
-							<option value="">ID USER</option>
+							<option value="">PENILAI</option>
 							<?php 
 							$sql_topik = mysqli_query($koneksi, "SELECT * FROM user") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_user'].'">'.$tampilkan['id_user'].$tampilkan['nama_user'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_user'].'">'.$tampilkan['nama_user'].'</option></center>';
 								}
 							?>
 
@@ -175,7 +168,7 @@ Tambah Versi Modal</button>
 					<label class="col-sm-3 control-label">&nbsp;</label>
 					<div class="col-sm-6">
 						<input type="submit" name="add" class="btn btn-primary" value="TAMBAH">
-						<a href="indexsertifikatpelatihan.php" class="btn btn-warning">KEMBALI</a>
+						
 					</div>
 				</div>
 			</form>

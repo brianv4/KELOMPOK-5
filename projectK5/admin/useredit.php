@@ -6,7 +6,7 @@ include('includes/navbar.php');
 ?>
     <div class="container">
 		<div class="content">
-			<h2>Edit User</h2>
+			<h2>EDIT USER</h2>
 			<hr />
 			
 			<?php

@@ -61,13 +61,6 @@ include("func.php");
 			if(!isset($_SESSION['username'])){
 				header('Location:../../index.php');
 			}
-               /* $id     	        = aman($_POST['id_kursus']);
-				$nik		        = aman($_POST['nik']);
-				$jenis_level		= aman($_POST['jenis_level']);
-				$file_ktp			= aman($_POST['file_ktp']);
-				$file_kk			= aman($_POST['file_kk']);
-				$file_ijazah		= aman($_POST['file_ijazah']);
-				*/
 				
 				$username = $_SESSION['username'];
 				//tinggal masalah database NIK dijadikan BIG INT
