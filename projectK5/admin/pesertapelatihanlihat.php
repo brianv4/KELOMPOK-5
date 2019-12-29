@@ -38,19 +38,16 @@ include('includes/navbar.php');
 					<td><?php echo $row['file_pelatihan']; ?></td>
 				</tr>
 				<tr>
-				<div type="hidden" id="scroller">
-					<iframe type="hidden" name="myiframe" id="myiframe" src="../peserta/pelatihan/img/<?php echo $row['file_pelatihan']; ?>">
-				</div>
+				<th>FILE IDENTITAS</th>
+					<td><a href="unduhpelatihan.php?filename=<?=$row['file_pelatihan']?>">Download File Pelatihan </a></td>
 					
 				</tr>
 				
 				
 			</table>
 			
-			<a href="jadwalpelatihan.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
-			<a href="jawdwalpelatihanedit.php?no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
-			<a href="jadwalpelatihanlihat.php?aksi=delete&no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
-		</div>
+			<a href="pesertakursus.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+			</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

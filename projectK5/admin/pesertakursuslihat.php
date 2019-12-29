@@ -4,6 +4,7 @@ include("userfunc.php");
 include('includes/header.php');
 include('includes/navbar.php');
 ?>
+<meta charset="UTF-8">
     <div class="container">
 		<div class="content">
 			<h2>Data Peserta Kursus</h2>
@@ -12,7 +13,7 @@ include('includes/navbar.php');
 			<?php
 			$id = $_GET['id_kursus'];
 			
-			$sql = mysqli_query($koneksi, "SELECT * FROM kursus WHERE id_kursus='$id'");
+			$sql = mysqli_query($koneksi, "SELECT * FROM kursus INNER JOIN tb_bukti ON kursus.id_kursus=tb_bukti.id_kursus WHERE kursus.id_kursus='$id'");
 			if(mysqli_num_rows($sql) == 0){
 				header("Location: index.php");
 			}else{
@@ -39,13 +40,14 @@ include('includes/navbar.php');
 				</tr>
 				<tr>
 				<div id="scroller">
-				<iframe type="hidden" name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['file_kursus']; ?>">	
+					<th>BUKTI</th>
+					<td><a href="unduhkursus.php?filename=<?=$row['bukti']?>">Download Bukti </a></td>
+						
 				</div>
 				</tr>
 				<tr>
-				<div id="scroller">
-					<iframe name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['bukti']; ?>">
-				</div>
+					<th>FILE IDENTITAS</th>
+					<td><a href="unduhkursus.php?filename=<?=$row['file_kursus']?>">Download File Identitas </a></td>
 					
 				</tr>
 				
@@ -53,9 +55,7 @@ include('includes/navbar.php');
 			</table>
 			
 			<a href="pesertakursus.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
-			<a href="pesertakursusedit.php?nik=<?php echo $row['nik']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
-			<a href="pesertakursus.php?aksi=delete&nik=<?php echo $row['nik']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
-		</div>
+			</div>
 	</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
