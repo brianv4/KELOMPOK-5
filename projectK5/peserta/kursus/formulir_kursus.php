@@ -90,9 +90,9 @@ include("func.php");
 					<div class="col-sm-2">
 						<select name="jenis_level" class="form-control" required>
 							<option value="">pilih</option>
-							<option value="level1">level1</option>
-							<option value="level2">level2</option>
-                            <option value="level3">level3</option>
+							<option value="Level 1">level1</option>
+							<option value="Level 2">level2</option>
+                            <option value="Level 3">level3</option>
 						</select>
 					</div>
 				</div>

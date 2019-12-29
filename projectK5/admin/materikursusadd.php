@@ -52,8 +52,8 @@ include("includes/navbar.php");
 					<div class="col-sm-3">
 						<select name="jenis_level" class="form-control">
 							<option value="">Jenis Level</option>
-							<option value="level 1">level 1</option>
-							<option value="level 2">level 2</option>
+							<option value="Level 1">level 1</option>
+							<option value="Level 2">level 2</option>
 							<option value="level 3">level 3</option>					
 						</select>
 					</div>

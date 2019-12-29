@@ -1,6 +1,6 @@
 <?php 
 mysqli_connect("localhost","root","");
-mysql_select_db("lkpsrirejeki");
+mysqli_select_db("lkpsrirejeki");
 
 $koneksi = mysqli_connect("localhost", "root", "", "lkpsrirejeki");
 
