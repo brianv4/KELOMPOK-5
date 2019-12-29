@@ -38,8 +38,8 @@ include('includes/navbar.php');
 					<td><?php echo $row['file_pelatihan']; ?></td>
 				</tr>
 				<tr>
-				<div id="scroller">
-					<iframe name="myiframe" id="myiframe" src="../peserta/pelatihan/img/<?php echo $row['file_pelatihan']; ?>">
+				<div type="hidden" id="scroller">
+					<iframe type="hidden" name="myiframe" id="myiframe" src="../peserta/pelatihan/img/<?php echo $row['file_pelatihan']; ?>">
 				</div>
 					
 				</tr>
