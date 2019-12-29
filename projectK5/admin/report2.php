@@ -12,7 +12,7 @@ $no = $_GET['nomor_sertifikat'];
 $query = "SELECT sertifikat_pelatihan.nomor_sertifikat, calon_peserta.nama, calon_peserta.tempat_lahir, calon_peserta.tanggal_lahir, ujian_pelatihan.nilai, user.nama_user,
 sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelatihan INNER JOIN ujian_pelatihan
  ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan) INNER JOIN pelatihan 
- ON ujian_pelatihan.id_ujianpelatihan=pelatihan.id_pelatihan INNER JOIN calon_peserta ON pelatihan.nik=calon_peserta.nik INNER JOIN 
+ ON ujian_pelatihan.id_pelatihan=pelatihan.id_pelatihan INNER JOIN calon_peserta ON pelatihan.nik=calon_peserta.nik INNER JOIN 
  user ON sertifikat_pelatihan.id_user=user.id_user WHERE nomor_sertifikat='".$no."'";
 			$sql_rm = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 			while ($data = mysqli_fetch_assoc($sql_rm)){
@@ -64,9 +64,12 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 				</font><br>
 				<HR WIDTH="40%" SIZE="4" color="black" NOSHADE>
 				<font size="5">
+				<font size="4">
+					Tempat, tanggal lahir  :
+				</font><br>
 				<?php echo $data['tempat_lahir']; ?>, <?php echo $data['tanggal_lahir']; ?>
 				<br>
-					SMA Negeri 1 Jember<br><br><br>
+					<br><br><br>
 				Dinyatakan lulus Pelatihan di LKP SRI REJEKI dan diakui telah memiliki kompetensi seperti tercantum di balik sertifikat ini.
 				</font>
  		</div><br><br><br>
@@ -83,7 +86,7 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 			<td width="300"><br></td>	
 			<td width="245" align="right">
 				<div align="center" class="time"><font size="5">
-				<?php echo $data['tempat']; ?>, <?php echo $data['tanggal']; ?><br>Service Manager<br>LKP HIDAYAH
+				<?php echo $data['tempat'];?>, <?php echo $data['tanggal']; ?><br>Service Manager<br>LKP HIDAYAH
 				</font></div>
 			</td>
 		</tr>
@@ -95,13 +98,13 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 		<tr>
 			<td width="245" align="right"><b>
 				<div align="center"><font size="5">
-					<u>DWITA WIDYANDARI</u>
+					<u><?php echo $data['nama_user']; ?></u>
 				</font></div></b>
 			</td>
 			<td width="300"></td>
 			<td width="245" align="right"><b>
 				<div align="center"><font size="5">
-					<u><?php echo $data['nama_user']; ?></u>
+					<u>SRI HERMAWATI</u>
 				</font></div></b>
 			</td>
 		</tr>
