@@ -70,7 +70,7 @@ sertifikat_kursus.tempat, sertifikat_kursus.tanggal FROM (sertifikat_kursus INNE
 				<?php echo $data['tempat_lahir']; ?>, <?php echo $data['tanggal_lahir']; ?>
 				<br>
 					<br><br><br>
-				Dinyatakan lulus Kursus <?php echo $data['jenis_level']; ?> di LKP SRI REJEKI dan diakui telah memiliki kompetensi seperti tercantum di balik sertifikat ini.
+				Dinyatakan lulus Kursus <?php echo $data['jenis_level']; ?> di LKP SRI REJEKI dan diakui telah memiliki kompetensi .
 				</font>
  		</div><br><br><br>
  	</div>

@@ -50,19 +50,19 @@ error_reporting(0);
                 <div class="form-group">
 					<label class="col-sm-3 control-label">NAMA</label>
 					<div class="col-sm-4">
-						<input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" placeholder="nik" required>
+						<input type="text" name="nama" pattern="[A-Za-z ]+" class="form-control" value="<?php echo $row['nama']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">NIK</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" placeholder="nik" required>
+						<input type="text" name="nik" pattern ="^[0-9]{16}$" class="form-control" value="<?php echo $row['nik']; ?>" placeholder="nik" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">TEMPAT LAHIR</label>
 					<div class="col-sm-4">
-						<input type="text" name="tempat_lahir" class="form-control" value="<?php echo $row['tempat_lahir']; ?>" placeholder="nik" required>
+						<input type="text" name="tempat_lahir" pattern="[A-Za-z ]+" class="form-control" value="<?php echo $row['tempat_lahir']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -78,43 +78,38 @@ error_reporting(0);
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">JENIS KELAMIN</label>
-					<div class="col-sm-2">
-						<select name="jenis_kelamin" class="form-control" required>
-							<option value="">JENIS KELAMIN</option>
-							<option value="Laki-laki" <?php if($row['jenis_kelamin'] == 'Laki-laki'){ echo 'selected'; } ?>>Laki-laki</option>
-							<option value="Perempuan" <?php if($row['jenis_kelamin'] == 'Perempuan'){ echo 'selected'; } ?>>Perempuan</option>
-							
-						</select>
+					<div class="col-sm-4">
+						<input type="text" name="jenis_kelamin" class="form-control" readonly value="<?php echo $row['jenis_kelamin']; ?>" placeholder="file ktp" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">TELEPON</label>
 					<div class="col-sm-4">
-						<input type="text" name="telepon" class="form-control" value="<?php echo $row['telepon']; ?>" placeholder="file ktp" required>
+						<input type="text" name="telepon" pattern ="^[0-9]{10}$|^[0-9]{12}$"  class="form-control" value="<?php echo $row['telepon']; ?>" placeholder="file ktp" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">EMAIL</label>
 					<div class="col-sm-4">
-						<input type="text" name="email" class="form-control" value="<?php echo $row['email']; ?>" placeholder="file kk" required>
+						<input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" value="<?php echo $row['email']; ?>" placeholder="file kk" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">ALAMAT</label>
 					<div class="col-sm-4">
-						<input type="text" name="alamat" class="form-control" value="<?php echo $row['alamat']; ?>" placeholder="file ijazah" required>
+						<input type="text" name="alamat" class="form-control" pattern="[A-Za-z ]+" value="<?php echo $row['alamat']; ?>" placeholder="file ijazah" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label"> KODE POS</label>
 					<div class="col-sm-4">
-						<input type="text" name="kode_pos" class="form-control" value="<?php echo $row['kode_pos']; ?>" placeholder="bukti_bayar" required>
+						<input type="text" name="kode_pos" pattern ="^[0-9]{5}$" class="form-control" value="<?php echo $row['kode_pos']; ?>" placeholder="bukti_bayar" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">PROVINSI</label>
 					<div class="col-sm-4">
-						<input type="text" name="provinsi" class="form-control" value="<?php echo $row['provinsi']; ?>" placeholder="file ijazah" required>
+						<input type="text" name="provinsi" pattern="[A-Za-z ]+" class="form-control" value="<?php echo $row['provinsi']; ?>" placeholder="file ijazah" required>
 					</div>
 				</div>
 				<div class="form-group">

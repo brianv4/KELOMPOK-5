@@ -20,13 +20,12 @@ include('includes/navbar.php');
 			if(isset($_POST['save'])){
 				
 				$nik		        = aman($_POST['nik']);
-				$ktp			    = aman($_POST['file_ktp']);
-				$kk	  				= aman($_POST['file_kk']);
-				$ijazah			    = aman($_POST['file_ijazah']);
+				$ktp			    = aman($_POST['file_pelatihan']);
 				
 				
 				
-				$update = mysqli_query($koneksi, "UPDATE `pelatihan` SET `nik`='$nik',`file_ktp`='$ktp',`file_kk`='$kk',`file_ijazah`='$ijazah' WHERE id_pelatihan='$id'") or die(mysqli_error());
+				
+				$update = mysqli_query($koneksi, "UPDATE `pelatihan` SET `nik`='$nik',`file_pelatihan`='$ktp' WHERE id_pelatihan='$id'") or die(mysqli_error());
 				if($update){
 					echo '<div class="alert alert-success">Data Berhasil diUpdate</div>';
 					//header("Location:user.php?pesan=sukses");
@@ -43,7 +42,13 @@ include('includes/navbar.php');
 				<div class="form-group">
 					<label class="col-sm-3 control-label">NIK</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" placeholder="nik" required>
+						<input type="text" name="nik" class="form-control" readonly value="<?php echo $row['nik']; ?>" placeholder="nik" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-3 control-label">NAMA</label>
+					<div class="col-sm-4">
+						<input type="text" name="file_pelatihan" class="form-control"  readonly value="<?php echo $row['file_pelatihan']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">

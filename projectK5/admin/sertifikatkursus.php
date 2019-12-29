@@ -94,11 +94,11 @@ error_reporting(0);
 		<?php
 
 			if(isset($_POST['add'])){
-               	$nomor      = aman($_POST['nomor_sertifikat']);
-				$id 		= aman($_POST['id_ujiankursus']);
-				$user		= aman($_POST['id_user']);
-                $tmp		= aman($_POST['tempat']);
-                $tgl		= aman($_POST['tanggal']);
+               	$nomor      = $_POST['nomor_sertifikat'];
+				$id 		= $_POST['id_ujiankursus'];
+				$user		= $_POST['id_user'];
+                $tmp		= $_POST['tempat'];
+                $tgl		= $_POST['tanggal'];
 				
 				
 				//tinggal masalah database NIK dijadikan BIG INT
@@ -156,7 +156,7 @@ error_reporting(0);
             <div class="form-group">
 					<label class="col-sm-3 control-label">TEMPAT</label>
 					<div class="col-sm-8">
-						<input type="text" name="tempat" class="form-control" placeholder="tempat">
+						<input type="text" name="tempat" pattern="[A-Za-z ]+" class="form-control" placeholder="tempat">
 					</div>
             </div>
 			<div class="form-group">

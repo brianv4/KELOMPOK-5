@@ -41,6 +41,9 @@ include('includes/navbar.php');
 				<div id="scroller">
 					<iframe name="myiframe" id="myiframe" src="../../projectK5/peserta/kursus/img<?php echo $row['file_kursus']; ?>">
 				</div>
+				<div id="scroller">
+					<iframe name="myiframe" id="myiframe" src="../../projectK5/peserta/kursus/img<?php echo $row['bukti']; ?>">
+				</div>
 					
 				</tr>
 				

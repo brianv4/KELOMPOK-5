@@ -32,7 +32,7 @@ include("koneksiuser.php");
 			}
 			?>
 			
-			<form class="form-inline" method="get">
+			<!-- <form class="form-inline" method="get">
 				<div class="form-group">
 					<select name="urut" class="form-control" onchange="form.submit()">
 						<option value="0">Filter</option>
@@ -41,7 +41,7 @@ include("koneksiuser.php");
 						<option value="2" <?php if($urut == '2'){ echo 'selected'; } ?>>Mahasiswa Tidak Aktif</option>
 					</select>
 				</div>
-			</form>
+			</form> -->
 			<br />
 			<div class="table-responsive">
 			<table class="table table-striped table-hover">

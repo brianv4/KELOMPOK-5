@@ -103,9 +103,9 @@ include('includes/navbar.php');
 			<?php
 
 			if(isset($_POST['add'])){
-				$id			= aman($_POST['id_ujiankursus']);
-				$idk		= aman($_POST['id_kursus']);
-				$nilai		= aman($_POST['nilai']);
+				$id			= $_POST['id_ujiankursus'];
+				$idk		= $_POST['id_kursus'];
+				$nilai		= $_POST['nilai'];
 				
 				
 				//tinggal masalah database NIK dijadikan BIG INT
@@ -144,7 +144,7 @@ include('includes/navbar.php');
             <div class="form-group">
 					<label class="col-sm-3 control-label">NILAI</label>
 					<div class="col-sm-8">
-						<input type="text" name="nilai" class="form-control" placeholder="nilai">
+						<input type="text" name="nilai" pattern = "[1-9][0-9]" class="form-control" placeholder="nilai">
 					</div>
 				</div>
 				

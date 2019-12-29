@@ -44,7 +44,7 @@ error_reporting(0);
 				<div class="form-group">
 					<label class="col-sm-3 control-label">NIK</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $row['nik']; ?>" placeholder="nik" required>
+						<input type="text" name="nik" class="form-control" readonly value="<?php echo $row['nik']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">

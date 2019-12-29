@@ -70,7 +70,7 @@ sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelat
 				<?php echo $data['tempat_lahir']; ?>, <?php echo $data['tanggal_lahir']; ?>
 				<br>
 					<br><br><br>
-				Dinyatakan lulus Pelatihan di LKP SRI REJEKI dan diakui telah memiliki kompetensi seperti tercantum di balik sertifikat ini.
+				Dinyatakan lulus Pelatihan di LKP SRI REJEKI dan diakui telah memiliki kompetensi.
 				</font>
  		</div><br><br><br>
  	</div>
