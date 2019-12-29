@@ -82,7 +82,7 @@ include("func.php");
 				<div class="form-group">
 					<label class="col-sm-3 control-label">nik</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $tampil['nik']; ?>" placeholder="nik" required>
+						<input type="text" name="nik" class="form-control" readonly value="<?php echo $tampil['nik']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -90,9 +90,9 @@ include("func.php");
 					<div class="col-sm-2">
 						<select name="jenis_level" class="form-control" required>
 							<option value="">pilih</option>
-							<option value="Level 1">level1</option>
-							<option value="Level 2">level2</option>
-                            <option value="Level 3">level3</option>
+							<option value="level 1">level1</option>
+							<option value="level 2">level2</option>
+                            <option value="level 3">level3</option>
 						</select>
 					</div>
 				</div>

@@ -75,13 +75,13 @@ include("func.php");
 				<div class="form-group">
 					<label class="col-sm-3 control-label">nik</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" value="<?php echo $tampil['nik']; ?>" placeholder="nik" required>
+						<input type="text" name="nik" class="form-control" readonly value="<?php echo $tampil['nik']; ?>" placeholder="nik" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">id kursus</label>
 					<div class="col-sm-4">
-						<input type="text" name="id_kursus" class="form-control" value="<?php echo $tampil['id_kursus']; ?>" placeholder="nik" required>
+						<input type="text" name="id_kursus" class="form-control" readonly value="<?php echo $tampil['id_kursus']; ?>" placeholder="id" required>
 					</div>
 				</div>
                 <div class="form-group">
