@@ -39,10 +39,12 @@ include('includes/navbar.php');
 				</tr>
 				<tr>
 				<div id="scroller">
-					<iframe name="myiframe" id="myiframe" src="../../projectK5/peserta/kursus/img<?php echo $row['file_kursus']; ?>">
+				<iframe type="hidden" name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['file_kursus']; ?>">	
 				</div>
+				</tr>
+				<tr>
 				<div id="scroller">
-					<iframe name="myiframe" id="myiframe" src="../../projectK5/peserta/kursus/img<?php echo $row['bukti']; ?>">
+					<iframe name="myiframe" id="myiframe" src="../peserta/kursus/img/<?php echo $row['bukti']; ?>">
 				</div>
 					
 				</tr>
@@ -50,9 +52,9 @@ include('includes/navbar.php');
 				
 			</table>
 			
-			<a href="jadwalpelatihan.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
-			<a href="jawdwalpelatihanedit.php?no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
-			<a href="jadwalpelatihanlihat.php?aksi=delete&no_jadwal=<?php echo $row['no_jadwal']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
+			<a href="pesertakursus.php" class="btn btn-warning"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></a>
+			<a href="pesertakursusedit.php?nik=<?php echo $row['nik']; ?>" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Data</a>
+			<a href="pesertakursus.php?aksi=delete&nik=<?php echo $row['nik']; ?>" class="btn btn-danger" onclick="return confirm('Yakin?')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Hapus Data</a>
 		</div>
 	</div>
 
