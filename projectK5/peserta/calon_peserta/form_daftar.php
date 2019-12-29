@@ -106,19 +106,19 @@ if(isset($_SESSION['username'])){
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Nama</label>
 					<div class="col-sm-2">
-						<input type="text" name="nama" class="form-control" placeholder="nama" required>
+						<input type="text" name="nama" pattern="[A-Za-z ]+" class="form-control" placeholder="nama" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">nik</label>
 					<div class="col-sm-4">
-						<input type="text" name="nik" class="form-control" placeholder="nik" required>
+						<input type="text" name="nik" pattern ="^[0-9]{16}$"  class="form-control" placeholder="nik" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">Tempat Lahir</label>
 					<div class="col-sm-2">
-						<input type="text" name="tempat_lahir" class="form-control" placeholder="tempat lahir" required>
+						<input type="text" name="tempat_lahir" pattern="[A-Za-z ]+" class="form-control" placeholder="tempat lahir" required>
 					</div>
 				</div>
 				<div class="form-group">
@@ -145,13 +145,13 @@ if(isset($_SESSION['username'])){
                 <div class="form-group">
 					<label class="col-sm-3 control-label">telepon</label>
 					<div class="col-sm-2">
-						<input type="text" name="telepon" class="form-control" placeholder="telepon" required>
+						<input type="text" name="telepon" pattern ="^[0-9]{10}$|^[0-9]{12}$" class="form-control" placeholder="telepon" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">Email</label>
 					<div class="col-sm-2">
-						<input type="text" name="email" class="form-control" placeholder="email" required>
+						<input type="text" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" placeholder="email" required>
 					</div>
 				</div>
                 <div class="form-group">
@@ -169,25 +169,25 @@ if(isset($_SESSION['username'])){
                 <div class="form-group">
 					<label class="col-sm-3 control-label">Konfirmasi Password</label>
 					<div class="col-sm-2">
-						<input type="password" name="pass2" class="form-control" placeholder="********" required>
+						<input type="password" name="pass2"  class="form-control" placeholder="********" required>
 					</div>
 				</div>
 				<div class="form-group">
 					<label class="col-sm-3 control-label">Alamat</label>
 					<div class="col-sm-4">
-						<input type="textarea" name="alamat" class="form-control" placeholder="alamat" required>
+						<input type="textarea" name="alamat" pattern="[A-Za-z ]+" class="form-control" placeholder="alamat" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">Kode Pos</label>
 					<div class="col-sm-2">
-						<input type="text" name="kode_pos" class="form-control" placeholder="" required>
+						<input type="text" name="kode_pos" pattern ="^[0-9]{5}$" class="form-control" placeholder="" required>
 					</div>
 				</div>
                 <div class="form-group">
 					<label class="col-sm-3 control-label">Provinsi</label>
 					<div class="col-sm-2">
-						<input type="text" name="provinsi" class="form-control" placeholder="provinsi" required>
+						<input type="text" name="provinsi" pattern="[A-Za-z ]+" class="form-control" placeholder="provinsi" required>
 					</div>
 				</div>
                 <div class="form-group">
