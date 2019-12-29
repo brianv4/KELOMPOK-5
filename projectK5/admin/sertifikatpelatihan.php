@@ -37,37 +37,36 @@ include('includes/navbar.php');
 			$no =1 ;
 
 			//$num = $_GET['nomor_sertifikat'];
-			$query = "SELECT sertifikat_pelatihan.nomor_sertifikat, calon_peserta.nama, calon_peserta.tempat_lahir, calon_peserta.tanggal_lahir, 
-            ujian_pelatihan.nilai, user.nama_user,
-            sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelatihan INNER JOIN ujian_pelatihan
-             ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan) INNER JOIN pelatihan 
-             ON ujian_pelatihan.id_ujianpelatihan=pelatihan.id_pelatihan INNER JOIN calon_peserta ON pelatihan.nik=calon_peserta.nik INNER JOIN 
-             user ON sertifikat_pelatihan.id_user=user.id_user";
+			$query = "SELECT sertifikat_pelatihan.nomor_sertifikat, calon_peserta.nama, calon_peserta.tempat_lahir, calon_peserta.tanggal_lahir, ujian_pelatihan.nilai, user.nama_user,
+			sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal FROM (sertifikat_pelatihan INNER JOIN ujian_pelatihan
+			 ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan) INNER JOIN pelatihan 
+			 ON ujian_pelatihan.id_pelatihan=pelatihan.id_pelatihan INNER JOIN calon_peserta ON pelatihan.nik=calon_peserta.nik INNER JOIN 
+			 user ON sertifikat_pelatihan.id_user=user.id_user";
 			$sql_rm = mysqli_query($koneksi, $query) or die (mysqli_error($koneksi));
 			while ($data = mysqli_fetch_assoc($sql_rm)){
 			?>
 			<tbody>
 			
-						<tr>
-							<td><?=$no++?>.</td>
-							<td><?=$data['nomor_sertifikat']?></td>
-							<td><?=$data['nama']?></td>
-							<td><?=$data['tempat_lahir']?></td>
-							<td><?=$data['tanggal_lahir']?></td>
-							<td><?=$data['nilai']?></td>
-							<td><?=$data['nama_user']?></td>
-							<td><?=$data['tempat']?></td>
-							<td><?=$data['tanggal']?></td>
-							<td>
-								<a href="report2.php?nomor_sertifikat=<?=$data['nomor_sertifikat']?>" target="_BLANK">
-								<button class="btn btn-light btn-xs"><i class="fa fa-print"></i></button>
-								</a>
-							</td>
-						</tr>
-						<?php
-						}
-						?>
-			</tbody>	
+			<tr>
+				<td><?=$no++?>.</td>
+				<td><?=$data['nomor_sertifikat']?></td>
+				<td><?=$data['nama']?></td>
+				<td><?=$data['tempat_lahir']?></td>
+				<td><?=$data['tanggal_lahir']?></td>
+				<td><?=$data['nilai']?></td>
+				<td><?=$data['nama_user']?></td>
+				<td><?=$data['tempat']?></td>
+				<td><?=$data['tanggal']?></td>
+				<td>
+					<a href="report2.php?nomor_sertifikat=<?=$data['nomor_sertifikat']?>" target="_BLANK">
+					<button class="btn btn-light btn-xs"><i class="fa fa-print"></i></button>
+					</a>
+				</td>
+			</tr>
+			<?php
+			}
+			?>
+</tbody>	
 			
 			</table>
 			</div>
@@ -88,7 +87,7 @@ include('includes/navbar.php');
 		<div class="content">
         <?php
 			if(isset($_POST['add'])){
-                $nomor    = aman($_POST['nomor_sertifikat']);
+				$no = aman($_POST['nomor_sertifikat']);
 				$id 		= aman($_POST['id_ujianpelatihan']);
 				$user		= aman($_POST['id_user']);
                 $tmp		= aman($_POST['tempat']);
@@ -97,7 +96,7 @@ include('includes/navbar.php');
 				
 				$cek = mysqli_query($koneksi, "SELECT sertifikat_pelatihan.id_ujianpelatihan, sertifikat_pelatihan.id_user, sertifikat_pelatihan.tempat, sertifikat_pelatihan.tanggal, FROM sertifikat_pelatihan INNER JOIN 
 				ujian_pelatihan ON sertifikat_pelatihan.id_ujianpelatihan=ujian_pelatihan.id_ujianpelatihan INNER JOIN user ON sertifikat_pelatihan.id_user=user.id_user
-                 WHERE nomor_sertifikat='$nomor'");
+                 WHERE nomor_sertifikat='$no'");
 				if(mysqli_num_rows($cek) == 0){
 						$insert = mysqli_query($koneksi, "INSERT INTO `sertifikat_pelatihan`(`nomor_sertifikat`,`id_ujianpelatihan`, `id_user`,`tempat`, `tanggal`) VALUES (null,'$id','$user','$tmp','$tgl')") or die(mysqli_error($koneksi));
 						if($insert){
@@ -139,7 +138,7 @@ include('includes/navbar.php');
 							$sql_topik = mysqli_query($koneksi, "SELECT * FROM user") or die
 								(mysqli_error($koneksi));
 								while($tampilkan = mysqli_fetch_array($sql_topik)){
-									echo '<center><option value="'.$tampilkan['id_user'].'">'.$tampilkan['nama_user'].'</option></center>';
+									echo '<center><option value="'.$tampilkan['id_user'].'">'.$tampilkan['id_user'].$jarak.$tampilkan['nama_user'].'</option></center>';
 								}
 							?>
 
