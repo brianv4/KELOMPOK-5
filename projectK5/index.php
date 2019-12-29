@@ -409,27 +409,27 @@ Calon Peserta.
         Isi data diri yang ada dengan benar, seperti Nama, NIK, Tempat dan Tanggal Lahir dll. Kemudian klik Daftar/Simpan.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="	fa fa-bell-o fa-3x red-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="	fa fa-bell-o fa-3x navy-text"></i>
         <h3 class="h4 mt-3">4.</h3>
         <p class="mt-3 blue-grey-text">
         Setelah Mendaftar menjadi calon peserta, calon peserta akan mempunyai akun. Akun ini dapat digunakan untuk
 masuk/login untuk melanjutkan pendaftaran jika calon peserta tertarik untuk mendapat kursus atau pelatihan.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-address-card-o fa-3x cyan-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-address-card-o fa-3x green-text"></i>
         <h3 class="h4 mt-3">5.</h3>
         <p class="mt-3 blue-grey-text">
         Jika calon peserta ingin mendaftar kursus atau pelatihan. Peserta melakukan login, kemudian memilih menu pendaftaran
 kursus atau pelatihan.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-comments-o fa-3x cyan-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-envelope fa-3x black-text"></i>
         <h3 class="h4 mt-3">6.</h3>
         <p class="mt-3 blue-grey-text">
         Isi persyaratan yang diperlukan dengan lengkap, kemudian simpan.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-comments-o fa-3x cyan-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="	fa fa-graduation-cap fa-3x black-text"></i>
         <h3 class="h4 mt-3">7.</h3>
         <p class="mt-3 blue-grey-text">
         Jika calon peserta telah melakukan pendaftaran kursus atau pelatihan, maka admin akan memberi tahu peserta melalui
@@ -437,14 +437,14 @@ nomor telepon yang telah diinputkan calon peserta. Kemudian peserta dapat melaku
 yang dipilihnya.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-comments-o fa-3x cyan-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-youtube-play fa-3x red-text"></i>
         <h3 class="h4 mt-3">8.</h3>
         <p class="mt-3 blue-grey-text">
         Setelah mengikutui pelatihan atau kursus sesuai jangka waktu yang ditentukan, maka peserta akan mengikuti ujian
 dan mendapatkan sertifikat untuk pelatihan, kursus level 2 dan kursus level 3.
         </p>
       </div>
-      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-comments-o fa-3x cyan-text"></i>
+      <div class="col-md-4 mb-r wow fadeInUp" data-wow-delay=".4s"><i class="	fa fa-desktop fa-3x black-text"></i>
         <h3 class="h4 mt-3">9.</h3>
         <p class="mt-3 blue-grey-text">
         Sertifikat akan diberikan oleh lembaga setelah kegiatan kursus atau pelatihan selesai.
