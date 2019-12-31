@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2019 at 05:32 AM
+-- Generation Time: Dec 31, 2019 at 07:21 AM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -50,13 +50,10 @@ CREATE TABLE `calon_peserta` (
 --
 
 INSERT INTO `calon_peserta` (`nama`, `nik`, `tempat_lahir`, `tanggal_lahir`, `jenis_kelamin`, `telepon`, `email`, `username`, `password`, `alamat`, `kode_pos`, `provinsi`, `pendidikan`, `status`) VALUES
-('Adi Irawan', 3511012809990002, 'Bondowoso', '1999-09-28', 'Laki-laki', '083853996176', 'adi@gmail.com', 'adiirawan', 'adiirawan', 'Maesan Bondowoso', '68262', 'Jawa Timur', 'SMK', 3),
-('gogon', 3511012809990004, 'Jember', '2019-12-01', 'laki-laki', '089988971222', 'gogon@gmail.com', 'gogon', 'gogon', 'jember', '67220', 'Jawa Timur', 'SMA', 2),
-('Muhammad Marsa Kamal Setiawan', 3511012809990007, 'Jember', '1999-09-09', 'Laki-laki', '08998897121', 'marsajanscall@yahoo.', 'mks111', '123456', 'Probolinggo', '62771', 'Jawa Timur', 'SMP', 1),
-('Brian Vidyanjaya', 3511012809990010, 'Probolinggo', '1999-12-02', 'laki-laki', '08989614190', 'admin@cerbonart.com', 'brian', 'brian', 'Probolinggo', '68263', 'Jawa Timur', 'SMP', 0),
-('rahmad', 3511012809990011, 'Jember', '2000-12-29', 'laki-laki', '08998897123', 'rahmad@gmail.com', 'rahmad', 'rahmad', 'jember', '67222', 'Jawa Timur', 'dll', 0),
-('gatot', 3511012809990051, 'jember', '2019-11-03', 'laki-laki', '0899889712112', 'gatot@gmail.com', 'gatot', 'gatot', 'mangli', '45454', 'Jawa Timur', 'SMA', 0),
-('bayu tol', 4738120398397238, 'pp', '2019-12-18', 'perempuan', '089896141901', 'gatoat@gmail.com', 'bayu', 'bayu', 'sss', '62771', 'jatim', 'SMA', 4);
+('Devi Diah Ayu', 3511012412000001, 'Probolinggo', '2000-12-24', 'perempuan', '087864531777', 'dediaha1@gmail.com', 'devi', 'devi', 'Probolinggo', '67221', 'Jawa Timur', 'SMP', 1),
+('Dini Sugiarti', 3511012908990003, 'Probolinggo', '1999-12-16', 'perempuan', '087757655765', 'dini.123@gmail.com', 'dini', 'dini12', 'Probolinggo', '62771', 'Jawa Timur', 'SMA', 2),
+('Puspa Dhiningtyas', 3574010320120003, 'Probolinggo', '1991-07-30', 'perempuan', '089184893213', 'puspa.d@gmail.com', 'puspa', 'puspa', 'Probolinggo', '67221', 'Jawa Timur', 'SMA', 3),
+('Windha Ika Puspita', 3574010887670002, 'Probolinggo', '1995-06-07', 'perempuan', '089786453177', 'ikawp1@gmail.com', 'ika', 'ika', 'Probolinggo', '67822', 'Jawa Timur', 'SMA', 2);
 
 -- --------------------------------------------------------
 
@@ -75,8 +72,12 @@ CREATE TABLE `gallery` (
 --
 
 INSERT INTO `gallery` (`id`, `nama_file`, `deskripsi`) VALUES
-(3, 'posty3000.jpg', 'bbb'),
-(4, 'postmalone.jpg', 'kkk');
+(1, '7.jpg', 'Ini adalah 2 Orang Peserta Pelatihan Di LKP Sri Rejeki'),
+(2, '8.jpg', 'Ini Adalah Peserta Pelatihan'),
+(3, '14.jpg', 'Ini adalah pengurus LKP Sri Rejeki'),
+(4, '4.jpg', 'Peserta Pelatihan LKP Sri Rejeki'),
+(5, '5.jpg', 'Peserta Kursus dan Pelatihan LKP Sri Rejeki'),
+(6, '13.jpg', 'Pengurus Besar LKP Sri Rejeki');
 
 -- --------------------------------------------------------
 
@@ -96,10 +97,8 @@ CREATE TABLE `jadwal_kursus` (
 --
 
 INSERT INTO `jadwal_kursus` (`no_jadwal`, `deskripsi`, `file`, `level`) VALUES
-(1, 'asdf', '10122019122229Hasil ', 'Level 1'),
-(8, 'Kumaha atuh', 'Jenis tipe file.docx', 'Level 3'),
-(10, 'sip', '1112201903300611122019030016Jenis tipe file.docx', 'level 1'),
-(11, 'obito', '1112201909364511122019030312barang.docx', 'level 1');
+(1, 'Jadwal Kursus Level 2', '30122019034650JADWAL PEMBELAJARAN.docx', 'Level 2'),
+(3, 'Jadwal Kursus Level 1', '30122019041455jadwal.docx', 'Level 1');
 
 -- --------------------------------------------------------
 
@@ -118,9 +117,7 @@ CREATE TABLE `jadwal_pelatihan` (
 --
 
 INSERT INTO `jadwal_pelatihan` (`no_jadwal`, `deskripsi`, `file`) VALUES
-(3, 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdi', '10122019122810Jenis '),
-(20, 'Membuat pakaian pesta dari dasar hingga bisa', '11122019031233barang.docx'),
-(21, 'gaul', '1112201903333611122019031233barang.docx');
+(1, 'Jadwal Pelatihan', '30122019034745jadwal.docx');
 
 -- --------------------------------------------------------
 
@@ -140,7 +137,10 @@ CREATE TABLE `kursus` (
 --
 
 INSERT INTO `kursus` (`id_kursus`, `nik`, `jenis_level`, `file_kursus`) VALUES
-(1, 3511012809990010, 'level1', '19122019081326Reviewpaper.pdf');
+(6, 3574011210990003, 'level 2', '30122019033423file identitas.docx'),
+(7, 3574010320120003, 'level 2', '30122019034324file identitas.docx'),
+(8, 3574010887670002, 'Level 1', '30122019035630file identitas.docx'),
+(9, 3511012908990003, 'Level 1', '30122019073648file identitas.docx');
 
 -- --------------------------------------------------------
 
@@ -163,15 +163,7 @@ CREATE TABLE `materi_kursus` (
 --
 
 INSERT INTO `materi_kursus` (`id_topik`, `topik`, `tgl_mulai`, `tgl_akhir`, `deskripsi`, `dokumen`, `jenis_level`) VALUES
-(2, 'Membuat Pakaian Haloween', '2019-11-15', '2019-11-30', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', 'TugasKelompok5 (1).d', 'Level 1'),
-(3, 'Membuat Pakaian Haloween', '2019-11-15', '2019-11-30', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', '101220191120552019_0', 'Level 3'),
-(4, 'Membuat Pakaian gaul', '2019-12-03', '2019-12-17', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', '10122019170904test1.', 'level 1'),
-(8, 'Membuat Pakaian mantab', '2019-12-03', '2019-12-05', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', '10122019171258lkp_sr', 'level 1'),
-(9, 'Membuat Pakaian Pesta wanita', '2019-12-01', '2019-12-03', 'sipta', '10122019172130101220', 'level 1'),
-(20, 'Membuat Pakaian Pesta', '2019-12-19', '2019-12-25', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', '11122019025703ALHAMDULILLAH.docx', 'level 1'),
-(21, 'Membuat Pakaian Haloween', '2019-12-24', '2019-12-31', 'JOS GANDOSA', '11122019030016Jenis tipe file.docx', 'level 2'),
-(22, 'Membuat Pakaian Muslim', '2019-12-01', '2019-12-01', 'Membuat pakaian pesta dari dasar hingga bisa', '11122019030312barang.docx', 'level 3'),
-(24, 'pepek', '2019-12-12', '2019-12-14', 'pepek', 'lost saga error.PNG', 'Level 2');
+(35, 'Kursus Level 1 Bagian 1', '2019-02-12', '2020-02-02', 'Kursus Level 1 Bagian 1', '30122019074328jadwal.docx', 'level 1');
 
 -- --------------------------------------------------------
 
@@ -188,18 +180,6 @@ CREATE TABLE `materi_pelatihan` (
   `dokumen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `materi_pelatihan`
---
-
-INSERT INTO `materi_pelatihan` (`id_topik`, `topik`, `tgl_mulai`, `tgl_akhir`, `deskripsi`, `dokumen`) VALUES
-(1, 'topik', '2019-11-15', '2019-11-30', 'materi1', 'Algoritma dan Kompleksitas Algoritma.docx'),
-(2, 'Membuat Pakaian Pesta', '2019-11-15', '2019-11-30', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', '10122019162420Hasil kolmogorov data 50 excel.xlsx'),
-(11, 'Membuat Pakaian Pesta pria', '2019-12-01', '2019-12-07', 'sip', '10122019171906lkpsrirejeki (2).sql'),
-(12, 'Membuat Pakaian Pesta malamas', '2019-12-01', '2019-12-10', 'Lembaga Kursus Pelatihan Menjahit Swsta yang berdiri pada 12 Desember 2000. Perum Kalirejo blok E-25 Dringu Probolinggo', 'dhcp.jpg'),
-(13, 'Membuat Pakaian Pesta siang', '2019-12-01', '2019-12-10', 'sip gaul', '1112201909375610122019162420Hasil kolmogorov data 50 excel.xlsx'),
-(14, 'kemem', '2019-12-12', '2019-12-28', 'kemem', '18122019151435Reviewpaper.pdf');
-
 -- --------------------------------------------------------
 
 --
@@ -209,7 +189,7 @@ INSERT INTO `materi_pelatihan` (`id_topik`, `topik`, `tgl_mulai`, `tgl_akhir`, `
 CREATE TABLE `pelatihan` (
   `id_pelatihan` int(10) NOT NULL,
   `nik` bigint(16) NOT NULL,
-  `file_pelatihan` varchar(20) NOT NULL
+  `file_pelatihan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -217,11 +197,7 @@ CREATE TABLE `pelatihan` (
 --
 
 INSERT INTO `pelatihan` (`id_pelatihan`, `nik`, `file_pelatihan`) VALUES
-(1, 3511012809990002, 'Jenis tipe file.docx'),
-(2, 3511011809990009, '28112019135756[M] St'),
-(4, 3511012809990051, '28112019140523PENCAK'),
-(8, 4738120398397238, '04122019091915biolog'),
-(9, 3511012809990010, '12122019140251tugas ');
+(15, 3511012412000001, '30122019042731file identitas.docx');
 
 -- --------------------------------------------------------
 
@@ -242,27 +218,10 @@ CREATE TABLE `sertifikat_kursus` (
 --
 
 INSERT INTO `sertifikat_kursus` (`nomor_sertifikat`, `id_ujiankursus`, `id_user`, `tempat`, `tanggal`) VALUES
-(1, 3, 9, 'Probolinggo', '2019-12-04'),
-(2, 4, 9, 'bali', '2019-12-05'),
-(3, 6, 13, 'Probolinggo', '2019-11-12'),
-(4, 6, 13, 'Probolinggo', '2019-11-12'),
-(5, 6, 13, 'Probolinggo', '2019-11-12'),
-(6, 4, 14, 'Probolinggo', '2019-11-25'),
-(7, 4, 14, 'Probolinggo', '2019-11-25'),
-(8, 3, 12, 'Probolinggo', '2019-11-29'),
-(9, 5, 14, 'Probolinggo', '2019-11-20'),
-(10, 5, 14, 'Probolinggo', '2019-11-20'),
-(11, 3, 12, 'Probolinggo', '2019-11-05'),
-(12, 3, 12, 'Probolinggo', '2019-11-05'),
-(13, 3, 12, 'Probolinggo', '2019-11-05'),
-(14, 3, 12, 'Probolinggo', '2019-11-05'),
-(15, 3, 12, 'Probolinggo', '2019-11-05'),
-(16, 3, 12, 'Probolinggo', '2019-11-05'),
-(17, 3, 12, 'Probolinggo', '2019-11-05'),
-(18, 12, 14, 'Probolinggo', '2019-11-25'),
-(19, 12, 14, 'Probolinggo', '2019-11-25'),
-(20, 12, 14, 'Probolinggo', '2019-11-25'),
-(21, 12, 14, 'Probolinggo', '2019-11-25');
+(23, 14, 12, 'Probolinggo', '2019-11-05'),
+(24, 15, 14, 'Probolinggo', '2019-11-12'),
+(25, 17, 14, 'Probolinggo', '2019-11-27'),
+(26, 19, 14, 'Probolinggo', '2019-11-12');
 
 -- --------------------------------------------------------
 
@@ -283,18 +242,8 @@ CREATE TABLE `sertifikat_pelatihan` (
 --
 
 INSERT INTO `sertifikat_pelatihan` (`nomor_sertifikat`, `id_ujianpelatihan`, `id_user`, `tempat`, `tanggal`) VALUES
-(1, 1, 12, 'Prob', '2019-12-09'),
-(2, 16, 14, 'Probolinggo', '2019-11-25'),
-(3, 16, 14, 'Probolinggo', '2019-11-20'),
-(4, 16, 14, 'Probolinggo', '2019-11-20'),
-(5, 16, 14, 'Probolinggo', '2019-11-20'),
-(6, 16, 14, 'Probolinggo', '2019-11-05'),
-(7, 16, 14, 'Probolinggo', '2019-11-05'),
-(8, 14, 14, 'Probolinggo', '2019-11-19'),
-(9, 14, 14, 'Probolinggo', '2019-11-19'),
-(10, 14, 14, 'Probolinggo', '2019-11-19'),
-(11, 16, 12, 'Jember Loss', '2019-11-25'),
-(12, 16, 12, 'Jember Loss', '2019-11-25');
+(30, 19, 14, 'Probolinggo', '2019-11-15'),
+(31, 20, 16, 'Probolinggo', '2019-11-12');
 
 -- --------------------------------------------------------
 
@@ -325,7 +274,7 @@ CREATE TABLE `tb_bukti` (
   `id_bukti` int(3) NOT NULL,
   `id_kursus` int(10) NOT NULL,
   `nik` bigint(16) NOT NULL,
-  `bukti` varchar(20) NOT NULL
+  `bukti` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -334,12 +283,21 @@ CREATE TABLE `tb_bukti` (
 
 INSERT INTO `tb_bukti` (`id_bukti`, `id_kursus`, `nik`, `bukti`) VALUES
 (2, 0, 8123912312312, '11122019100452biolog'),
-(3, 2147483647, 10, '12122019085713Kelomp'),
 (4, 17, 3511012809990010, '12122019091809alur b'),
 (5, 23, 3511012809990011, '12122019162957Muhamm'),
 (9, 24, 3511012809990007, '13122019152827biolog'),
 (10, 27, 3511012809990007, '13122019153449biolog'),
-(11, 1, 3511012809990010, '19122019081341dhcp.j');
+(11, 1, 3511012809990010, '19122019081341dhcp.j'),
+(12, 2, 3574011210990003, '29122019062216[M] St'),
+(13, 3, 3574011210990003, '29122019154216DAFUL.'),
+(14, 4, 3574011210990003, '29122019170250materi kursus level 1 - Bagian 1.docx'),
+(15, 4, 3574011210990003, '29122019175001materi kursus level 2 - Bagian 4.docx'),
+(16, 4, 3574011210990003, '29122019180238materi kursus level 3 - Bagian 2.docx'),
+(17, 5, 3574011210990003, '29122019180649Materi Pelatihan.docx'),
+(18, 6, 3574011210990003, '30122019033443bukti pembayaran.docx'),
+(19, 7, 3574010320120003, '30122019034350bukti pembayaran.docx'),
+(20, 8, 3574010887670002, '30122019035650bukti pembayaran.docx'),
+(21, 9, 3511012908990003, '30122019073714bukti pembayaran.docx');
 
 -- --------------------------------------------------------
 
@@ -359,15 +317,10 @@ CREATE TABLE `ujian_kursus` (
 --
 
 INSERT INTO `ujian_kursus` (`id_ujiankursus`, `id_kursus`, `nilai`, `keterangan`) VALUES
-(1, 0, 90, ''),
-(2, 0, 11, ''),
-(3, 8, 90, ''),
-(4, 10, 90, 'lulus'),
-(5, 0, 100, ''),
-(6, 8, 80, ''),
-(7, 0, 78, ''),
-(11, 1, 100, ''),
-(12, 1, 100, '');
+(14, 5, 99, ''),
+(15, 7, 90, ''),
+(17, 8, 80, ''),
+(19, 9, 90, '');
 
 -- --------------------------------------------------------
 
@@ -387,9 +340,8 @@ CREATE TABLE `ujian_pelatihan` (
 --
 
 INSERT INTO `ujian_pelatihan` (`id_ujianpelatihan`, `id_pelatihan`, `nilai`, `keterangan`) VALUES
-(14, 2147483647, 99, ''),
-(16, 1, 88, ''),
-(17, 9, 100, '');
+(19, 14, 88, ''),
+(20, 15, 79, '');
 
 -- --------------------------------------------------------
 
@@ -413,7 +365,8 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id_user`, `nama_user`, `alamat_user`, `nohp_user`, `level`, `username`, `password`) VALUES
 (12, 'Brian Vidyanjaya', 'Kaliamas Dringu Probolinggo', '081218712124', 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3'),
-(14, 'Dwita Widyandari', 'Kaliamas Dringu Probolinggo', '081233292287', 'Owner', 'owner', '72122ce96bfec66e2396d2e25225d70a');
+(14, 'Dwita Widyandari', 'Kaliamas Dringu Probolinggo', '081233292287', 'Owner', 'owner', '72122ce96bfec66e2396d2e25225d70a'),
+(16, 'Sri Rejeki', 'Probolinggo', '087757611671', 'Admin', 'srirejeki', '21232f297a57a5a743894a0e4a801fc3');
 
 --
 -- Indexes for dumped tables
@@ -519,79 +472,79 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `jadwal_kursus`
 --
 ALTER TABLE `jadwal_kursus`
-  MODIFY `no_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `no_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `jadwal_pelatihan`
 --
 ALTER TABLE `jadwal_pelatihan`
-  MODIFY `no_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `no_jadwal` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `kursus`
 --
 ALTER TABLE `kursus`
-  MODIFY `id_kursus` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kursus` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `materi_kursus`
 --
 ALTER TABLE `materi_kursus`
-  MODIFY `id_topik` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_topik` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `materi_pelatihan`
 --
 ALTER TABLE `materi_pelatihan`
-  MODIFY `id_topik` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_topik` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `pelatihan`
 --
 ALTER TABLE `pelatihan`
-  MODIFY `id_pelatihan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pelatihan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `sertifikat_kursus`
 --
 ALTER TABLE `sertifikat_kursus`
-  MODIFY `nomor_sertifikat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `nomor_sertifikat` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `sertifikat_pelatihan`
 --
 ALTER TABLE `sertifikat_pelatihan`
-  MODIFY `nomor_sertifikat` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `nomor_sertifikat` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `tb_bukti`
 --
 ALTER TABLE `tb_bukti`
-  MODIFY `id_bukti` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_bukti` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `ujian_kursus`
 --
 ALTER TABLE `ujian_kursus`
-  MODIFY `id_ujiankursus` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_ujiankursus` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `ujian_pelatihan`
 --
 ALTER TABLE `ujian_pelatihan`
-  MODIFY `id_ujianpelatihan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_ujianpelatihan` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
